@@ -1,12 +1,24 @@
 # TangPrimer-20K-example
 ---
-
 - [# TangPrimer-20K-example](#-tangprimer-20k-example)
+- [Note](#note)
+  - [Error code:RP2017](#error-coderp2017)
 - [Reference](#reference)
   - [Lite-bottom test project](#lite-bottom-test-project)
   - [DDR-Test](#ddr-test)
   - [SPI_lcd](#spi_lcd)
   - [RBG_lcd](#rbg_lcd)
+
+## Note
+
+### Error code:RP2017
+
+When you meet error code `PR2017`, just enable corresponding IO as regular IO.
+
+![rp2017](./.assets/rp2017.png)
+
+Click `Project` in top menu bar and choose `Configuration`, then enable the corresponding Dual Purpose Pin to deal with this error.
+
 
 ## Reference
 
