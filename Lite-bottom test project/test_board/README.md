@@ -23,7 +23,7 @@ The following picture shows testing spi connector IO and SD slot IO.
 
 ## Serial print
 
-Using serial tool to see the ddr test result.
+Using serial tool with 115200 baudrates to see the DDR test result.
 
 ```text
 Perform ResetAuto Reset Every 100s
