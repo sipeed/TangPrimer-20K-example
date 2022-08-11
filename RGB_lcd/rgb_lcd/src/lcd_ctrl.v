@@ -31,16 +31,16 @@ module lcd_ctrl
 
 `ifdef _1280_1024
 	parameter H_SYNC = 112	; 		// Horizontal Sync count
-	parameter H_BACK = 248	; 		// 行消隐后肩时间
-	parameter H_DISP = 1280 ; 		// 行数据有效时间
-	parameter H_FRONT = 48	; 		// 行消隐前肩时间
-	parameter H_TOTAL = 1688; 		// 行扫描总时间
+	parameter H_BACK = 248	; 		// Back Porch
+	parameter H_DISP = 1280 ; 		// Display Period
+	parameter H_FRONT = 48	; 		// Front Porch
+	parameter H_TOTAL = 1688; 		// Total Period
 			
-	parameter V_SYNC = 3	; 		// 列同步信号时间
-	parameter V_BACK = 38	; 		// 列消隐后肩时间
-	parameter V_DISP = 1024 ; 		// 列数据有效时间
-	parameter V_FRONT = 1	; 		// 列消隐前肩时间
-	parameter V_TOTAL = 1066;  		// 列扫描总时间
+	parameter V_SYNC = 3	; 		// Vertical Sync count
+	parameter V_BACK = 38	; 		// Back Porch
+	parameter V_DISP = 1024 ; 		// Display Period
+	parameter V_FRONT = 1	; 		// Front Porch
+	parameter V_TOTAL = 1066;  		// Total Period
 `endif
 
 `ifdef _800_480
