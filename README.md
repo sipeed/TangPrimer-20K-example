@@ -8,6 +8,7 @@
   - [DDR-Test](#ddr-test)
   - [SPI_lcd](#spi_lcd)
   - [RBG_lcd](#rbg_lcd)
+  - [Cam2lcd](#cam2lcd)
 
 ## Note
 
@@ -43,3 +44,11 @@ This is an example driving 1.14 inch spi screen.
 This example contains 4 kind of different color bar data in source code, this project just use one color bar data for example.
 
 ![rgb](./.assets/rgb.jpg)
+
+### Cam2lcd
+
+There are 2 projects, one is the 800x400 RGB screen displays the image captured by OV5640 and another one is 480x272 RGB screen displays what is captured by OV5640.
+
+After burning the .fs bitstream into fpga, press `S0` button to get right display.
+
+![cam2lcd](./.assets/cam2lcd.jpg)
