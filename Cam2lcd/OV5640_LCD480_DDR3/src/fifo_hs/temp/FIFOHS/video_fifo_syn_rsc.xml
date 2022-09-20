@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="video_fifo" Register="90" Alu="25" Lut="107" Bsram="4" Ssram="4"/>

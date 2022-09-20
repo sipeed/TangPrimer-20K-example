@@ -1,0 +1,35 @@
+[General]
+ipc_version=4
+file=video_fifo
+module=video_fifo
+target_device=gw2a18c-011
+type=fifo_hs
+version=1.0
+
+[Config]
+AlmostEmptyFlag=false
+AlmostEmptyFlagItem=Empty_Single Threshold Constant Parameter
+AlmostFullFlag=false
+AlmostFullFlagItem=Full_Single Threshold Constant Parameter
+BSRAM=true
+ControlledByRdEn=true
+ECCSelected=false
+EmptyClear=1
+EmptySet=1
+EnReset=true
+FirstWordFallThrough=false
+FullClear=1
+FullSet=1
+LANG=0
+OutputRegistersSelected=true
+REG=false
+ReadDataNum=true
+ReadDataWidth=16
+ReadDepth=4096
+ResetSynchronization=true
+SSRAM=false
+StandardFIFO=true
+Synthesis_tool=GowinSynthesis
+WriteDataNum=false
+WriteDataWidth=16
+WriteDepth=4096

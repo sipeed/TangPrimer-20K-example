@@ -1,0 +1,68 @@
+{
+ "Files" : [
+  {
+   "Path" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/cmos_8_16bit.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/color_bar.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/fifo_hs/video_fifo.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/gowin_rpll/cmos_pll.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/gowin_rpll/sys_pll.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/i2c_master/i2c_config.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/i2c_master/i2c_master_bit_ctrl.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/i2c_master/i2c_master_byte_ctrl.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/i2c_master/i2c_master_defines.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/i2c_master/i2c_master_top.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/i2c_master/timescale.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/lut_ov5640_rgb565_800_480.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/top.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/video_timing_data.v",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/impl/temp/rtl_parser.result",
+ "Top" : "",
+ "VerilogStd" : "verilog_2001",
+ "VhdlStd" : "vhdl_93"
+}

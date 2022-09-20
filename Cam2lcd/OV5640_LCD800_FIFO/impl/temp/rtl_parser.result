@@ -1,0 +1,108 @@
+[
+ {
+  "InstFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/top.v",
+  "InstLine" : 1,
+  "InstName" : "top",
+  "ModuleFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/top.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/top.v",
+    "InstLine" : 59,
+    "InstName" : "sys_pll_m0",
+    "ModuleFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/gowin_rpll/sys_pll.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "sys_pll"
+   },
+   {
+    "InstFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/top.v",
+    "InstLine" : 63,
+    "InstName" : "cmos_pll_m0",
+    "ModuleFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/gowin_rpll/cmos_pll.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "cmos_pll"
+   },
+   {
+    "InstFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/top.v",
+    "InstLine" : 69,
+    "InstName" : "i2c_config_m0",
+    "ModuleFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/i2c_master/i2c_config.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "i2c_config",
+    "SubInsts" : [
+     {
+      "InstFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/i2c_master/i2c_config.v",
+      "InstLine" : 101,
+      "InstName" : "i2c_master_top_m0",
+      "ModuleFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/i2c_master/i2c_master_top.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "i2c_master_top",
+      "SubInsts" : [
+       {
+        "InstFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/i2c_master/i2c_master_top.v",
+        "InstLine" : 232,
+        "InstName" : "byte_controller",
+        "ModuleFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/i2c_master/i2c_master_byte_ctrl.v",
+        "ModuleLine" : 75,
+        "ModuleName" : "i2c_master_byte_ctrl",
+        "SubInsts" : [
+         {
+          "InstFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/i2c_master/i2c_master_byte_ctrl.v",
+          "InstLine" : 146,
+          "InstName" : "bit_controller",
+          "ModuleFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/i2c_master/i2c_master_bit_ctrl.v",
+          "ModuleLine" : 143,
+          "ModuleName" : "i2c_master_bit_ctrl"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "InstFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/top.v",
+    "InstLine" : 84,
+    "InstName" : "lut_ov5640_rgb565_800_480_m0",
+    "ModuleFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/lut_ov5640_rgb565_800_480.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "lut_ov5640_rgb565_800_480"
+   },
+   {
+    "InstFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/top.v",
+    "InstLine" : 89,
+    "InstName" : "cmos_8_16bit_m0",
+    "ModuleFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/cmos_8_16bit.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "cmos_8_16bit"
+   },
+   {
+    "InstFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/top.v",
+    "InstLine" : 100,
+    "InstName" : "video_timing_data_m0",
+    "ModuleFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/video_timing_data.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "video_timing_data",
+    "SubInsts" : [
+     {
+      "InstFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/video_timing_data.v",
+      "InstLine" : 30,
+      "InstName" : "video_fifo_m0",
+      "ModuleFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/fifo_hs/video_fifo.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "video_fifo"
+     },
+     {
+      "InstFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/video_timing_data.v",
+      "InstLine" : 64,
+      "InstName" : "color_bar_m0",
+      "ModuleFile" : "E:/TangPrimer-20K-example/Cam2lcd/OV5640_LCD800_FIFO/src/color_bar.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "color_bar"
+     }
+    ]
+   }
+  ]
+ }
+]
