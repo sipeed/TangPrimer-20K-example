@@ -47,8 +47,17 @@ This example contains 4 kind of different color bar data in source code, this pr
 
 ### Cam2lcd
 
-There are 2 projects, one is the 800x480 RGB screen displays the image captured by OV5640 and another one is 480x272 RGB screen displays what is captured by OV5640.
+There are 4 projects, their name rules are as followings:
 
-After burning the .fs bitstream into fpga, press `S0` button to get right display.
+| Folder name | Camera | Screen resolution | Frame storge mode |
+| --- | --- | --- | --- |
+|OV5640_LCD480_DDR3| OV5640 | 480x272 | DDR3 |
+|OV5640_LCD800_DDR3| OV5640 | 800x480 | DDR3 |
+|OV5640_LCD480_FIFO| OV5640 | 480x272 | FIFO |
+|OV5640_LCD800_FIFO| OV5640 | 800x480 | FIFO |
+
+These are only for testing, and if you want better results, you need program on yourself.
+
+After burning the .fs bitstream into fpga, press `S0` button to reset to get right display.
 
 ![cam2lcd](./.assets/cam2lcd.jpg)
