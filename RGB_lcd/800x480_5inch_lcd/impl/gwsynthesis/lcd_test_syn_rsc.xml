@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top">
+    <SubModule name="video_pll_m0"/>
+    <SubModule name="vga_timing_m0" Register="32" Alu="27" Lut="31"/>
+</Module>

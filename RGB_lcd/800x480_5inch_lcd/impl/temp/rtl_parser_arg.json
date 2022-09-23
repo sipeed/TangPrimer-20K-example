@@ -1,0 +1,24 @@
+{
+ "Files" : [
+  {
+   "Path" : "E:/EP4CE6F17C8/module/GOWIN/LCD800/src/gowin_rpll/video_pll.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "E:/EP4CE6F17C8/module/GOWIN/LCD800/src/top.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "E:/EP4CE6F17C8/module/GOWIN/LCD800/src/vga_timing.v",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "E:/EP4CE6F17C8/module/GOWIN/LCD800/impl/temp/rtl_parser.result",
+ "Top" : "",
+ "VerilogStd" : "verilog_2001",
+ "VhdlStd" : "vhdl_93"
+}

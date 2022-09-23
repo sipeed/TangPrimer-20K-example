@@ -1,0 +1,28 @@
+[
+ {
+  "InstFile" : "E:/EP4CE6F17C8/module/GOWIN/LCD480/src/top.v",
+  "InstLine" : 1,
+  "InstName" : "top",
+  "ModuleFile" : "E:/EP4CE6F17C8/module/GOWIN/LCD480/src/top.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "E:/EP4CE6F17C8/module/GOWIN/LCD480/src/top.v",
+    "InstLine" : 17,
+    "InstName" : "video_pll_m0",
+    "ModuleFile" : "E:/EP4CE6F17C8/module/GOWIN/LCD480/src/gowin_rpll/video_pll.v",
+    "ModuleLine" : 8,
+    "ModuleName" : "video_pll"
+   },
+   {
+    "InstFile" : "E:/EP4CE6F17C8/module/GOWIN/LCD480/src/top.v",
+    "InstLine" : 22,
+    "InstName" : "vga_timing_m0",
+    "ModuleFile" : "E:/EP4CE6F17C8/module/GOWIN/LCD480/src/vga_timing.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "vga_timing"
+   }
+  ]
+ }
+]

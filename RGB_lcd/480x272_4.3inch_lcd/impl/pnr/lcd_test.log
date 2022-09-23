@@ -1,0 +1,29 @@
+Reading netlist file: "E:\EP4CE6F17C8\module\GOWIN\LCD480\impl\gwsynthesis\lcd_test.vg"
+Parsing netlist file "E:\EP4CE6F17C8\module\GOWIN\LCD480\impl\gwsynthesis\lcd_test.vg" completed
+Processing netlist completed
+Reading constraint file: "E:\EP4CE6F17C8\module\GOWIN\LCD480\src\lcd.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "E:\EP4CE6F17C8\module\GOWIN\LCD480\impl\pnr\lcd_test.power.html" completed
+Generate file "E:\EP4CE6F17C8\module\GOWIN\LCD480\impl\pnr\lcd_test.pin.html" completed
+Generate file "E:\EP4CE6F17C8\module\GOWIN\LCD480\impl\pnr\lcd_test.rpt.html" completed
+Generate file "E:\EP4CE6F17C8\module\GOWIN\LCD480\impl\pnr\lcd_test.rpt.txt" completed
+Generate file "E:\EP4CE6F17C8\module\GOWIN\LCD480\impl\pnr\lcd_test.tr.html" completed
+Sat Aug 20 15:14:25 2022
+
