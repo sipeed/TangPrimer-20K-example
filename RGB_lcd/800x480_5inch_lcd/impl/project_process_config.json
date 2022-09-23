@@ -56,7 +56,6 @@
  "Resolve_Mixed_Drivers" : false,
  "Resource_Sharing" : true,
  "Retiming" : false,
- "Route_Maxfan" : 23,
  "Route_Option" : "0",
  "Run_Timing_Driven" : true,
  "SECURE_MODE" : false,

@@ -1,15 +1,15 @@
 {
  "Files" : [
   {
-   "Path" : "E:/EP4CE6F17C8/module/GOWIN/LCD480/src/gowin_rpll/video_pll.v",
+   "Path" : "D:/TangPrimer-20K-example/RGB_lcd/480x272_4.3inch_lcd/src/gowin_rpll/video_pll.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "E:/EP4CE6F17C8/module/GOWIN/LCD480/src/top.v",
+   "Path" : "D:/TangPrimer-20K-example/RGB_lcd/480x272_4.3inch_lcd/src/top.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "E:/EP4CE6F17C8/module/GOWIN/LCD480/src/vga_timing.v",
+   "Path" : "D:/TangPrimer-20K-example/RGB_lcd/480x272_4.3inch_lcd/src/vga_timing.v",
    "Type" : "verilog"
   }
  ],
@@ -17,7 +17,7 @@
 
  ],
  "LoopLimit" : 2000,
- "ResultFile" : "E:/EP4CE6F17C8/module/GOWIN/LCD480/impl/temp/rtl_parser.result",
+ "ResultFile" : "D:/TangPrimer-20K-example/RGB_lcd/480x272_4.3inch_lcd/impl/temp/rtl_parser.result",
  "Top" : "",
  "VerilogStd" : "verilog_2001",
  "VhdlStd" : "vhdl_93"
