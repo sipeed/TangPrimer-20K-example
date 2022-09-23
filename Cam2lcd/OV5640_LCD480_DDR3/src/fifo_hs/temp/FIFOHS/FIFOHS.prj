@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW2A-18C" package="PBGA256" speed="8" partNumber="GW2A-LV18PG256C8/I7"/>
+    <FileList>
+        <File path="D:/Gowin/Gowin_V1.9.8.07_Education/IDE/ipcore/FIFO_HS/data/fifo_hs.v" type="verilog"/>
+        <File path="D:/Gowin/Gowin_V1.9.8.07_Education/IDE/ipcore/FIFO_HS/data/fifo_hs_top.v" type="verilog"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="1"/>
+        <Option type="dsp_balance" value="1"/>
+        <Option type="include_path" value="D:/Gowin/Gowin_V1.9.8.07_Education/IDE/ipcore/FIFO_HS/data"/>
+        <Option type="include_path" value="D:/Users/HUIP/Desktop/OV5640_LCD800_DDR3/src/fifo_hs/temp/FIFOHS"/>
+        <Option type="output_file" value="video_fifo.vg"/>
+        <Option type="output_template" value="video_fifo_tmp.v"/>
+        <Option type="ram_balance" value="1"/>
+        <Option type="ram_rw_check" value="1"/>
+        <Option type="verilog_language" value="sysv-2017"/>
+    </OptionList>
+</Project>

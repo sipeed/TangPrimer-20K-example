@@ -1,0 +1,48 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v'
+Analyzing included file 'fifo_define.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Analyzing included file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\static_macro_define.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Analyzing included file 'fifo_parameter.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Analyzing included file 'fifo_define.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Analyzing included file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\static_macro_define.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Undeclared symbol '**', assumed default net type '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v":0)
+Undeclared symbol '**', assumed default net type '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v":0)
+Analyzing Verilog file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v'
+Analyzing included file 'fifo_define.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v":1)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v":1)
+Analyzing included file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\static_macro_define.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v":2)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v":2)
+Analyzing included file 'fifo_parameter.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v":57)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v":57)
+Compiling module 'video_fifo'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v":4)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v":0)
+Extracting RAM for identifier '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v":0)
+NOTE  (EX0101) : Current top module is "video_fifo"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+WARN  (DI0003) : Latch inferred for net 'wfull_val1';We do not recommend the use of latches in FPGA designs, as they may lead to timing problems("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v":0)
+WARN  (DI0003) : Latch inferred for net 'Full';We do not recommend the use of latches in FPGA designs, as they may lead to timing problems("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\FIFO_HS\data\fifo_hs.v":0)
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "D:\Users\HUIP\Desktop\OV5640_LCD800_DDR3\src\fifo_hs\temp\FIFOHS\video_fifo.vg" completed
+Generate template file "D:\Users\HUIP\Desktop\OV5640_LCD800_DDR3\src\fifo_hs\temp\FIFOHS\video_fifo_tmp.v" completed
+[100%] Generate report file "D:\Users\HUIP\Desktop\OV5640_LCD800_DDR3\src\fifo_hs\temp\FIFOHS\video_fifo_syn.rpt.html" completed
+GowinSynthesis finish
