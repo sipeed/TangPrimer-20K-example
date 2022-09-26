@@ -1,0 +1,32 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW2A-18C" pn="GW2A-LV18PG256C8/I7">gw2a18c-011</Device>
+    <FileList>
+        <File path="src/cmos_8_16bit.v" type="file.verilog" enable="1"/>
+        <File path="src/ddr3_memory_interface/DDR3MI.v" type="file.verilog" enable="1"/>
+        <File path="src/dvi_tx/DVI_TX_Top.v" type="file.verilog" enable="1"/>
+        <File path="src/fifo_hs/video_fifo.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_rpll/TMDS_rPLL.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_rpll/cmos_pll.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_rpll/mem_pll.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_rpll/sys_pll.v" type="file.verilog" enable="1"/>
+        <File path="src/i2c_master/i2c_config.v" type="file.verilog" enable="1"/>
+        <File path="src/i2c_master/i2c_master_bit_ctrl.v" type="file.verilog" enable="1"/>
+        <File path="src/i2c_master/i2c_master_byte_ctrl.v" type="file.verilog" enable="1"/>
+        <File path="src/i2c_master/i2c_master_defines.v" type="file.verilog" enable="1"/>
+        <File path="src/i2c_master/i2c_master_top.v" type="file.verilog" enable="1"/>
+        <File path="src/i2c_master/timescale.v" type="file.verilog" enable="1"/>
+        <File path="src/lut_ov5640_rgb565_1024_768.v" type="file.verilog" enable="1"/>
+        <File path="src/syn_gen.v" type="file.verilog" enable="1"/>
+        <File path="src/testpattern.v" type="file.verilog" enable="1"/>
+        <File path="src/top.v" type="file.verilog" enable="1"/>
+        <File path="src/vga_timing.v" type="file.verilog" enable="1"/>
+        <File path="src/video_frame_buffer/Video_Frame_Buffer_Top.v" type="file.verilog" enable="1"/>
+        <File path="src/top.cst" type="file.cst" enable="1"/>
+        <File path="src/lcd.sdc" type="file.sdc" enable="1"/>
+        <File path="src/top.rao" type="file.gao" enable="0"/>
+    </FileList>
+</Project>

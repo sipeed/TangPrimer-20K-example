@@ -1,0 +1,55 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_top.v'
+Analyzing included file 'top_define.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_top.v":24)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_top.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_top.v":24)
+Analyzing included file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\static_macro_define.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_top.v":25)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_top.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_top.v":25)
+Analyzing included file 'vfb_defines.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_top.v":26)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_top.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_top.v":26)
+Analyzing Verilog file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp'
+Analyzing included file 'top_define.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":5359)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":5359)
+Analyzing included file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\static_macro_define.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":5359)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":5359)
+Analyzing included file 'vfb_defines.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":5359)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":5359)
+Compiling module 'Video_Frame_Buffer_Top'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_top.v":28)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":0)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":0)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":0)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":0)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":0)
+Extracting RAM for identifier '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":0)
+WARN  (EX3791) : Expression size ** truncated to fit in target size **("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":0)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":0)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":0)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":0)
+Extracting RAM for identifier '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":0)
+WARN  (EX3791) : Expression size ** truncated to fit in target size **("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":0)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":0)
+WARN  (EX3791) : Expression size ** truncated to fit in target size **("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":0)
+WARN  (EX3670) : Actual bit length ** differs from formal bit length ** for port '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":0)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_wrapper.vp":0)
+NOTE  (EX0101) : Current top module is "Video_Frame_Buffer_Top"
+[5%] Running netlist conversion ...
+WARN  (CV0016) : Input I_rd_data_end is unused("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\VFB\data\vfb_top.v":70)
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "D:\Users\HUIP\Desktop\OV5640_HDMI800_DDR3\src\video_frame_buffer\temp\VFB\Video_Frame_Buffer_Top.vg" completed
+Generate template file "D:\Users\HUIP\Desktop\OV5640_HDMI800_DDR3\src\video_frame_buffer\temp\VFB\Video_Frame_Buffer_Top_tmp.v" completed
+[100%] Generate report file "D:\Users\HUIP\Desktop\OV5640_HDMI800_DDR3\src\video_frame_buffer\temp\VFB\Video_Frame_Buffer_Top_syn.rpt.html" completed
+GowinSynthesis finish

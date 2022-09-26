@@ -1,0 +1,146 @@
+[
+ {
+  "InstFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/gowin_rpll/sys_pll.v",
+  "InstLine" : 9,
+  "InstName" : "sys_pll",
+  "ModuleFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/gowin_rpll/sys_pll.v",
+  "ModuleLine" : 9,
+  "ModuleName" : "sys_pll"
+ },
+ {
+  "InstFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/syn_gen.v",
+  "InstLine" : 13,
+  "InstName" : "syn_gen",
+  "ModuleFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/syn_gen.v",
+  "ModuleLine" : 13,
+  "ModuleName" : "syn_gen"
+ },
+ {
+  "InstFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/testpattern.v",
+  "InstLine" : 17,
+  "InstName" : "testpattern",
+  "ModuleFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/testpattern.v",
+  "ModuleLine" : 17,
+  "ModuleName" : "testpattern"
+ },
+ {
+  "InstFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/top.v",
+  "InstLine" : 1,
+  "InstName" : "top",
+  "ModuleFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/top.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/top.v",
+    "InstLine" : 202,
+    "InstName" : "Video_Frame_Buffer_Top_inst",
+    "ModuleFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/video_frame_buffer/Video_Frame_Buffer_Top.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "Video_Frame_Buffer_Top"
+   },
+   {
+    "InstFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/top.v",
+    "InstLine" : 282,
+    "InstName" : "DDR3_Memory_Interface_Top_inst",
+    "ModuleFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/ddr3_memory_interface/DDR3MI.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "DDR3MI"
+   },
+   {
+    "InstFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/top.v",
+    "InstLine" : 349,
+    "InstName" : "DVI_TX_Top_inst",
+    "ModuleFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/dvi_tx/DVI_TX_Top.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "DVI_TX_Top"
+   },
+   {
+    "InstFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/top.v",
+    "InstLine" : 109,
+    "InstName" : "cmos_pll_m0",
+    "ModuleFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/gowin_rpll/cmos_pll.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "cmos_pll"
+   },
+   {
+    "InstFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/top.v",
+    "InstLine" : 114,
+    "InstName" : "mem_pll_m0",
+    "ModuleFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/gowin_rpll/mem_pll.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "mem_pll"
+   },
+   {
+    "InstFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/top.v",
+    "InstLine" : 121,
+    "InstName" : "i2c_config_m0",
+    "ModuleFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/i2c_master/i2c_config.v",
+    "ModuleLine" : 30,
+    "ModuleName" : "i2c_config",
+    "SubInsts" : [
+     {
+      "InstFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/i2c_master/i2c_config.v",
+      "InstLine" : 130,
+      "InstName" : "i2c_master_top_m0",
+      "ModuleFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/i2c_master/i2c_master_top.v",
+      "ModuleLine" : 30,
+      "ModuleName" : "i2c_master_top",
+      "SubInsts" : [
+       {
+        "InstFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/i2c_master/i2c_master_top.v",
+        "InstLine" : 261,
+        "InstName" : "byte_controller",
+        "ModuleFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/i2c_master/i2c_master_byte_ctrl.v",
+        "ModuleLine" : 75,
+        "ModuleName" : "i2c_master_byte_ctrl",
+        "SubInsts" : [
+         {
+          "InstFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/i2c_master/i2c_master_byte_ctrl.v",
+          "InstLine" : 146,
+          "InstName" : "bit_controller",
+          "ModuleFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/i2c_master/i2c_master_bit_ctrl.v",
+          "ModuleLine" : 143,
+          "ModuleName" : "i2c_master_bit_ctrl"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "InstFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/top.v",
+    "InstLine" : 136,
+    "InstName" : "lut_ov5640_rgb565_1024_768_m0",
+    "ModuleFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/lut_ov5640_rgb565_1024_768.v",
+    "ModuleLine" : 30,
+    "ModuleName" : "lut_ov5640_rgb565_1024_768"
+   },
+   {
+    "InstFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/top.v",
+    "InstLine" : 141,
+    "InstName" : "cmos_8_16bit_m0",
+    "ModuleFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/cmos_8_16bit.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "cmos_8_16bit"
+   },
+   {
+    "InstFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/top.v",
+    "InstLine" : 155,
+    "InstName" : "vga_timing_m0",
+    "ModuleFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/vga_timing.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "vga_timing"
+   },
+   {
+    "InstFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/top.v",
+    "InstLine" : 332,
+    "InstName" : "u_tmds_rpll",
+    "ModuleFile" : "H:/file/qq/OV5640_HDMI1024_DDR3/src/gowin_rpll/TMDS_rPLL.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "TMDS_rPLL"
+   }
+  ]
+ }
+]

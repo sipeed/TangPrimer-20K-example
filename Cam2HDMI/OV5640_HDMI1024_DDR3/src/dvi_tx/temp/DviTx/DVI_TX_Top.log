@@ -1,0 +1,41 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\dvi_tx_top.v'
+Analyzing included file 'top_define.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\dvi_tx_top.v":26)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\dvi_tx_top.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\dvi_tx_top.v":26)
+Analyzing included file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\static_macro_define.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\dvi_tx_top.v":27)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\dvi_tx_top.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\dvi_tx_top.v":27)
+Analyzing included file 'dvi_tx_defines.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\dvi_tx_top.v":28)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\dvi_tx_top.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\dvi_tx_top.v":28)
+Analyzing Verilog file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\rgb2dvi.vp'
+Analyzing included file 'top_define.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\rgb2dvi.vp":352)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\rgb2dvi.vp'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\rgb2dvi.vp":352)
+Analyzing included file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\static_macro_define.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\rgb2dvi.vp":352)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\rgb2dvi.vp'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\rgb2dvi.vp":352)
+Analyzing included file 'dvi_tx_defines.v'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\rgb2dvi.vp":352)
+Back to file 'D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\rgb2dvi.vp'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\rgb2dvi.vp":352)
+Compiling module 'DVI_TX_Top'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\dvi_tx_top.v":30)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\rgb2dvi.vp":0)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\rgb2dvi.vp":0)
+WARN  (EX3791) : Expression size ** truncated to fit in target size **("D:\Gowin\Gowin_V1.9.8.07_Education\IDE\ipcore\DVI_TX\data\rgb2dvi.vp":0)
+NOTE  (EX0101) : Current top module is "DVI_TX_Top"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "D:\Users\HUIP\Desktop\OV5640_HDMI800_DDR3\src\dvi_tx\temp\DviTx\DVI_TX_Top.vg" completed
+Generate template file "D:\Users\HUIP\Desktop\OV5640_HDMI800_DDR3\src\dvi_tx\temp\DviTx\DVI_TX_Top_tmp.v" completed
+[100%] Generate report file "D:\Users\HUIP\Desktop\OV5640_HDMI800_DDR3\src\dvi_tx\temp\DviTx\DVI_TX_Top_syn.rpt.html" completed
+GowinSynthesis finish

@@ -1,0 +1,16 @@
+[General]
+ipc_version=4
+file=DVI_TX_Top
+module=DVI_TX_Top
+target_device=gw2a18c-011
+type=dvi_tx
+version=1.0
+
+[Config]
+DISABLE_IO_INSERTION=true
+ELVDS=false
+LANG=0
+RX_CLOCK_IN_FREQUENCY=40
+Synthesis_tool=GowinSynthesis
+TLVDS=true
+USING_EXTERNAL_CLOCK=true

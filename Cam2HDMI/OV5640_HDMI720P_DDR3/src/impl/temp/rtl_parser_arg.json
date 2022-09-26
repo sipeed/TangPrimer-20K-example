@@ -1,0 +1,88 @@
+{
+ "Files" : [
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/cmos_8_16bit.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/ddr3_memory_interface/DDR3MI.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/dvi_tx/DVI_TX_Top.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/fifo_hs/video_fifo.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/gowin_rpll/TMDS_rPLL.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/gowin_rpll/cmos_pll.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/gowin_rpll/mem_pll.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/gowin_rpll/sys_pll.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/i2c_master/i2c_config.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/i2c_master/i2c_master_bit_ctrl.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/i2c_master/i2c_master_byte_ctrl.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/i2c_master/i2c_master_defines.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/i2c_master/i2c_master_top.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/i2c_master/timescale.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/syn_gen.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/testpattern.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/top.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/video_frame_buffer/Video_Frame_Buffer_Top.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/lut_ov5640_rgb565_1280_720.v",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/impl/temp/rtl_parser.result",
+ "Top" : "top",
+ "VerilogStd" : "verilog_2001",
+ "VhdlStd" : "vhdl_93"
+}
