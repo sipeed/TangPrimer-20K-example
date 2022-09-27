@@ -61,3 +61,7 @@ These are only for testing, and if you want better results, you need program on 
 After burning the .fs bitstream into fpga, press `S0` button to reset to get right display.
 
 ![cam2lcd](./.assets/cam2lcd.jpg)
+
+### Micarray
+
+There is demo for micarray board.
