@@ -1,14 +1,17 @@
 # TangPrimer-20K-example
 ---
-- [# TangPrimer-20K-example](#-tangprimer-20k-example)
-- [Note](#note)
-  - [Error code:RP2017](#error-coderp2017)
-- [Reference](#reference)
-  - [Lite-bottom test project](#lite-bottom-test-project)
-  - [DDR-Test](#ddr-test)
-  - [SPI_lcd](#spi_lcd)
-  - [RBG_lcd](#rbg_lcd)
-  - [Cam2lcd](#cam2lcd)
+- [TangPrimer-20K-example](#tangprimer-20k-example)
+  - [Note](#note)
+    - [Error code:RP2017](#error-coderp2017)
+  - [Reference](#reference)
+    - [Lite-bottom test project](#lite-bottom-test-project)
+    - [DDR-Test](#ddr-test)
+    - [SPI\_lcd](#spi_lcd)
+    - [RBG\_lcd](#rbg_lcd)
+    - [Cam2lcd](#cam2lcd)
+    - [Micarray](#micarray)
+    - [rocket](#rocket)
+    - [WS2812](#ws2812)
 
 ## Note
 
@@ -65,3 +68,11 @@ After burning the .fs bitstream into fpga, press `S0` button to reset to get rig
 ### Micarray
 
 There is demo for micarray board.
+
+### [rocket](./rocket/README.md)
+
+This runs a `rv32ic` rocket core with a UART peripheral attached. This example system outputs `A` via UART infinitely.
+
+### WS2812
+
+A demo for onboard ws2812 led.
