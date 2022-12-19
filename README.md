@@ -4,7 +4,7 @@
   - [Note](#note)
     - [Error code:RP2017](#error-coderp2017)
   - [Reference](#reference)
-    - [Lite-bottom test project](#lite-bottom-test-project)
+    - [Lite-bottom\_test\_project](#lite-bottom_test_project)
     - [DDR-Test](#ddr-test)
     - [SPI\_lcd](#spi_lcd)
     - [RBG\_lcd](#rbg_lcd)
@@ -26,7 +26,7 @@ Click `Project` in top menu bar and choose `Configuration`, then enable the corr
 
 ## Reference
 
-### [Lite-bottom test project](./Lite-bottom%20test%20project/test_board/README.md)
+### [Lite-bottom_test_project](./Lite-bottom_test_project/test_board/README.md)
 
 This is the test project which is used for testing Lite-bottom and core board(Factory test).
 Including the DDR-Test project and another demo containing all other usable IO blink.
