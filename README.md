@@ -7,7 +7,7 @@
     - [Lite-bottom\_test\_project](#lite-bottom_test_project)
     - [DDR-Test](#ddr-test)
     - [SPI\_lcd](#spi_lcd)
-    - [RBG\_lcd](#rbg_lcd)
+    - [RGB\_lcd](#rgb_lcd)
     - [Cam2lcd](#cam2lcd)
     - [Micarray](#micarray)
     - [rocket](#rocket)
@@ -42,7 +42,7 @@ This is an example driving 1.14 inch spi screen.
 
 ![spi_lcd](./.assets/spi_lcd.jpg)
 
-### RBG_lcd
+### RGB_lcd
 
 This example contains 4 kind of different color bar data in source code, this project just use one color bar data for example.
 
