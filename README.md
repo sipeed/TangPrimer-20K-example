@@ -23,7 +23,6 @@ When you meet error code `PR2017`, just enable corresponding IO as regular IO.
 
 Click `Project` in top menu bar and choose `Configuration`, then enable the corresponding Dual Purpose Pin to deal with this error.
 
-
 ## Reference
 
 ### [Lite-bottom_test_project](./Lite-bottom_test_project/test_board/README.md)
@@ -42,7 +41,7 @@ This is an example driving 1.14 inch spi screen.
 
 ![spi_lcd](./.assets/spi_lcd.jpg)
 
-### RGB_lcd
+### [RGB_lcd](./RGB_lcd/../README.md)
 
 This example contains 4 kind of different color bar data in source code, this project just use one color bar data for example.
 
