@@ -21,8 +21,8 @@ parameter BIT_SEND_HIGH   	= 2;
 parameter BIT_SEND_LOW   	= 3;
 
 reg [ 1:0] state       = 0/* synthesis preserve */; //主状态机控制
-reg [ 4:0] bit_send    = 0; //数据数量发送控制
-reg [ 4:0] data_send   = 0; //数据位发送控制
+reg [ 8:0] bit_send    = 0; // amount of bit sent // increase it for larger led strips/matrix
+reg [ 8:0] data_send   = 0; // amount of data sent // increase it for larger led strips/matrix
 reg [31:0] clk_delay   = 0; //延时控制
 reg [23:0] WS2812_data = 24'd1; // WS2812的颜色数据(初始淡蓝)
 
