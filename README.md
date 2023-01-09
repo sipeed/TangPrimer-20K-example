@@ -43,7 +43,7 @@ This is an example driving 1.14 inch spi screen.
 
 ### [RGB_lcd](./RGB_lcd/../README.md)
 
-This example contains 4 kind of different color bar data in source code, this project just use one color bar data for example.
+For RGB screen displays test.
 
 ![rgb](./.assets/rgb.jpg)
 
@@ -60,7 +60,7 @@ There are 4 projects, their name rules are as followings:
 
 These are only for testing, and if you want better results, you need program on yourself.
 
-After burning the .fs bitstream into fpga, press `S0` button to reset to get right display.
+After burning the .fs bitstream into fpga, press `S0` button to reset fpga chip to get right display.
 
 ![cam2lcd](./.assets/cam2lcd.jpg)
 

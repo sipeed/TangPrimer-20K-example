@@ -1,0 +1,52 @@
+//Copyright (C)2014-2022 Gowin Semiconductor Corporation.
+//All rights reserved. 
+//File Title: Physical Constraints file
+//GOWIN Version: 1.9.8.06-1
+//Part Number: GW2A-LV18PG256C8/I7
+//Device: GW2A-18
+//Created Time: Sat 08 06 22:58:28 2022
+
+IO_LOC "lcd_bl" E10;
+IO_PORT "lcd_bl" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_clk" R9;
+IO_PORT "lcd_clk" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_vsync" D14;
+IO_PORT "lcd_vsync" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_hsync" A15;
+IO_PORT "lcd_hsync" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_de" E15;
+IO_PORT "lcd_de" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_b[4]" B14;
+IO_PORT "lcd_b[4]" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_b[3]" A14;
+IO_PORT "lcd_b[3]" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_b[2]" B13;
+IO_PORT "lcd_b[2]" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_b[1]" C12;
+IO_PORT "lcd_b[1]" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_b[0]" B12;
+IO_PORT "lcd_b[0]" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_g[5]" D10;
+IO_PORT "lcd_g[5]" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_g[4]" R7;
+IO_PORT "lcd_g[4]" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_g[3]" P7;
+IO_PORT "lcd_g[3]" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_g[2]" B11;
+IO_PORT "lcd_g[2]" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_g[1]" A11;
+IO_PORT "lcd_g[1]" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_g[0]" D11;
+IO_PORT "lcd_g[0]" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_r[4]" N6;
+IO_PORT "lcd_r[4]" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_r[3]" N7;
+IO_PORT "lcd_r[3]" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_r[2]" N9;
+IO_PORT "lcd_r[2]" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_r[1]" N8;
+IO_PORT "lcd_r[1]" PULL_MODE=UP DRIVE=8;
+IO_LOC "lcd_r[0]" L9;
+IO_PORT "lcd_r[0]" PULL_MODE=UP DRIVE=8;
+IO_LOC "clk" H11;
+IO_PORT "clk" PULL_MODE=UP;
