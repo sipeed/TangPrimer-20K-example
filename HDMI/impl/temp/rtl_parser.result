@@ -1,0 +1,46 @@
+[
+ {
+  "InstFile" : "D:/TangPrimer-20K-example/HDMI/src/video_top.v",
+  "InstLine" : 24,
+  "InstName" : "video_top",
+  "ModuleFile" : "D:/TangPrimer-20K-example/HDMI/src/video_top.v",
+  "ModuleLine" : 24,
+  "ModuleName" : "video_top",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/TangPrimer-20K-example/HDMI/src/video_top.v",
+    "InstLine" : 80,
+    "InstName" : "testpattern_inst",
+    "ModuleFile" : "D:/TangPrimer-20K-example/HDMI/src/testpattern.v",
+    "ModuleLine" : 17,
+    "ModuleName" : "testpattern"
+   },
+   {
+    "InstFile" : "D:/TangPrimer-20K-example/HDMI/src/video_top.v",
+    "InstLine" : 121,
+    "InstName" : "u_tmds_rpll",
+    "ModuleFile" : "D:/TangPrimer-20K-example/HDMI/src/gowin_rpll/TMDS_rPLL.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "TMDS_rPLL"
+   },
+   {
+    "InstFile" : "D:/TangPrimer-20K-example/HDMI/src/video_top.v",
+    "InstLine" : 138,
+    "InstName" : "DVI_TX_Top_inst",
+    "ModuleFile" : "D:/TangPrimer-20K-example/HDMI/src/dvi_tx/dvi_tx.v",
+    "ModuleLine" : 1048,
+    "ModuleName" : "DVI_TX_Top",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/TangPrimer-20K-example/HDMI/src/dvi_tx/dvi_tx.v",
+      "InstLine" : 1079,
+      "InstName" : "rgb2dvi_inst",
+      "ModuleFile" : "D:/TangPrimer-20K-example/HDMI/src/dvi_tx/dvi_tx.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "~rgb2dvi.DVI_TX_Top"
+     }
+    ]
+   }
+  ]
+ }
+]

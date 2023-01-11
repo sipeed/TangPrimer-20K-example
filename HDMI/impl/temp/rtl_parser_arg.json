@@ -1,0 +1,28 @@
+{
+ "Files" : [
+  {
+   "Path" : "D:/TangPrimer-20K-example/HDMI/src/dvi_tx/dvi_tx.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TangPrimer-20K-example/HDMI/src/gowin_rpll/TMDS_rPLL.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TangPrimer-20K-example/HDMI/src/testpattern.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TangPrimer-20K-example/HDMI/src/video_top.v",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "D:/TangPrimer-20K-example/HDMI/impl/temp/rtl_parser.result",
+ "Top" : "video_top",
+ "VerilogStd" : "sysv",
+ "VhdlStd" : "vhdl_93"
+}
