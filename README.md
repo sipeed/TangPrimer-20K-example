@@ -13,12 +13,13 @@
     - [Micarray](#micarray)
     - [rocket](#rocket)
     - [WS2812](#ws2812)
+    - [USB](#usb)
   - [Tang Primer 20K Dock pin constrain](#tang-primer-20k-dock-pin-constrain)
     - [Clk pin](#clk-pin)
     - [Reset pin](#reset-pin)
     - [RGB LCD](#rgb-lcd)
     - [Camera](#camera)
-    - [USB](#usb)
+    - [USB](#usb-1)
     - [Ethernet](#ethernet)
     - [DDR](#ddr)
     - [SPI LCD](#spi-lcd)
@@ -63,9 +64,9 @@ Cross colorbar on the screen.
 
 Colorbar on screen
 
-| rgb_lcd_4.3inch_colorbar                | rgb_lcd_5inch_colorbar                                  |
-| --------------------------------------- | ------------------------------------------------------- |
-| ![](./.assets/lcd_4.3inch_colorbar.jpg) | ![lcd_5inch_colorbar](./.assets/lcd_5inch_colorbar.jpg) |
+| rgb_lcd_4.3inch_colorbar                                    | rgb_lcd_5inch_colorbar                                  |
+| ----------------------------------------------------------- | ------------------------------------------------------- |
+| ![lcd_4.3inch_colorbar](./.assets/lcd_4.3inch_colorbar.jpg) | ![lcd_5inch_colorbar](./.assets/lcd_5inch_colorbar.jpg) |
 
 ### Cam2lcd
 
@@ -95,6 +96,10 @@ This runs a `rv32ic` rocket core with a UART peripheral attached. This example s
 ### WS2812
 
 A demo for onboard ws2812 led.
+
+### USB
+
+Demo for onboard USB3317 Hi-Speed USB Transceive based on LUNA.
 
 ## Tang Primer 20K Dock pin constrain
 
@@ -144,7 +149,7 @@ The reset pin on primer 20K is `T10`
 | ulpi_data[3] | inout  | H13 | ulpi_data[2] | inout  | J12 |
 | ulpi_data[1] | inout  | H12 | ulpi_data[0] | inout  | G11 |
 | ulpi_nxt     | input  | K13 | ulpi_dir     | input  | K12 |
-| ulpi_clk     | input  | T15 |
+| ulpi_clk     | input  | T15 | rst_n        | input  | T3  |
 
 ### Ethernet
 
@@ -153,7 +158,7 @@ The reset pin on primer 20K is `T10`
 | PORT         | IO     | Pin   | PORT         | IO     | Pin   |
 | ------------ | ------ | ----- | ------------ | ------ | ----- |
 | ddr_bank[0]  | output | H4    | ddr_bank[1]  | output | D3    |
-| ddr_bank[2]  | output | H5    | ddr_odt      |        | R3    |
+| ddr_bank[2]  | output | H5    | ddr_odt      | output | R3    |
 | ddr_addr[0]  | output | F7    | ddr_addr[1]  | output | A4    |
 | ddr_addr[2]  | output | D6    | ddr_addr[3]  | output | F8    |
 | ddr_addr[4]  | output | C4    | ddr_addr[5]  | output | E6    |
@@ -165,15 +170,15 @@ The reset pin on primer 20K is `T10`
 | ddr_cas      | output | R6    | ddr_ras      | output | R4    |
 | ddr_dm[0]    | output | G1    | ddr_dm[1]    | output | K5    |
 | ddr_ck       | output | J1,J3 | ddr_reset_n  | output | B9    |
-| ddr_dqs[0]   | output | G2,G3 | ddr_dqs[1]   | output | J5,K6 |
-| ddr_dq[0]    | output | G5    | ddr_dq[1]    | output | F5    |
-| ddr_dq[2]    | output | F4    | ddr_dq[3]    | output | F3    |
-| ddr_dq[4]    | output | E2    | ddr_dq[5]    | output | C1    |
-| ddr_dq[6]    | output | E1    | ddr_dq[7]    | output | B3    |
-| ddr_dq[8]    | output | M3    | ddr_dq[9]    | output | K4    |
-| ddr_dq[10]   | output | N2    | ddr_dq[11]   | output | L1    |
-| ddr_dq[12]   | output | P4    | ddr_dq[13]   | output | H3    |
-| ddr_dq[14]   | output | R1    | ddr_dq[15]   | output | M2    |
+| ddr_dqs[0]   | inout  | G2,G3 | ddr_dqs[1]   | inout  | J5,K6 |
+| ddr_dq[0]    | inout  | G5    | ddr_dq[1]    | inout  | F5    |
+| ddr_dq[2]    | inout  | F4    | ddr_dq[3]    | inout  | F3    |
+| ddr_dq[4]    | inout  | E2    | ddr_dq[5]    | inout  | C1    |
+| ddr_dq[6]    | inout  | E1    | ddr_dq[7]    | inout  | B3    |
+| ddr_dq[8]    | inout  | M3    | ddr_dq[9]    | inout  | K4    |
+| ddr_dq[10]   | inout  | N2    | ddr_dq[11]   | inout  | L1    |
+| ddr_dq[12]   | inout  | P4    | ddr_dq[13]   | inout  | H3    |
+| ddr_dq[14]   | inout  | R1    | ddr_dq[15]   | inout  | M2    |
 | ddr_cs       | output | P5    |              |        |       |
 
 ### SPI LCD
