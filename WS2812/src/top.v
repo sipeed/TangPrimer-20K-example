@@ -10,31 +10,31 @@ parameter WS2812_WIDTH 	= 24 	     ; // WS2812的数据位宽
 parameter CLK_FRE 	 	= 27_000_000	 	 ; // CLK的频率(mHZ)
 
 parameter DELAY_1_HIGH 	= (CLK_FRE / 1_000_000 * 0.85 )  - 1; //≈850ns±150ns     1 高电平时间
-parameter DELAY_1_LOW 	= (CLK_FRE / 1_000_000 * 0.40 )  - 1; //≈400ns±150ns 	  1 低电平时间
-parameter DELAY_0_HIGH 	= (CLK_FRE / 1_000_000 * 0.40 )  - 1; //≈400ns±150ns 	  0 高电平时间
+parameter DELAY_1_LOW 	= (CLK_FRE / 1_000_000 * 0.40 )  - 1; //≈400ns±150ns 	 1 低电平时间
+parameter DELAY_0_HIGH 	= (CLK_FRE / 1_000_000 * 0.40 )  - 1; //≈400ns±150ns 	 0 高电平时间
 parameter DELAY_0_LOW 	= (CLK_FRE / 1_000_000 * 0.85 )  - 1; //≈850ns±150ns     0 低电平时间
-parameter DELAY_RESET 	= (CLK_FRE  / 10 ) - 1; //0.1s 复位时间 ＞50us
+parameter DELAY_RESET 	= (CLK_FRE / 10 ) - 1; //0.1s 复位时间 ＞50us
 
 parameter RESET 	 		= 0; //状态机声明
 parameter DATA_SEND  		= 1;
 parameter BIT_SEND_HIGH   	= 2;
 parameter BIT_SEND_LOW   	= 3;
 
-reg [ 1:0] state       = 0/* synthesis preserve */; //主状态机控制
+reg [ 1:0] state       = 0; // synthesis preserve //主状态机控制
 reg [ 8:0] bit_send    = 0; // amount of bit sent // increase it for larger led strips/matrix
 reg [ 8:0] data_send   = 0; // amount of data sent // increase it for larger led strips/matrix
-reg [31:0] clk_delay   = 0; //延时控制
-reg [23:0] WS2812_data = 24'd1; // WS2812的颜色数据(初始淡蓝)
+reg [31:0] clk_count   = 0; // 延时控制
+reg [23:0] WS2812_data = 24'd1; // WS2812的颜色数据
 
 always@(posedge clk)
 	case (state)
 		RESET:begin
 			WS2812_Di <= 0;
 
-			if (clk_delay < DELAY_RESET) 
-				clk_delay <= clk_delay + 1;
+			if (clk_count < DELAY_RESET) 
+				clk_count <= clk_count + 1;
 			else begin
-				clk_delay <= 0;
+				clk_count <= 0;
 				WS2812_data <= {WS2812_data[22:0],WS2812_data[23]};//颜色移位循环显示
 				state <= DATA_SEND;
 			end
@@ -59,17 +59,17 @@ always@(posedge clk)
 			WS2812_Di <= 1;
 
 			if (WS2812_data[bit_send]) 
-				if (clk_delay < DELAY_1_HIGH)
-					clk_delay <= clk_delay + 1;
+				if (clk_count < DELAY_1_HIGH)
+					clk_count <= clk_count + 1;
 				else begin
-					clk_delay <= 0;
+					clk_count <= 0;
 					state    <= BIT_SEND_LOW;
 				end
 			else 
-				if (clk_delay < DELAY_0_HIGH)
-					clk_delay <= clk_delay + 1;
+				if (clk_count < DELAY_0_HIGH)
+					clk_count <= clk_count + 1;
 				else begin
-					clk_delay <= 0;
+					clk_count <= 0;
 					state    <= BIT_SEND_LOW;
 				end
 		end
@@ -78,19 +78,19 @@ always@(posedge clk)
 			WS2812_Di <= 0;
 
 			if (WS2812_data[bit_send]) 
-				if (clk_delay < DELAY_1_LOW) 
-					clk_delay <= clk_delay + 1;
+				if (clk_count < DELAY_1_LOW) 
+					clk_count <= clk_count + 1;
 				else begin
-					clk_delay <= 0;
+					clk_count <= 0;
 
 					bit_send <= bit_send + 1;
 					state    <= DATA_SEND;
 				end
 			else 
-				if (clk_delay < DELAY_0_LOW) 
-					clk_delay <= clk_delay + 1;
+				if (clk_count < DELAY_0_LOW) 
+					clk_count <= clk_count + 1;
 				else begin
-					clk_delay <= 0;
+					clk_count <= 0;
 					
 					bit_send <= bit_send + 1;
 					state    <= DATA_SEND;
