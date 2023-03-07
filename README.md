@@ -14,6 +14,7 @@
     - [rocket](#rocket)
     - [WS2812](#ws2812)
     - [USB](#usb)
+    - [UART](#uart)
   - [Tang Primer 20K Dock pin constrain](#tang-primer-20k-dock-pin-constrain)
     - [Clk pin](#clk-pin)
     - [Reset pin](#reset-pin)
@@ -23,7 +24,7 @@
     - [Ethernet](#ethernet)
     - [DDR](#ddr)
     - [SPI LCD](#spi-lcd)
-    - [UART](#uart)
+    - [UART](#uart-1)
     - [SD card/SDIO](#sd-cardsdio)
 
 ## Note
@@ -100,6 +101,12 @@ A demo for onboard ws2812 led.
 ### USB
 
 Demo for onboard USB3317 Hi-Speed USB Transceive based on LUNA.
+
+### UART
+
+A demo of UART, set baudrate and open the onboard COM port to see the message.
+
+![hello_gowin](./.assets/hello_gowin.png)
 
 ## Tang Primer 20K Dock pin constrain
 
