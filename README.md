@@ -53,7 +53,7 @@ This is an example driving 1.14 inch spi screen.
 
 ![spi_lcd](./.assets/spi_lcd.jpg)
 
-### [RGB_lcd](./RGB_lcd/rgb_lcd.md)
+### [RGB_lcd](./RGB_lcd/readme.md)
 
 Screen datasheet: [Click me](https://dl.sipeed.com/shareURL/TANG/Nano%209K/6_Chip_Manual/EN/LCD_Datasheet)
 
