@@ -15,6 +15,7 @@
     - [WS2812](#ws2812)
     - [USB](#usb)
     - [UART](#uart)
+    - [PT8211](#pt8211)
   - [Tang Primer 20K Dock pin constrain](#tang-primer-20k-dock-pin-constrain)
     - [Clk pin](#clk-pin)
     - [Reset pin](#reset-pin)
@@ -26,6 +27,7 @@
     - [SPI LCD](#spi-lcd)
     - [UART](#uart-1)
     - [SD card/SDIO](#sd-cardsdio)
+    - [Audio DAC](#audio-dac)
 
 ## Note
 
@@ -107,6 +109,10 @@ Demo for onboard USB3317 Hi-Speed USB Transceive based on LUNA.
 A demo of UART, set baudrate and open the onboard COM port to see the message.
 
 ![hello_gowin](./.assets/hello_gowin.png)
+
+### PT8211
+
+A demo to drive PT8211-S which is the audio DAC on Primer 20K Dock. Be careful of the voice because it's loud.
 
 ## Tang Primer 20K Dock pin constrain
 
@@ -210,3 +216,11 @@ The reset pin on primer 20K is `T10`
 | DAT0  | inout  | M8  | DAT1 | inout | M7  |
 | DAT2  | inout  | M10 | DAT3 | inout | N11 |
 | DET_A | input  | D15 |      |       |     |
+
+
+### Audio DAC
+
+| PORT  | IO     | Pin | PORT   | IO     | Pin |
+| ----- | ------ | --- | ------ | ------ | --- |
+| PA_EN | output | R16 | HP_DIN | output | P15 |
+| HP_WS | output | P16 | HP_BCK | output | N15 |
