@@ -12,6 +12,7 @@
     - [Cam2lcd](#cam2lcd)
     - [Micarray](#micarray)
     - [rocket](#rocket)
+    - [litex](#litex)
     - [WS2812](#ws2812)
     - [USB](#usb)
     - [UART](#uart)
@@ -95,6 +96,10 @@ There is demo for micarray board.
 ### [rocket](./rocket/README.md)
 
 This runs a `rv32ic` rocket core with a UART peripheral attached. This example system outputs `A` via UART infinitely.
+
+### Litex
+
+This is the [litex](https://github.com/litex) firmware on primer20k, memory not works well, but leds and buttons are ok,have a try.
 
 ### WS2812
 
