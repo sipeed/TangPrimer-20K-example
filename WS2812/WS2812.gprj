@@ -7,5 +7,6 @@
     <FileList>
         <File path="src/top.v" type="file.verilog" enable="1"/>
         <File path="src/top.cst" type="file.cst" enable="1"/>
+        <File path="src/WS2812.sdc" type="file.sdc" enable="1"/>
     </FileList>
 </Project>

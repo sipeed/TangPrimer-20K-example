@@ -2,9 +2,13 @@
 
 ---
 
+- IDE 基础使用步骤:[点我](https://wiki.sipeed.com/hardware/zh/tang/tang-primer-20k/examples/led.html)
+- IDE Instructions:[Click me](https://wiki.sipeed.com/hardware/en/tang/tang-primer-20k/examples/led.html)
+
 - [TangPrimer-20K-example](#tangprimer-20k-example)
   - [Note](#note)
     - [Error code:RP2017](#error-coderp2017)
+  - [Examples](#examples)
     - [Lite-bottom\_test\_project](#lite-bottom_test_project)
     - [DDR-Test](#ddr-test)
     - [SPI\_lcd](#spi_lcd)
@@ -12,7 +16,6 @@
     - [Cam2lcd](#cam2lcd)
     - [Micarray](#micarray)
     - [rocket](#rocket)
-    - [litex](#litex)
     - [WS2812](#ws2812)
     - [USB](#usb)
     - [UART](#uart)
@@ -39,6 +42,8 @@ When you meet error code `PR2017`, just enable corresponding IO as regular IO.
 ![rp2017](./.assets/rp2017.png)
 
 Click `Project` in top menu bar and choose `Configuration`, then enable the corresponding Dual Purpose Pin to deal with this error.
+
+## Examples
 
 ### [Lite-bottom_test_project](./Lite-bottom_test_project/test_board/README.md)
 
@@ -96,10 +101,6 @@ There is demo for micarray board.
 ### [rocket](./rocket/README.md)
 
 This runs a `rv32ic` rocket core with a UART peripheral attached. This example system outputs `A` via UART infinitely.
-
-### Litex
-
-This is the [litex](https://github.com/litex) firmware on primer20k, memory not works well, but leds and buttons are ok,have a try.
 
 ### WS2812
 

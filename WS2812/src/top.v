@@ -1,8 +1,7 @@
-//功能描述：驱动 WS2812_NUM 个的WS2812一起渐变亮
 module top (
 	input 		clk,  //输入 时钟源  
 
-	output reg WS2812_Di //输出到WS2812的接口
+	output reg WS2812 //输出到WS2812的接口
 	
 );
 parameter WS2812_NUM 	= 1  - 1     ; // WS2812的LED数量(1从0开始)
@@ -29,7 +28,7 @@ reg [23:0] WS2812_data = 24'd1; // WS2812的颜色数据
 always@(posedge clk)
 	case (state)
 		RESET:begin
-			WS2812_Di <= 0;
+			WS2812 <= 0;
 
 			if (clk_count < DELAY_RESET) 
 				clk_count <= clk_count + 1;
@@ -56,7 +55,7 @@ always@(posedge clk)
 			end
 			
 		BIT_SEND_HIGH:begin
-			WS2812_Di <= 1;
+			WS2812 <= 1;
 
 			if (WS2812_data[bit_send]) 
 				if (clk_count < DELAY_1_HIGH)
@@ -75,7 +74,7 @@ always@(posedge clk)
 		end
 
 		BIT_SEND_LOW:begin
-			WS2812_Di <= 0;
+			WS2812 <= 0;
 
 			if (WS2812_data[bit_send]) 
 				if (clk_count < DELAY_1_LOW) 
