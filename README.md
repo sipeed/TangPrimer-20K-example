@@ -5,6 +5,8 @@
 - IDE 基础使用步骤:[点我](https://wiki.sipeed.com/hardware/zh/tang/tang-primer-20k/examples/led.html)
 - IDE Instructions:[Click me](https://wiki.sipeed.com/hardware/en/tang/tang-primer-20k/examples/led.html)
 
+---
+
 - [TangPrimer-20K-example](#tangprimer-20k-example)
   - [Note](#note)
     - [Error code:RP2017](#error-coderp2017)
