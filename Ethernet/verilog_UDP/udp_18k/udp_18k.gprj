@@ -1,0 +1,15 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW2A-18C" pn="GW2A-LV18PG256C8/I7">gw2a18c-011</Device>
+    <FileList>
+        <File path="src/PLL_6M/PLL_6M.v" type="file.verilog" enable="1"/>
+        <File path="src/top.sv" type="file.verilog" enable="1"/>
+        <File path="src/udp.sv" type="file.verilog" enable="1"/>
+        <File path="src/ddr_18k.cst" type="file.cst" enable="1"/>
+        <File path="src/ddr_18k.sdc" type="file.sdc" enable="1"/>
+        <File path="src/rmii.svh" type="file.other" enable="1"/>
+    </FileList>
+</Project>

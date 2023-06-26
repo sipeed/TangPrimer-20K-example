@@ -21,7 +21,8 @@
     - [WS2812](#ws2812)
     - [USB](#usb)
     - [UART](#uart)
-    - [PT8211](#pt8211)
+    - [PT8211 (Stereo Audio)](#pt8211-stereo-audio)
+    - [Ethernet](#ethernet)
   - [Tang Primer 20K Dock pin constrain](#tang-primer-20k-dock-pin-constrain)
     - [Clk pin](#clk-pin)
     - [Reset pin](#reset-pin)
@@ -118,9 +119,15 @@ A demo of UART, set baudrate and open the onboard COM port to see the message.
 
 ![hello_gowin](./.assets/hello_gowin.png)
 
-### PT8211
+### PT8211 (Stereo Audio)
 
 A demo to drive PT8211-S which is the audio DAC on Primer 20K Dock. Be careful of the voice because it's loud.
+
+### Ethernet
+
+- verilog_UDP
+
+A Ethernet example from [LAKKA](https://github.com/ZiyangYE) [verilog_UDP](https://github.com/ZiyangYE/verilog_UDP)
 
 ## Tang Primer 20K Dock pin constrain
 
@@ -173,6 +180,14 @@ The reset pin on primer 20K is `T10`
 | ulpi_clk     | input  | T15 | rst_n        | input  | T3  |
 
 ### Ethernet
+
+| PORT           | IO     | Pin | PORT            | IO     | Pin |
+| -------------- | ------ | --- | --------------- | ------ | --- |
+| phyrst         | output | F10 | netrmii_clk50m" | input  | A9  |
+| netrmii_txd[0] | output | D16 | netrmii_txd[1]  | output | E14 |
+| netrmii_txen   | output | E16 | netrmii_rx_crs  | input  | M6  |
+| netrmii_rxd[0] | input  | F15 | netrmii_rxd[1]  | input  | C9  |
+| netrmii_mdc    | output | F14 | netrmii_mdio    | inout  | F16 |
 
 ### DDR
 
