@@ -111,7 +111,7 @@ A demo for onboard ws2812 led.
 
 ### USB
 
-Demo for onboard USB3317 Hi-Speed USB Transceive based on LUNA.
+Demo of onboard USB3317 Hi-Speed USB serial pool based on LUNA.
 
 ### UART
 
