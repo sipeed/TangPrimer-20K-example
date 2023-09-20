@@ -1,12 +1,9 @@
-// by fanoble, has been modified,QQ:87430545
-// 27/6/2022
-
 `timescale 1ps/1ps
 
 module lcd114_test(
 	input clk, // 27M
 	input resetn,
-
+	
 	output lcd_resetn,
 	output lcd_clk,
 	output lcd_cs,
@@ -15,7 +12,7 @@ module lcd114_test(
 	output lcd_bl
 );
 
-assign lcd_bl =1'b0;
+assign lcd_bl = 'b0;
 
 localparam MAX_CMDS = 69;
 
