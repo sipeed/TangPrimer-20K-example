@@ -1,0 +1,2935 @@
+//Copyright (C)2014-2026 Gowin Semiconductor Corporation.
+//All rights reserved.
+//File Title: Post-PnR Verilog Simulation Model file
+//Tool Version: V1.9.12.02_SP1(64-bit)
+//Created Time: Wed Apr  8 16:39:27 2026
+
+`timescale 100 ps/100 ps
+module I2C_MASTER_GW_Top(
+	I_CLK,
+	I_RESETN,
+	I_TX_EN,
+	I_WADDR,
+	I_WDATA,
+	I_RX_EN,
+	I_RADDR,
+	O_RDATA,
+	O_IIC_INT,
+	SCL,
+	SDA
+);
+input I_CLK;
+input I_RESETN;
+input I_TX_EN;
+input [2:0] I_WADDR;
+input [7:0] I_WDATA;
+input I_RX_EN;
+input [2:0] I_RADDR;
+output [7:0] O_RDATA;
+output O_IIC_INT;
+inout SCL;
+inout SDA;
+wire GND;
+wire I_CLK;
+wire [2:0] I_RADDR;
+wire I_RESETN;
+wire I_RX_EN;
+wire I_TX_EN;
+wire [2:0] I_WADDR;
+wire [7:0] I_WDATA;
+wire O_IIC_INT;
+wire [7:0] O_RDATA;
+wire SCL;
+wire SCL_in;
+wire SDA;
+wire SDA_in;
+wire VCC;
+wire scl_padoen_o;
+wire sda_padoen_o;
+wire \u_i2c_master/n169_18 ;
+wire \u_i2c_master/n169_19 ;
+wire \u_i2c_master/n170_18 ;
+wire \u_i2c_master/n170_19 ;
+wire \u_i2c_master/n171_18 ;
+wire \u_i2c_master/n171_19 ;
+wire \u_i2c_master/n172_14 ;
+wire \u_i2c_master/n172_15 ;
+wire \u_i2c_master/n173_14 ;
+wire \u_i2c_master/n173_15 ;
+wire \u_i2c_master/n174_14 ;
+wire \u_i2c_master/n174_15 ;
+wire \u_i2c_master/n175_18 ;
+wire \u_i2c_master/n175_19 ;
+wire \u_i2c_master/n176_18 ;
+wire \u_i2c_master/n176_19 ;
+wire \u_i2c_master/n323_4 ;
+wire \u_i2c_master/n330_3 ;
+wire \u_i2c_master/n338_3 ;
+wire \u_i2c_master/n346_3 ;
+wire \u_i2c_master/n354_3 ;
+wire \u_i2c_master/n136_3 ;
+wire \u_i2c_master/n218_3 ;
+wire \u_i2c_master/n230_3 ;
+wire \u_i2c_master/al_8 ;
+wire \u_i2c_master/n159_6 ;
+wire \u_i2c_master/n155_6 ;
+wire \u_i2c_master/n154_6 ;
+wire \u_i2c_master/n153_6 ;
+wire \u_i2c_master/n152_6 ;
+wire \u_i2c_master/n354_4 ;
+wire \u_i2c_master/reg_data_out_0_7 ;
+wire \u_i2c_master/reg_data_out_0_8 ;
+wire \u_i2c_master/n220_14 ;
+wire \u_i2c_master/rxack ;
+wire \u_i2c_master/tip ;
+wire \u_i2c_master/al ;
+wire \u_i2c_master/irq_flag ;
+wire \u_i2c_master/n169_21 ;
+wire \u_i2c_master/n170_21 ;
+wire \u_i2c_master/n171_21 ;
+wire \u_i2c_master/n172_17 ;
+wire \u_i2c_master/n173_17 ;
+wire \u_i2c_master/n174_17 ;
+wire \u_i2c_master/n175_21 ;
+wire \u_i2c_master/n176_21 ;
+wire \u_i2c_master/n16_6 ;
+wire \u_i2c_master/core_txd ;
+wire \u_i2c_master/done ;
+wire \u_i2c_master/irxack ;
+wire \u_i2c_master/i2c_al ;
+wire \u_i2c_master/core_rxd ;
+wire \u_i2c_master/core_ack ;
+wire \u_i2c_master/i2c_busy ;
+wire [7:0] \u_i2c_master/reg_data_out ;
+wire [7:0] \u_i2c_master/prescale_reg0 ;
+wire [7:0] \u_i2c_master/prescale_reg1 ;
+wire [7:0] \u_i2c_master/control_reg ;
+wire [7:0] \u_i2c_master/transmit_reg ;
+wire [7:0] \u_i2c_master/command_reg ;
+wire [3:0] \u_i2c_master/core_cmd ;
+wire [7:0] \u_i2c_master/receive_reg ;
+wire \u_i2c_master/byte_controller/n19_3 ;
+wire \u_i2c_master/byte_controller/n20_3 ;
+wire \u_i2c_master/byte_controller/n21_3 ;
+wire \u_i2c_master/byte_controller/n22_3 ;
+wire \u_i2c_master/byte_controller/n23_3 ;
+wire \u_i2c_master/byte_controller/n24_3 ;
+wire \u_i2c_master/byte_controller/n25_3 ;
+wire \u_i2c_master/byte_controller/n26_3 ;
+wire \u_i2c_master/byte_controller/CORE_CMD_0_5 ;
+wire \u_i2c_master/byte_controller/ACK_OUT_5 ;
+wire \u_i2c_master/byte_controller/n198_7 ;
+wire \u_i2c_master/byte_controller/n104_7 ;
+wire \u_i2c_master/byte_controller/n210_7 ;
+wire \u_i2c_master/byte_controller/n209_7 ;
+wire \u_i2c_master/byte_controller/n208_7 ;
+wire \u_i2c_master/byte_controller/n207_7 ;
+wire \u_i2c_master/byte_controller/n206_7 ;
+wire \u_i2c_master/byte_controller/n205_7 ;
+wire \u_i2c_master/byte_controller/n204_7 ;
+wire \u_i2c_master/byte_controller/n203_7 ;
+wire \u_i2c_master/byte_controller/n201_7 ;
+wire \u_i2c_master/byte_controller/n200_7 ;
+wire \u_i2c_master/byte_controller/n199_7 ;
+wire \u_i2c_master/byte_controller/n50_6 ;
+wire \u_i2c_master/byte_controller/ACK_OUT_6 ;
+wire \u_i2c_master/byte_controller/n210_8 ;
+wire \u_i2c_master/byte_controller/n210_9 ;
+wire \u_i2c_master/byte_controller/n210_10 ;
+wire \u_i2c_master/byte_controller/n209_8 ;
+wire \u_i2c_master/byte_controller/n209_9 ;
+wire \u_i2c_master/byte_controller/n209_10 ;
+wire \u_i2c_master/byte_controller/n208_8 ;
+wire \u_i2c_master/byte_controller/n207_8 ;
+wire \u_i2c_master/byte_controller/n207_9 ;
+wire \u_i2c_master/byte_controller/n206_8 ;
+wire \u_i2c_master/byte_controller/n205_8 ;
+wire \u_i2c_master/byte_controller/n204_8 ;
+wire \u_i2c_master/byte_controller/n204_9 ;
+wire \u_i2c_master/byte_controller/n203_8 ;
+wire \u_i2c_master/byte_controller/n203_9 ;
+wire \u_i2c_master/byte_controller/n201_8 ;
+wire \u_i2c_master/byte_controller/n201_9 ;
+wire \u_i2c_master/byte_controller/n200_8 ;
+wire \u_i2c_master/byte_controller/n200_9 ;
+wire \u_i2c_master/byte_controller/n199_8 ;
+wire \u_i2c_master/byte_controller/CORE_CMD_0_8 ;
+wire \u_i2c_master/byte_controller/n210_11 ;
+wire \u_i2c_master/byte_controller/n210_12 ;
+wire \u_i2c_master/byte_controller/n210_13 ;
+wire \u_i2c_master/byte_controller/n209_11 ;
+wire \u_i2c_master/byte_controller/n208_9 ;
+wire \u_i2c_master/byte_controller/n207_10 ;
+wire \u_i2c_master/byte_controller/n207_11 ;
+wire \u_i2c_master/byte_controller/n205_9 ;
+wire \u_i2c_master/byte_controller/n203_10 ;
+wire \u_i2c_master/byte_controller/n201_10 ;
+wire \u_i2c_master/byte_controller/n200_10 ;
+wire \u_i2c_master/byte_controller/n209_12 ;
+wire \u_i2c_master/byte_controller/CORE_CMD_0_10 ;
+wire \u_i2c_master/byte_controller/CORE_CMD_0_12 ;
+wire \u_i2c_master/byte_controller/n51_9 ;
+wire \u_i2c_master/byte_controller/sr_6_9 ;
+wire \u_i2c_master/byte_controller/n52_9 ;
+wire \u_i2c_master/byte_controller/shift ;
+wire \u_i2c_master/byte_controller/ld ;
+wire [4:1] \u_i2c_master/byte_controller/c_state ;
+wire [2:0] \u_i2c_master/byte_controller/dcnt ;
+wire \u_i2c_master/bit_controller/n13_3 ;
+wire \u_i2c_master/bit_controller/n31_3 ;
+wire \u_i2c_master/bit_controller/n32_3 ;
+wire \u_i2c_master/bit_controller/n33_3 ;
+wire \u_i2c_master/bit_controller/n34_3 ;
+wire \u_i2c_master/bit_controller/n35_3 ;
+wire \u_i2c_master/bit_controller/n36_3 ;
+wire \u_i2c_master/bit_controller/n37_3 ;
+wire \u_i2c_master/bit_controller/n38_3 ;
+wire \u_i2c_master/bit_controller/n39_3 ;
+wire \u_i2c_master/bit_controller/n40_3 ;
+wire \u_i2c_master/bit_controller/n41_3 ;
+wire \u_i2c_master/bit_controller/n42_3 ;
+wire \u_i2c_master/bit_controller/n43_3 ;
+wire \u_i2c_master/bit_controller/n44_3 ;
+wire \u_i2c_master/bit_controller/n45_3 ;
+wire \u_i2c_master/bit_controller/n46_3 ;
+wire \u_i2c_master/bit_controller/n93_3 ;
+wire \u_i2c_master/bit_controller/n96_3 ;
+wire \u_i2c_master/bit_controller/n110_3 ;
+wire \u_i2c_master/bit_controller/n123_3 ;
+wire \u_i2c_master/bit_controller/n129_3 ;
+wire \u_i2c_master/bit_controller/cnt_15_8 ;
+wire \u_i2c_master/bit_controller/n228_7 ;
+wire \u_i2c_master/bit_controller/n227_7 ;
+wire \u_i2c_master/bit_controller/n225_7 ;
+wire \u_i2c_master/bit_controller/n224_7 ;
+wire \u_i2c_master/bit_controller/n222_7 ;
+wire \u_i2c_master/bit_controller/n221_7 ;
+wire \u_i2c_master/bit_controller/n220_7 ;
+wire \u_i2c_master/bit_controller/n219_7 ;
+wire \u_i2c_master/bit_controller/n218_7 ;
+wire \u_i2c_master/bit_controller/n217_7 ;
+wire \u_i2c_master/bit_controller/n215_7 ;
+wire \u_i2c_master/bit_controller/n214_7 ;
+wire \u_i2c_master/bit_controller/n213_7 ;
+wire \u_i2c_master/bit_controller/n212_7 ;
+wire \u_i2c_master/bit_controller/n250_6 ;
+wire \u_i2c_master/bit_controller/n230_6 ;
+wire \u_i2c_master/bit_controller/n203_19 ;
+wire \u_i2c_master/bit_controller/n13_4 ;
+wire \u_i2c_master/bit_controller/n13_5 ;
+wire \u_i2c_master/bit_controller/n31_4 ;
+wire \u_i2c_master/bit_controller/n32_4 ;
+wire \u_i2c_master/bit_controller/n34_4 ;
+wire \u_i2c_master/bit_controller/n35_4 ;
+wire \u_i2c_master/bit_controller/n37_4 ;
+wire \u_i2c_master/bit_controller/n38_4 ;
+wire \u_i2c_master/bit_controller/n39_4 ;
+wire \u_i2c_master/bit_controller/n40_4 ;
+wire \u_i2c_master/bit_controller/n41_4 ;
+wire \u_i2c_master/bit_controller/n42_4 ;
+wire \u_i2c_master/bit_controller/n43_4 ;
+wire \u_i2c_master/bit_controller/n44_4 ;
+wire \u_i2c_master/bit_controller/n123_4 ;
+wire \u_i2c_master/bit_controller/n231_8 ;
+wire \u_i2c_master/bit_controller/n228_8 ;
+wire \u_i2c_master/bit_controller/n228_9 ;
+wire \u_i2c_master/bit_controller/n227_8 ;
+wire \u_i2c_master/bit_controller/n227_9 ;
+wire \u_i2c_master/bit_controller/n225_8 ;
+wire \u_i2c_master/bit_controller/n222_8 ;
+wire \u_i2c_master/bit_controller/n222_9 ;
+wire \u_i2c_master/bit_controller/n221_8 ;
+wire \u_i2c_master/bit_controller/n220_8 ;
+wire \u_i2c_master/bit_controller/n219_8 ;
+wire \u_i2c_master/bit_controller/n218_8 ;
+wire \u_i2c_master/bit_controller/n217_8 ;
+wire \u_i2c_master/bit_controller/n217_9 ;
+wire \u_i2c_master/bit_controller/n214_8 ;
+wire \u_i2c_master/bit_controller/n214_9 ;
+wire \u_i2c_master/bit_controller/n213_8 ;
+wire \u_i2c_master/bit_controller/n250_7 ;
+wire \u_i2c_master/bit_controller/n250_8 ;
+wire \u_i2c_master/bit_controller/n230_8 ;
+wire \u_i2c_master/bit_controller/n230_9 ;
+wire \u_i2c_master/bit_controller/n230_10 ;
+wire \u_i2c_master/bit_controller/n203_20 ;
+wire \u_i2c_master/bit_controller/n13_6 ;
+wire \u_i2c_master/bit_controller/n13_7 ;
+wire \u_i2c_master/bit_controller/n123_5 ;
+wire \u_i2c_master/bit_controller/n227_10 ;
+wire \u_i2c_master/bit_controller/n227_11 ;
+wire \u_i2c_master/bit_controller/n227_12 ;
+wire \u_i2c_master/bit_controller/n226_9 ;
+wire \u_i2c_master/bit_controller/n225_9 ;
+wire \u_i2c_master/bit_controller/n225_10 ;
+wire \u_i2c_master/bit_controller/n222_10 ;
+wire \u_i2c_master/bit_controller/n222_11 ;
+wire \u_i2c_master/bit_controller/n218_9 ;
+wire \u_i2c_master/bit_controller/n218_10 ;
+wire \u_i2c_master/bit_controller/n214_10 ;
+wire \u_i2c_master/bit_controller/n214_11 ;
+wire \u_i2c_master/bit_controller/n250_9 ;
+wire \u_i2c_master/bit_controller/n250_10 ;
+wire \u_i2c_master/bit_controller/n230_11 ;
+wire \u_i2c_master/bit_controller/n230_12 ;
+wire \u_i2c_master/bit_controller/n203_21 ;
+wire \u_i2c_master/bit_controller/n226_10 ;
+wire \u_i2c_master/bit_controller/n250_11 ;
+wire \u_i2c_master/bit_controller/n250_12 ;
+wire \u_i2c_master/bit_controller/n203_22 ;
+wire \u_i2c_master/bit_controller/n216_9 ;
+wire \u_i2c_master/bit_controller/n226_12 ;
+wire \u_i2c_master/bit_controller/n230_14 ;
+wire \u_i2c_master/bit_controller/n36_6 ;
+wire \u_i2c_master/bit_controller/n223_9 ;
+wire \u_i2c_master/bit_controller/SCL_OEN_8 ;
+wire \u_i2c_master/bit_controller/n102_11 ;
+wire \u_i2c_master/bit_controller/n231_11 ;
+wire \u_i2c_master/bit_controller/c_state_16_10 ;
+wire \u_i2c_master/bit_controller/sSCL ;
+wire \u_i2c_master/bit_controller/sSDA ;
+wire \u_i2c_master/bit_controller/dSCL ;
+wire \u_i2c_master/bit_controller/dSDA ;
+wire \u_i2c_master/bit_controller/sta_condition ;
+wire \u_i2c_master/bit_controller/sto_condition ;
+wire \u_i2c_master/bit_controller/cmd_stop ;
+wire \u_i2c_master/bit_controller/dscl_oen ;
+wire \u_i2c_master/bit_controller/clk_en ;
+wire \u_i2c_master/bit_controller/sda_chk ;
+wire [15:0] \u_i2c_master/bit_controller/cnt ;
+wire [16:0] \u_i2c_master/bit_controller/c_state ;
+VCC VCC_cZ (
+  .V(VCC)
+);
+GND GND_cZ (
+  .G(GND)
+);
+GSR GSR (
+	.GSRI(VCC)
+);
+IOBUF SCL_iobuf (
+	.I(GND),
+	.OEN(scl_padoen_o),
+	.IO(SCL),
+	.O(SCL_in)
+);
+IOBUF SDA_iobuf (
+	.I(GND),
+	.OEN(sda_padoen_o),
+	.IO(SDA),
+	.O(SDA_in)
+);
+LUT3 \u_i2c_master/n169_s14  (
+	.I0(\u_i2c_master/prescale_reg0 [7]),
+	.I1(\u_i2c_master/prescale_reg1 [7]),
+	.I2(I_RADDR[0]),
+	.F(\u_i2c_master/n169_18 )
+);
+defparam \u_i2c_master/n169_s14 .INIT=8'hCA;
+LUT3 \u_i2c_master/n169_s15  (
+	.I0(\u_i2c_master/control_reg [7]),
+	.I1(\u_i2c_master/receive_reg [7]),
+	.I2(I_RADDR[0]),
+	.F(\u_i2c_master/n169_19 )
+);
+defparam \u_i2c_master/n169_s15 .INIT=8'hCA;
+LUT3 \u_i2c_master/n170_s14  (
+	.I0(\u_i2c_master/prescale_reg0 [6]),
+	.I1(\u_i2c_master/prescale_reg1 [6]),
+	.I2(I_RADDR[0]),
+	.F(\u_i2c_master/n170_18 )
+);
+defparam \u_i2c_master/n170_s14 .INIT=8'hCA;
+LUT3 \u_i2c_master/n170_s15  (
+	.I0(\u_i2c_master/control_reg [6]),
+	.I1(\u_i2c_master/receive_reg [6]),
+	.I2(I_RADDR[0]),
+	.F(\u_i2c_master/n170_19 )
+);
+defparam \u_i2c_master/n170_s15 .INIT=8'hCA;
+LUT3 \u_i2c_master/n171_s14  (
+	.I0(\u_i2c_master/prescale_reg0 [5]),
+	.I1(\u_i2c_master/prescale_reg1 [5]),
+	.I2(I_RADDR[0]),
+	.F(\u_i2c_master/n171_18 )
+);
+defparam \u_i2c_master/n171_s14 .INIT=8'hCA;
+LUT3 \u_i2c_master/n171_s15  (
+	.I0(\u_i2c_master/control_reg [5]),
+	.I1(\u_i2c_master/receive_reg [5]),
+	.I2(I_RADDR[0]),
+	.F(\u_i2c_master/n171_19 )
+);
+defparam \u_i2c_master/n171_s15 .INIT=8'hCA;
+LUT3 \u_i2c_master/n172_s12  (
+	.I0(\u_i2c_master/prescale_reg0 [4]),
+	.I1(\u_i2c_master/prescale_reg1 [4]),
+	.I2(I_RADDR[0]),
+	.F(\u_i2c_master/n172_14 )
+);
+defparam \u_i2c_master/n172_s12 .INIT=8'hCA;
+LUT3 \u_i2c_master/n172_s13  (
+	.I0(\u_i2c_master/control_reg [4]),
+	.I1(\u_i2c_master/receive_reg [4]),
+	.I2(I_RADDR[0]),
+	.F(\u_i2c_master/n172_15 )
+);
+defparam \u_i2c_master/n172_s13 .INIT=8'hCA;
+LUT3 \u_i2c_master/n173_s12  (
+	.I0(\u_i2c_master/prescale_reg0 [3]),
+	.I1(\u_i2c_master/prescale_reg1 [3]),
+	.I2(I_RADDR[0]),
+	.F(\u_i2c_master/n173_14 )
+);
+defparam \u_i2c_master/n173_s12 .INIT=8'hCA;
+LUT3 \u_i2c_master/n173_s13  (
+	.I0(\u_i2c_master/control_reg [3]),
+	.I1(\u_i2c_master/receive_reg [3]),
+	.I2(I_RADDR[0]),
+	.F(\u_i2c_master/n173_15 )
+);
+defparam \u_i2c_master/n173_s13 .INIT=8'hCA;
+LUT3 \u_i2c_master/n174_s12  (
+	.I0(\u_i2c_master/prescale_reg0 [2]),
+	.I1(\u_i2c_master/prescale_reg1 [2]),
+	.I2(I_RADDR[0]),
+	.F(\u_i2c_master/n174_14 )
+);
+defparam \u_i2c_master/n174_s12 .INIT=8'hCA;
+LUT3 \u_i2c_master/n174_s13  (
+	.I0(\u_i2c_master/control_reg [2]),
+	.I1(\u_i2c_master/receive_reg [2]),
+	.I2(I_RADDR[0]),
+	.F(\u_i2c_master/n174_15 )
+);
+defparam \u_i2c_master/n174_s13 .INIT=8'hCA;
+LUT3 \u_i2c_master/n175_s14  (
+	.I0(\u_i2c_master/prescale_reg0 [1]),
+	.I1(\u_i2c_master/prescale_reg1 [1]),
+	.I2(I_RADDR[0]),
+	.F(\u_i2c_master/n175_18 )
+);
+defparam \u_i2c_master/n175_s14 .INIT=8'hCA;
+LUT3 \u_i2c_master/n175_s15  (
+	.I0(\u_i2c_master/control_reg [1]),
+	.I1(\u_i2c_master/receive_reg [1]),
+	.I2(I_RADDR[0]),
+	.F(\u_i2c_master/n175_19 )
+);
+defparam \u_i2c_master/n175_s15 .INIT=8'hCA;
+LUT3 \u_i2c_master/n176_s14  (
+	.I0(\u_i2c_master/prescale_reg0 [0]),
+	.I1(\u_i2c_master/prescale_reg1 [0]),
+	.I2(I_RADDR[0]),
+	.F(\u_i2c_master/n176_18 )
+);
+defparam \u_i2c_master/n176_s14 .INIT=8'hCA;
+LUT3 \u_i2c_master/n176_s15  (
+	.I0(\u_i2c_master/control_reg [0]),
+	.I1(\u_i2c_master/receive_reg [0]),
+	.I2(I_RADDR[0]),
+	.F(\u_i2c_master/n176_19 )
+);
+defparam \u_i2c_master/n176_s15 .INIT=8'hCA;
+LUT4 \u_i2c_master/n323_s0  (
+	.I0(I_WADDR[0]),
+	.I1(I_WADDR[1]),
+	.I2(I_WADDR[2]),
+	.I3(I_TX_EN),
+	.F(\u_i2c_master/n323_4 )
+);
+defparam \u_i2c_master/n323_s0 .INIT=16'h0100;
+LUT4 \u_i2c_master/n330_s0  (
+	.I0(I_WADDR[1]),
+	.I1(I_WADDR[2]),
+	.I2(I_WADDR[0]),
+	.I3(I_TX_EN),
+	.F(\u_i2c_master/n330_3 )
+);
+defparam \u_i2c_master/n330_s0 .INIT=16'h1000;
+LUT4 \u_i2c_master/n338_s0  (
+	.I0(I_WADDR[0]),
+	.I1(I_WADDR[2]),
+	.I2(I_WADDR[1]),
+	.I3(I_TX_EN),
+	.F(\u_i2c_master/n338_3 )
+);
+defparam \u_i2c_master/n338_s0 .INIT=16'h1000;
+LUT4 \u_i2c_master/n346_s0  (
+	.I0(I_WADDR[2]),
+	.I1(I_WADDR[1]),
+	.I2(I_WADDR[0]),
+	.I3(I_TX_EN),
+	.F(\u_i2c_master/n346_3 )
+);
+defparam \u_i2c_master/n346_s0 .INIT=16'h4000;
+LUT4 \u_i2c_master/n354_s0  (
+	.I0(I_WADDR[0]),
+	.I1(I_WADDR[1]),
+	.I2(\u_i2c_master/n354_4 ),
+	.I3(I_WADDR[2]),
+	.F(\u_i2c_master/n354_3 )
+);
+defparam \u_i2c_master/n354_s0 .INIT=16'h1000;
+LUT4 \u_i2c_master/n136_s0  (
+	.I0(\u_i2c_master/done ),
+	.I1(\u_i2c_master/i2c_al ),
+	.I2(I_TX_EN),
+	.I3(\u_i2c_master/n354_3 ),
+	.F(\u_i2c_master/n136_3 )
+);
+defparam \u_i2c_master/n136_s0 .INIT=16'hFF0E;
+LUT2 \u_i2c_master/n218_s0  (
+	.I0(\u_i2c_master/command_reg [5]),
+	.I1(\u_i2c_master/command_reg [4]),
+	.F(\u_i2c_master/n218_3 )
+);
+defparam \u_i2c_master/n218_s0 .INIT=4'hE;
+LUT2 \u_i2c_master/n230_s0  (
+	.I0(\u_i2c_master/irq_flag ),
+	.I1(\u_i2c_master/control_reg [6]),
+	.F(\u_i2c_master/n230_3 )
+);
+defparam \u_i2c_master/n230_s0 .INIT=4'h8;
+LUT2 \u_i2c_master/al_s3  (
+	.I0(\u_i2c_master/i2c_al ),
+	.I1(\u_i2c_master/command_reg [7]),
+	.F(\u_i2c_master/al_8 )
+);
+defparam \u_i2c_master/al_s3 .INIT=4'hE;
+LUT2 \u_i2c_master/n159_s1  (
+	.I0(I_TX_EN),
+	.I1(I_WDATA[0]),
+	.F(\u_i2c_master/n159_6 )
+);
+defparam \u_i2c_master/n159_s1 .INIT=4'h8;
+LUT2 \u_i2c_master/n155_s1  (
+	.I0(I_TX_EN),
+	.I1(I_WDATA[4]),
+	.F(\u_i2c_master/n155_6 )
+);
+defparam \u_i2c_master/n155_s1 .INIT=4'h8;
+LUT2 \u_i2c_master/n154_s1  (
+	.I0(I_TX_EN),
+	.I1(I_WDATA[5]),
+	.F(\u_i2c_master/n154_6 )
+);
+defparam \u_i2c_master/n154_s1 .INIT=4'h8;
+LUT2 \u_i2c_master/n153_s1  (
+	.I0(I_TX_EN),
+	.I1(I_WDATA[6]),
+	.F(\u_i2c_master/n153_6 )
+);
+defparam \u_i2c_master/n153_s1 .INIT=4'h8;
+LUT2 \u_i2c_master/n152_s1  (
+	.I0(I_TX_EN),
+	.I1(I_WDATA[7]),
+	.F(\u_i2c_master/n152_6 )
+);
+defparam \u_i2c_master/n152_s1 .INIT=4'h8;
+LUT4 \u_i2c_master/reg_data_out_0_s1  (
+	.I0(\u_i2c_master/reg_data_out_0_7 ),
+	.I1(\u_i2c_master/n176_21 ),
+	.I2(\u_i2c_master/irq_flag ),
+	.I3(\u_i2c_master/reg_data_out_0_8 ),
+	.F(\u_i2c_master/reg_data_out [0])
+);
+defparam \u_i2c_master/reg_data_out_0_s1 .INIT=16'hF888;
+LUT4 \u_i2c_master/reg_data_out_1_s1  (
+	.I0(\u_i2c_master/tip ),
+	.I1(\u_i2c_master/reg_data_out_0_8 ),
+	.I2(\u_i2c_master/n175_21 ),
+	.I3(\u_i2c_master/reg_data_out_0_7 ),
+	.F(\u_i2c_master/reg_data_out [1])
+);
+defparam \u_i2c_master/reg_data_out_1_s1 .INIT=16'hF888;
+LUT4 \u_i2c_master/reg_data_out_5_s1  (
+	.I0(\u_i2c_master/al ),
+	.I1(\u_i2c_master/reg_data_out_0_8 ),
+	.I2(\u_i2c_master/n171_21 ),
+	.I3(\u_i2c_master/reg_data_out_0_7 ),
+	.F(\u_i2c_master/reg_data_out [5])
+);
+defparam \u_i2c_master/reg_data_out_5_s1 .INIT=16'hF888;
+LUT4 \u_i2c_master/reg_data_out_6_s1  (
+	.I0(\u_i2c_master/i2c_busy ),
+	.I1(\u_i2c_master/reg_data_out_0_8 ),
+	.I2(\u_i2c_master/n170_21 ),
+	.I3(\u_i2c_master/reg_data_out_0_7 ),
+	.F(\u_i2c_master/reg_data_out [6])
+);
+defparam \u_i2c_master/reg_data_out_6_s1 .INIT=16'hF888;
+LUT4 \u_i2c_master/reg_data_out_7_s1  (
+	.I0(\u_i2c_master/rxack ),
+	.I1(\u_i2c_master/reg_data_out_0_8 ),
+	.I2(\u_i2c_master/n169_21 ),
+	.I3(\u_i2c_master/reg_data_out_0_7 ),
+	.F(\u_i2c_master/reg_data_out [7])
+);
+defparam \u_i2c_master/reg_data_out_7_s1 .INIT=16'hF888;
+LUT2 \u_i2c_master/n354_s1  (
+	.I0(I_TX_EN),
+	.I1(\u_i2c_master/control_reg [7]),
+	.F(\u_i2c_master/n354_4 )
+);
+defparam \u_i2c_master/n354_s1 .INIT=4'h8;
+LUT2 \u_i2c_master/reg_data_out_0_s2  (
+	.I0(I_RADDR[2]),
+	.I1(I_RESETN),
+	.F(\u_i2c_master/reg_data_out_0_7 )
+);
+defparam \u_i2c_master/reg_data_out_0_s2 .INIT=4'h4;
+LUT4 \u_i2c_master/reg_data_out_0_s3  (
+	.I0(I_RADDR[1]),
+	.I1(I_RADDR[0]),
+	.I2(I_RESETN),
+	.I3(I_RADDR[2]),
+	.F(\u_i2c_master/reg_data_out_0_8 )
+);
+defparam \u_i2c_master/reg_data_out_0_s3 .INIT=16'h1000;
+LUT3 \u_i2c_master/reg_data_out_4_s2  (
+	.I0(\u_i2c_master/n172_17 ),
+	.I1(I_RADDR[2]),
+	.I2(I_RESETN),
+	.F(\u_i2c_master/reg_data_out [4])
+);
+defparam \u_i2c_master/reg_data_out_4_s2 .INIT=8'h20;
+LUT3 \u_i2c_master/reg_data_out_3_s2  (
+	.I0(\u_i2c_master/n173_17 ),
+	.I1(I_RADDR[2]),
+	.I2(I_RESETN),
+	.F(\u_i2c_master/reg_data_out [3])
+);
+defparam \u_i2c_master/reg_data_out_3_s2 .INIT=8'h20;
+LUT3 \u_i2c_master/reg_data_out_2_s2  (
+	.I0(\u_i2c_master/n174_17 ),
+	.I1(I_RADDR[2]),
+	.I2(I_RESETN),
+	.F(\u_i2c_master/reg_data_out [2])
+);
+defparam \u_i2c_master/reg_data_out_2_s2 .INIT=8'h20;
+LUT4 \u_i2c_master/n220_s5  (
+	.I0(\u_i2c_master/irq_flag ),
+	.I1(\u_i2c_master/done ),
+	.I2(\u_i2c_master/i2c_al ),
+	.I3(\u_i2c_master/command_reg [0]),
+	.F(\u_i2c_master/n220_14 )
+);
+defparam \u_i2c_master/n220_s5 .INIT=16'h00FE;
+DFFCE \u_i2c_master/prescale_reg0_6_s0  (
+	.D(I_WDATA[6]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n323_4 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/prescale_reg0 [6])
+);
+defparam \u_i2c_master/prescale_reg0_6_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/prescale_reg0_5_s0  (
+	.D(I_WDATA[5]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n323_4 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/prescale_reg0 [5])
+);
+defparam \u_i2c_master/prescale_reg0_5_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/prescale_reg0_4_s0  (
+	.D(I_WDATA[4]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n323_4 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/prescale_reg0 [4])
+);
+defparam \u_i2c_master/prescale_reg0_4_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/prescale_reg0_3_s0  (
+	.D(I_WDATA[3]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n323_4 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/prescale_reg0 [3])
+);
+defparam \u_i2c_master/prescale_reg0_3_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/prescale_reg0_2_s0  (
+	.D(I_WDATA[2]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n323_4 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/prescale_reg0 [2])
+);
+defparam \u_i2c_master/prescale_reg0_2_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/prescale_reg0_1_s0  (
+	.D(I_WDATA[1]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n323_4 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/prescale_reg0 [1])
+);
+defparam \u_i2c_master/prescale_reg0_1_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/prescale_reg0_0_s0  (
+	.D(I_WDATA[0]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n323_4 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/prescale_reg0 [0])
+);
+defparam \u_i2c_master/prescale_reg0_0_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/prescale_reg1_7_s0  (
+	.D(I_WDATA[7]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n330_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/prescale_reg1 [7])
+);
+defparam \u_i2c_master/prescale_reg1_7_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/prescale_reg1_6_s0  (
+	.D(I_WDATA[6]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n330_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/prescale_reg1 [6])
+);
+defparam \u_i2c_master/prescale_reg1_6_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/prescale_reg1_5_s0  (
+	.D(I_WDATA[5]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n330_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/prescale_reg1 [5])
+);
+defparam \u_i2c_master/prescale_reg1_5_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/prescale_reg1_4_s0  (
+	.D(I_WDATA[4]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n330_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/prescale_reg1 [4])
+);
+defparam \u_i2c_master/prescale_reg1_4_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/prescale_reg1_3_s0  (
+	.D(I_WDATA[3]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n330_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/prescale_reg1 [3])
+);
+defparam \u_i2c_master/prescale_reg1_3_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/prescale_reg1_2_s0  (
+	.D(I_WDATA[2]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n330_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/prescale_reg1 [2])
+);
+defparam \u_i2c_master/prescale_reg1_2_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/prescale_reg1_1_s0  (
+	.D(I_WDATA[1]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n330_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/prescale_reg1 [1])
+);
+defparam \u_i2c_master/prescale_reg1_1_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/prescale_reg1_0_s0  (
+	.D(I_WDATA[0]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n330_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/prescale_reg1 [0])
+);
+defparam \u_i2c_master/prescale_reg1_0_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/control_reg_7_s0  (
+	.D(I_WDATA[7]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n338_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/control_reg [7])
+);
+defparam \u_i2c_master/control_reg_7_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/control_reg_6_s0  (
+	.D(I_WDATA[6]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n338_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/control_reg [6])
+);
+defparam \u_i2c_master/control_reg_6_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/control_reg_5_s0  (
+	.D(I_WDATA[5]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n338_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/control_reg [5])
+);
+defparam \u_i2c_master/control_reg_5_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/control_reg_4_s0  (
+	.D(I_WDATA[4]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n338_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/control_reg [4])
+);
+defparam \u_i2c_master/control_reg_4_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/control_reg_3_s0  (
+	.D(I_WDATA[3]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n338_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/control_reg [3])
+);
+defparam \u_i2c_master/control_reg_3_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/control_reg_2_s0  (
+	.D(I_WDATA[2]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n338_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/control_reg [2])
+);
+defparam \u_i2c_master/control_reg_2_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/control_reg_1_s0  (
+	.D(I_WDATA[1]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n338_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/control_reg [1])
+);
+defparam \u_i2c_master/control_reg_1_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/control_reg_0_s0  (
+	.D(I_WDATA[0]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n338_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/control_reg [0])
+);
+defparam \u_i2c_master/control_reg_0_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/transmit_reg_7_s0  (
+	.D(I_WDATA[7]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n346_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/transmit_reg [7])
+);
+defparam \u_i2c_master/transmit_reg_7_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/transmit_reg_6_s0  (
+	.D(I_WDATA[6]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n346_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/transmit_reg [6])
+);
+defparam \u_i2c_master/transmit_reg_6_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/transmit_reg_5_s0  (
+	.D(I_WDATA[5]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n346_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/transmit_reg [5])
+);
+defparam \u_i2c_master/transmit_reg_5_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/transmit_reg_4_s0  (
+	.D(I_WDATA[4]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n346_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/transmit_reg [4])
+);
+defparam \u_i2c_master/transmit_reg_4_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/transmit_reg_3_s0  (
+	.D(I_WDATA[3]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n346_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/transmit_reg [3])
+);
+defparam \u_i2c_master/transmit_reg_3_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/transmit_reg_2_s0  (
+	.D(I_WDATA[2]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n346_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/transmit_reg [2])
+);
+defparam \u_i2c_master/transmit_reg_2_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/transmit_reg_1_s0  (
+	.D(I_WDATA[1]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n346_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/transmit_reg [1])
+);
+defparam \u_i2c_master/transmit_reg_1_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/transmit_reg_0_s0  (
+	.D(I_WDATA[0]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n346_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/transmit_reg [0])
+);
+defparam \u_i2c_master/transmit_reg_0_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/command_reg_3_s0  (
+	.D(I_WDATA[3]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n354_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/command_reg [3])
+);
+defparam \u_i2c_master/command_reg_3_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/rdata_7_s0  (
+	.D(\u_i2c_master/reg_data_out [7]),
+	.CLK(I_CLK),
+	.CE(I_RX_EN),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(O_RDATA[7])
+);
+defparam \u_i2c_master/rdata_7_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/rdata_6_s0  (
+	.D(\u_i2c_master/reg_data_out [6]),
+	.CLK(I_CLK),
+	.CE(I_RX_EN),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(O_RDATA[6])
+);
+defparam \u_i2c_master/rdata_6_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/rdata_5_s0  (
+	.D(\u_i2c_master/reg_data_out [5]),
+	.CLK(I_CLK),
+	.CE(I_RX_EN),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(O_RDATA[5])
+);
+defparam \u_i2c_master/rdata_5_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/rdata_4_s0  (
+	.D(\u_i2c_master/reg_data_out [4]),
+	.CLK(I_CLK),
+	.CE(I_RX_EN),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(O_RDATA[4])
+);
+defparam \u_i2c_master/rdata_4_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/rdata_3_s0  (
+	.D(\u_i2c_master/reg_data_out [3]),
+	.CLK(I_CLK),
+	.CE(I_RX_EN),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(O_RDATA[3])
+);
+defparam \u_i2c_master/rdata_3_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/rdata_2_s0  (
+	.D(\u_i2c_master/reg_data_out [2]),
+	.CLK(I_CLK),
+	.CE(I_RX_EN),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(O_RDATA[2])
+);
+defparam \u_i2c_master/rdata_2_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/rdata_1_s0  (
+	.D(\u_i2c_master/reg_data_out [1]),
+	.CLK(I_CLK),
+	.CE(I_RX_EN),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(O_RDATA[1])
+);
+defparam \u_i2c_master/rdata_1_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/rdata_0_s0  (
+	.D(\u_i2c_master/reg_data_out [0]),
+	.CLK(I_CLK),
+	.CE(I_RX_EN),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(O_RDATA[0])
+);
+defparam \u_i2c_master/rdata_0_s0 .INIT=1'b0;
+DFFC \u_i2c_master/rxack_s0  (
+	.D(\u_i2c_master/irxack ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/rxack )
+);
+defparam \u_i2c_master/rxack_s0 .INIT=1'b0;
+DFFC \u_i2c_master/tip_s0  (
+	.D(\u_i2c_master/n218_3 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/tip )
+);
+defparam \u_i2c_master/tip_s0 .INIT=1'b0;
+DFFC \u_i2c_master/O_IIC_INT_s0  (
+	.D(\u_i2c_master/n230_3 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(O_IIC_INT)
+);
+defparam \u_i2c_master/O_IIC_INT_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/prescale_reg0_7_s0  (
+	.D(I_WDATA[7]),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n323_4 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/prescale_reg0 [7])
+);
+defparam \u_i2c_master/prescale_reg0_7_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/command_reg_7_s1  (
+	.D(\u_i2c_master/n152_6 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n136_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/command_reg [7])
+);
+defparam \u_i2c_master/command_reg_7_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/command_reg_6_s1  (
+	.D(\u_i2c_master/n153_6 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n136_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/command_reg [6])
+);
+defparam \u_i2c_master/command_reg_6_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/command_reg_5_s1  (
+	.D(\u_i2c_master/n154_6 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n136_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/command_reg [5])
+);
+defparam \u_i2c_master/command_reg_5_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/command_reg_4_s1  (
+	.D(\u_i2c_master/n155_6 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n136_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/command_reg [4])
+);
+defparam \u_i2c_master/command_reg_4_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/command_reg_0_s1  (
+	.D(\u_i2c_master/n159_6 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/n136_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/command_reg [0])
+);
+defparam \u_i2c_master/command_reg_0_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/al_s1  (
+	.D(\u_i2c_master/i2c_al ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/al_8 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/al )
+);
+defparam \u_i2c_master/al_s1 .INIT=1'b0;
+DFFC \u_i2c_master/irq_flag_s4  (
+	.D(\u_i2c_master/n220_14 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/irq_flag )
+);
+defparam \u_i2c_master/irq_flag_s4 .INIT=1'b0;
+MUX2_LUT5 \u_i2c_master/n169_s13  (
+	.I0(\u_i2c_master/n169_18 ),
+	.I1(\u_i2c_master/n169_19 ),
+	.S0(I_RADDR[1]),
+	.O(\u_i2c_master/n169_21 )
+);
+MUX2_LUT5 \u_i2c_master/n170_s13  (
+	.I0(\u_i2c_master/n170_18 ),
+	.I1(\u_i2c_master/n170_19 ),
+	.S0(I_RADDR[1]),
+	.O(\u_i2c_master/n170_21 )
+);
+MUX2_LUT5 \u_i2c_master/n171_s13  (
+	.I0(\u_i2c_master/n171_18 ),
+	.I1(\u_i2c_master/n171_19 ),
+	.S0(I_RADDR[1]),
+	.O(\u_i2c_master/n171_21 )
+);
+MUX2_LUT5 \u_i2c_master/n172_s11  (
+	.I0(\u_i2c_master/n172_14 ),
+	.I1(\u_i2c_master/n172_15 ),
+	.S0(I_RADDR[1]),
+	.O(\u_i2c_master/n172_17 )
+);
+MUX2_LUT5 \u_i2c_master/n173_s11  (
+	.I0(\u_i2c_master/n173_14 ),
+	.I1(\u_i2c_master/n173_15 ),
+	.S0(I_RADDR[1]),
+	.O(\u_i2c_master/n173_17 )
+);
+MUX2_LUT5 \u_i2c_master/n174_s11  (
+	.I0(\u_i2c_master/n174_14 ),
+	.I1(\u_i2c_master/n174_15 ),
+	.S0(I_RADDR[1]),
+	.O(\u_i2c_master/n174_17 )
+);
+MUX2_LUT5 \u_i2c_master/n175_s13  (
+	.I0(\u_i2c_master/n175_18 ),
+	.I1(\u_i2c_master/n175_19 ),
+	.S0(I_RADDR[1]),
+	.O(\u_i2c_master/n175_21 )
+);
+MUX2_LUT5 \u_i2c_master/n176_s13  (
+	.I0(\u_i2c_master/n176_18 ),
+	.I1(\u_i2c_master/n176_19 ),
+	.S0(I_RADDR[1]),
+	.O(\u_i2c_master/n176_21 )
+);
+INV \u_i2c_master/n16_s2  (
+	.I(I_RESETN),
+	.O(\u_i2c_master/n16_6 )
+);
+LUT3 \u_i2c_master/byte_controller/n19_s0  (
+	.I0(\u_i2c_master/transmit_reg [7]),
+	.I1(\u_i2c_master/receive_reg [6]),
+	.I2(\u_i2c_master/byte_controller/ld ),
+	.F(\u_i2c_master/byte_controller/n19_3 )
+);
+defparam \u_i2c_master/byte_controller/n19_s0 .INIT=8'hAC;
+LUT3 \u_i2c_master/byte_controller/n20_s0  (
+	.I0(\u_i2c_master/receive_reg [5]),
+	.I1(\u_i2c_master/transmit_reg [6]),
+	.I2(\u_i2c_master/byte_controller/ld ),
+	.F(\u_i2c_master/byte_controller/n20_3 )
+);
+defparam \u_i2c_master/byte_controller/n20_s0 .INIT=8'hCA;
+LUT3 \u_i2c_master/byte_controller/n21_s0  (
+	.I0(\u_i2c_master/receive_reg [4]),
+	.I1(\u_i2c_master/transmit_reg [5]),
+	.I2(\u_i2c_master/byte_controller/ld ),
+	.F(\u_i2c_master/byte_controller/n21_3 )
+);
+defparam \u_i2c_master/byte_controller/n21_s0 .INIT=8'hCA;
+LUT3 \u_i2c_master/byte_controller/n22_s0  (
+	.I0(\u_i2c_master/receive_reg [3]),
+	.I1(\u_i2c_master/transmit_reg [4]),
+	.I2(\u_i2c_master/byte_controller/ld ),
+	.F(\u_i2c_master/byte_controller/n22_3 )
+);
+defparam \u_i2c_master/byte_controller/n22_s0 .INIT=8'hCA;
+LUT3 \u_i2c_master/byte_controller/n23_s0  (
+	.I0(\u_i2c_master/receive_reg [2]),
+	.I1(\u_i2c_master/transmit_reg [3]),
+	.I2(\u_i2c_master/byte_controller/ld ),
+	.F(\u_i2c_master/byte_controller/n23_3 )
+);
+defparam \u_i2c_master/byte_controller/n23_s0 .INIT=8'hCA;
+LUT3 \u_i2c_master/byte_controller/n24_s0  (
+	.I0(\u_i2c_master/receive_reg [1]),
+	.I1(\u_i2c_master/transmit_reg [2]),
+	.I2(\u_i2c_master/byte_controller/ld ),
+	.F(\u_i2c_master/byte_controller/n24_3 )
+);
+defparam \u_i2c_master/byte_controller/n24_s0 .INIT=8'hCA;
+LUT3 \u_i2c_master/byte_controller/n25_s0  (
+	.I0(\u_i2c_master/receive_reg [0]),
+	.I1(\u_i2c_master/transmit_reg [1]),
+	.I2(\u_i2c_master/byte_controller/ld ),
+	.F(\u_i2c_master/byte_controller/n25_3 )
+);
+defparam \u_i2c_master/byte_controller/n25_s0 .INIT=8'hCA;
+LUT3 \u_i2c_master/byte_controller/n26_s0  (
+	.I0(\u_i2c_master/core_rxd ),
+	.I1(\u_i2c_master/transmit_reg [0]),
+	.I2(\u_i2c_master/byte_controller/ld ),
+	.F(\u_i2c_master/byte_controller/n26_3 )
+);
+defparam \u_i2c_master/byte_controller/n26_s0 .INIT=8'hCA;
+LUT4 \u_i2c_master/byte_controller/CORE_CMD_0_s3  (
+	.I0(\u_i2c_master/byte_controller/CORE_CMD_0_10 ),
+	.I1(\u_i2c_master/core_ack ),
+	.I2(\u_i2c_master/i2c_al ),
+	.I3(\u_i2c_master/byte_controller/CORE_CMD_0_12 ),
+	.F(\u_i2c_master/byte_controller/CORE_CMD_0_5 )
+);
+defparam \u_i2c_master/byte_controller/CORE_CMD_0_s3 .INIT=16'hFAFC;
+LUT3 \u_i2c_master/byte_controller/ACK_OUT_s3  (
+	.I0(\u_i2c_master/core_ack ),
+	.I1(\u_i2c_master/byte_controller/ACK_OUT_6 ),
+	.I2(\u_i2c_master/i2c_al ),
+	.F(\u_i2c_master/byte_controller/ACK_OUT_5 )
+);
+defparam \u_i2c_master/byte_controller/ACK_OUT_s3 .INIT=8'hF8;
+LUT2 \u_i2c_master/byte_controller/n198_s2  (
+	.I0(\u_i2c_master/i2c_al ),
+	.I1(\u_i2c_master/core_rxd ),
+	.F(\u_i2c_master/byte_controller/n198_7 )
+);
+defparam \u_i2c_master/byte_controller/n198_s2 .INIT=4'h4;
+LUT3 \u_i2c_master/byte_controller/n104_s2  (
+	.I0(\u_i2c_master/i2c_al ),
+	.I1(\u_i2c_master/command_reg [7]),
+	.I2(\u_i2c_master/byte_controller/CORE_CMD_0_12 ),
+	.F(\u_i2c_master/byte_controller/n104_7 )
+);
+defparam \u_i2c_master/byte_controller/n104_s2 .INIT=8'h40;
+LUT4 \u_i2c_master/byte_controller/n210_s2  (
+	.I0(\u_i2c_master/byte_controller/n210_8 ),
+	.I1(\u_i2c_master/byte_controller/n210_9 ),
+	.I2(\u_i2c_master/byte_controller/n210_10 ),
+	.I3(\u_i2c_master/i2c_al ),
+	.F(\u_i2c_master/byte_controller/n210_7 )
+);
+defparam \u_i2c_master/byte_controller/n210_s2 .INIT=16'h00F4;
+LUT4 \u_i2c_master/byte_controller/n209_s2  (
+	.I0(\u_i2c_master/byte_controller/n209_8 ),
+	.I1(\u_i2c_master/byte_controller/n209_9 ),
+	.I2(\u_i2c_master/byte_controller/n209_10 ),
+	.I3(\u_i2c_master/i2c_al ),
+	.F(\u_i2c_master/byte_controller/n209_7 )
+);
+defparam \u_i2c_master/byte_controller/n209_s2 .INIT=16'h00F4;
+LUT4 \u_i2c_master/byte_controller/n208_s2  (
+	.I0(\u_i2c_master/byte_controller/ACK_OUT_6 ),
+	.I1(\u_i2c_master/byte_controller/n208_8 ),
+	.I2(\u_i2c_master/i2c_al ),
+	.I3(\u_i2c_master/core_ack ),
+	.F(\u_i2c_master/byte_controller/n208_7 )
+);
+defparam \u_i2c_master/byte_controller/n208_s2 .INIT=16'h0C0A;
+LUT3 \u_i2c_master/byte_controller/n207_s2  (
+	.I0(\u_i2c_master/i2c_al ),
+	.I1(\u_i2c_master/byte_controller/n207_8 ),
+	.I2(\u_i2c_master/byte_controller/n207_9 ),
+	.F(\u_i2c_master/byte_controller/n207_7 )
+);
+defparam \u_i2c_master/byte_controller/n207_s2 .INIT=8'h10;
+LUT4 \u_i2c_master/byte_controller/n206_s2  (
+	.I0(\u_i2c_master/byte_controller/n206_8 ),
+	.I1(\u_i2c_master/i2c_al ),
+	.I2(\u_i2c_master/core_ack ),
+	.I3(\u_i2c_master/byte_controller/n207_9 ),
+	.F(\u_i2c_master/byte_controller/n206_7 )
+);
+defparam \u_i2c_master/byte_controller/n206_s2 .INIT=16'h1000;
+LUT4 \u_i2c_master/byte_controller/n205_s2  (
+	.I0(\u_i2c_master/byte_controller/CORE_CMD_0_10 ),
+	.I1(\u_i2c_master/byte_controller/CORE_CMD_0_12 ),
+	.I2(\u_i2c_master/byte_controller/n205_8 ),
+	.I3(\u_i2c_master/i2c_al ),
+	.F(\u_i2c_master/byte_controller/n205_7 )
+);
+defparam \u_i2c_master/byte_controller/n205_s2 .INIT=16'h00F8;
+LUT4 \u_i2c_master/byte_controller/n204_s2  (
+	.I0(\u_i2c_master/byte_controller/n204_8 ),
+	.I1(\u_i2c_master/byte_controller/n209_9 ),
+	.I2(\u_i2c_master/byte_controller/n210_9 ),
+	.I3(\u_i2c_master/byte_controller/n204_9 ),
+	.F(\u_i2c_master/byte_controller/n204_7 )
+);
+defparam \u_i2c_master/byte_controller/n204_s2 .INIT=16'hF400;
+LUT4 \u_i2c_master/byte_controller/n203_s2  (
+	.I0(\u_i2c_master/byte_controller/c_state [3]),
+	.I1(\u_i2c_master/byte_controller/n203_8 ),
+	.I2(\u_i2c_master/byte_controller/n203_9 ),
+	.I3(\u_i2c_master/i2c_al ),
+	.F(\u_i2c_master/byte_controller/n203_7 )
+);
+defparam \u_i2c_master/byte_controller/n203_s2 .INIT=16'h004F;
+LUT4 \u_i2c_master/byte_controller/n201_s2  (
+	.I0(\u_i2c_master/byte_controller/n201_8 ),
+	.I1(\u_i2c_master/byte_controller/n201_9 ),
+	.I2(\u_i2c_master/i2c_al ),
+	.I3(\u_i2c_master/byte_controller/CORE_CMD_0_12 ),
+	.F(\u_i2c_master/byte_controller/n201_7 )
+);
+defparam \u_i2c_master/byte_controller/n201_s2 .INIT=16'h030A;
+LUT4 \u_i2c_master/byte_controller/n200_s2  (
+	.I0(\u_i2c_master/core_cmd [2]),
+	.I1(\u_i2c_master/byte_controller/n200_8 ),
+	.I2(\u_i2c_master/byte_controller/n200_9 ),
+	.I3(\u_i2c_master/i2c_al ),
+	.F(\u_i2c_master/byte_controller/n200_7 )
+);
+defparam \u_i2c_master/byte_controller/n200_s2 .INIT=16'h008F;
+LUT4 \u_i2c_master/byte_controller/n199_s2  (
+	.I0(\u_i2c_master/core_cmd [3]),
+	.I1(\u_i2c_master/byte_controller/n200_8 ),
+	.I2(\u_i2c_master/byte_controller/n199_8 ),
+	.I3(\u_i2c_master/i2c_al ),
+	.F(\u_i2c_master/byte_controller/n199_7 )
+);
+defparam \u_i2c_master/byte_controller/n199_s2 .INIT=16'h008F;
+LUT4 \u_i2c_master/byte_controller/n50_s1  (
+	.I0(\u_i2c_master/byte_controller/dcnt [0]),
+	.I1(\u_i2c_master/byte_controller/dcnt [1]),
+	.I2(\u_i2c_master/byte_controller/ld ),
+	.I3(\u_i2c_master/byte_controller/dcnt [2]),
+	.F(\u_i2c_master/byte_controller/n50_6 )
+);
+defparam \u_i2c_master/byte_controller/n50_s1 .INIT=16'hFEF1;
+LUT3 \u_i2c_master/byte_controller/ACK_OUT_s4  (
+	.I0(\u_i2c_master/byte_controller/c_state [4]),
+	.I1(\u_i2c_master/byte_controller/c_state [3]),
+	.I2(\u_i2c_master/byte_controller/n207_9 ),
+	.F(\u_i2c_master/byte_controller/ACK_OUT_6 )
+);
+defparam \u_i2c_master/byte_controller/ACK_OUT_s4 .INIT=8'h40;
+LUT4 \u_i2c_master/byte_controller/n210_s3  (
+	.I0(\u_i2c_master/byte_controller/c_state [2]),
+	.I1(\u_i2c_master/byte_controller/c_state [1]),
+	.I2(\u_i2c_master/byte_controller/n204_8 ),
+	.I3(\u_i2c_master/byte_controller/n210_11 ),
+	.F(\u_i2c_master/byte_controller/n210_8 )
+);
+defparam \u_i2c_master/byte_controller/n210_s3 .INIT=16'h4200;
+LUT3 \u_i2c_master/byte_controller/n210_s4  (
+	.I0(\u_i2c_master/byte_controller/c_state [3]),
+	.I1(\u_i2c_master/byte_controller/c_state [1]),
+	.I2(\u_i2c_master/byte_controller/n210_12 ),
+	.F(\u_i2c_master/byte_controller/n210_9 )
+);
+defparam \u_i2c_master/byte_controller/n210_s4 .INIT=8'h40;
+LUT3 \u_i2c_master/byte_controller/n210_s5  (
+	.I0(\u_i2c_master/byte_controller/n205_8 ),
+	.I1(\u_i2c_master/byte_controller/n210_13 ),
+	.I2(\u_i2c_master/command_reg [5]),
+	.F(\u_i2c_master/byte_controller/n210_10 )
+);
+defparam \u_i2c_master/byte_controller/n210_s5 .INIT=8'hE0;
+LUT4 \u_i2c_master/byte_controller/n209_s3  (
+	.I0(\u_i2c_master/byte_controller/c_state [2]),
+	.I1(\u_i2c_master/byte_controller/n204_8 ),
+	.I2(\u_i2c_master/byte_controller/c_state [1]),
+	.I3(\u_i2c_master/byte_controller/n210_11 ),
+	.F(\u_i2c_master/byte_controller/n209_8 )
+);
+defparam \u_i2c_master/byte_controller/n209_s3 .INIT=16'h1800;
+LUT4 \u_i2c_master/byte_controller/n209_s4  (
+	.I0(\u_i2c_master/byte_controller/c_state [1]),
+	.I1(\u_i2c_master/core_cmd [0]),
+	.I2(\u_i2c_master/byte_controller/c_state [2]),
+	.I3(\u_i2c_master/byte_controller/CORE_CMD_0_8 ),
+	.F(\u_i2c_master/byte_controller/n209_9 )
+);
+defparam \u_i2c_master/byte_controller/n209_s4 .INIT=16'h1000;
+LUT3 \u_i2c_master/byte_controller/n209_s5  (
+	.I0(\u_i2c_master/byte_controller/n209_11 ),
+	.I1(\u_i2c_master/byte_controller/n205_8 ),
+	.I2(\u_i2c_master/command_reg [5]),
+	.F(\u_i2c_master/byte_controller/n209_10 )
+);
+defparam \u_i2c_master/byte_controller/n209_s5 .INIT=8'h0E;
+LUT4 \u_i2c_master/byte_controller/n208_s3  (
+	.I0(\u_i2c_master/core_cmd [0]),
+	.I1(\u_i2c_master/byte_controller/n208_9 ),
+	.I2(\u_i2c_master/byte_controller/n204_8 ),
+	.I3(\u_i2c_master/byte_controller/CORE_CMD_0_8 ),
+	.F(\u_i2c_master/byte_controller/n208_8 )
+);
+defparam \u_i2c_master/byte_controller/n208_s3 .INIT=16'h1000;
+LUT4 \u_i2c_master/byte_controller/n207_s3  (
+	.I0(\u_i2c_master/byte_controller/n207_10 ),
+	.I1(\u_i2c_master/byte_controller/c_state [4]),
+	.I2(\u_i2c_master/byte_controller/c_state [3]),
+	.I3(\u_i2c_master/byte_controller/n207_11 ),
+	.F(\u_i2c_master/byte_controller/n207_8 )
+);
+defparam \u_i2c_master/byte_controller/n207_s3 .INIT=16'hFD03;
+LUT3 \u_i2c_master/byte_controller/n207_s4  (
+	.I0(\u_i2c_master/byte_controller/c_state [2]),
+	.I1(\u_i2c_master/byte_controller/c_state [1]),
+	.I2(\u_i2c_master/core_cmd [0]),
+	.F(\u_i2c_master/byte_controller/n207_9 )
+);
+defparam \u_i2c_master/byte_controller/n207_s4 .INIT=8'h01;
+LUT3 \u_i2c_master/byte_controller/n206_s3  (
+	.I0(\u_i2c_master/command_reg [6]),
+	.I1(\u_i2c_master/byte_controller/c_state [4]),
+	.I2(\u_i2c_master/byte_controller/c_state [3]),
+	.F(\u_i2c_master/byte_controller/n206_8 )
+);
+defparam \u_i2c_master/byte_controller/n206_s3 .INIT=8'hE3;
+LUT3 \u_i2c_master/byte_controller/n205_s3  (
+	.I0(\u_i2c_master/core_ack ),
+	.I1(\u_i2c_master/core_cmd [0]),
+	.I2(\u_i2c_master/byte_controller/n205_9 ),
+	.F(\u_i2c_master/byte_controller/n205_8 )
+);
+defparam \u_i2c_master/byte_controller/n205_s3 .INIT=8'h80;
+LUT3 \u_i2c_master/byte_controller/n204_s3  (
+	.I0(\u_i2c_master/byte_controller/dcnt [0]),
+	.I1(\u_i2c_master/byte_controller/dcnt [1]),
+	.I2(\u_i2c_master/byte_controller/dcnt [2]),
+	.F(\u_i2c_master/byte_controller/n204_8 )
+);
+defparam \u_i2c_master/byte_controller/n204_s3 .INIT=8'h01;
+LUT2 \u_i2c_master/byte_controller/n204_s4  (
+	.I0(\u_i2c_master/i2c_al ),
+	.I1(\u_i2c_master/core_ack ),
+	.F(\u_i2c_master/byte_controller/n204_9 )
+);
+defparam \u_i2c_master/byte_controller/n204_s4 .INIT=4'h4;
+LUT4 \u_i2c_master/byte_controller/n203_s3  (
+	.I0(\u_i2c_master/core_ack ),
+	.I1(\u_i2c_master/byte_controller/n210_12 ),
+	.I2(\u_i2c_master/byte_controller/n203_10 ),
+	.I3(\u_i2c_master/receive_reg [7]),
+	.F(\u_i2c_master/byte_controller/n203_8 )
+);
+defparam \u_i2c_master/byte_controller/n203_s3 .INIT=16'hF400;
+LUT4 \u_i2c_master/byte_controller/n203_s4  (
+	.I0(\u_i2c_master/byte_controller/n210_9 ),
+	.I1(\u_i2c_master/byte_controller/ACK_OUT_6 ),
+	.I2(\u_i2c_master/core_ack ),
+	.I3(\u_i2c_master/command_reg [3]),
+	.F(\u_i2c_master/byte_controller/n203_9 )
+);
+defparam \u_i2c_master/byte_controller/n203_s4 .INIT=16'h133F;
+LUT4 \u_i2c_master/byte_controller/n201_s3  (
+	.I0(\u_i2c_master/byte_controller/c_state [3]),
+	.I1(\u_i2c_master/byte_controller/n210_12 ),
+	.I2(\u_i2c_master/byte_controller/n203_10 ),
+	.I3(\u_i2c_master/byte_controller/n201_10 ),
+	.F(\u_i2c_master/byte_controller/n201_8 )
+);
+defparam \u_i2c_master/byte_controller/n201_s3 .INIT=16'h00D4;
+LUT3 \u_i2c_master/byte_controller/n201_s4  (
+	.I0(\u_i2c_master/byte_controller/n207_10 ),
+	.I1(\u_i2c_master/core_cmd [1]),
+	.I2(\u_i2c_master/byte_controller/CORE_CMD_0_10 ),
+	.F(\u_i2c_master/byte_controller/n201_9 )
+);
+defparam \u_i2c_master/byte_controller/n201_s4 .INIT=8'h53;
+LUT4 \u_i2c_master/byte_controller/n200_s3  (
+	.I0(\u_i2c_master/byte_controller/CORE_CMD_0_10 ),
+	.I1(\u_i2c_master/byte_controller/n200_10 ),
+	.I2(\u_i2c_master/byte_controller/n205_9 ),
+	.I3(\u_i2c_master/core_cmd [0]),
+	.F(\u_i2c_master/byte_controller/n200_8 )
+);
+defparam \u_i2c_master/byte_controller/n200_s3 .INIT=16'hC073;
+LUT4 \u_i2c_master/byte_controller/n200_s4  (
+	.I0(\u_i2c_master/byte_controller/n205_8 ),
+	.I1(\u_i2c_master/byte_controller/n209_11 ),
+	.I2(\u_i2c_master/command_reg [5]),
+	.I3(\u_i2c_master/byte_controller/n210_8 ),
+	.F(\u_i2c_master/byte_controller/n200_9 )
+);
+defparam \u_i2c_master/byte_controller/n200_s4 .INIT=16'h00F1;
+LUT4 \u_i2c_master/byte_controller/n199_s3  (
+	.I0(\u_i2c_master/byte_controller/n210_13 ),
+	.I1(\u_i2c_master/byte_controller/n205_8 ),
+	.I2(\u_i2c_master/command_reg [5]),
+	.I3(\u_i2c_master/byte_controller/n209_8 ),
+	.F(\u_i2c_master/byte_controller/n199_8 )
+);
+defparam \u_i2c_master/byte_controller/n199_s3 .INIT=16'h001F;
+LUT2 \u_i2c_master/byte_controller/CORE_CMD_0_s6  (
+	.I0(\u_i2c_master/byte_controller/c_state [4]),
+	.I1(\u_i2c_master/byte_controller/c_state [3]),
+	.F(\u_i2c_master/byte_controller/CORE_CMD_0_8 )
+);
+defparam \u_i2c_master/byte_controller/CORE_CMD_0_s6 .INIT=4'h1;
+LUT4 \u_i2c_master/byte_controller/n210_s6  (
+	.I0(\u_i2c_master/byte_controller/c_state [4]),
+	.I1(\u_i2c_master/byte_controller/c_state [3]),
+	.I2(\u_i2c_master/core_cmd [0]),
+	.I3(\u_i2c_master/core_ack ),
+	.F(\u_i2c_master/byte_controller/n210_11 )
+);
+defparam \u_i2c_master/byte_controller/n210_s6 .INIT=16'h0100;
+LUT3 \u_i2c_master/byte_controller/n210_s7  (
+	.I0(\u_i2c_master/byte_controller/c_state [4]),
+	.I1(\u_i2c_master/byte_controller/c_state [2]),
+	.I2(\u_i2c_master/core_cmd [0]),
+	.F(\u_i2c_master/byte_controller/n210_12 )
+);
+defparam \u_i2c_master/byte_controller/n210_s7 .INIT=8'h01;
+LUT4 \u_i2c_master/byte_controller/n210_s8  (
+	.I0(\u_i2c_master/done ),
+	.I1(\u_i2c_master/command_reg [7]),
+	.I2(\u_i2c_master/byte_controller/CORE_CMD_0_8 ),
+	.I3(\u_i2c_master/byte_controller/n207_9 ),
+	.F(\u_i2c_master/byte_controller/n210_13 )
+);
+defparam \u_i2c_master/byte_controller/n210_s8 .INIT=16'h1000;
+LUT4 \u_i2c_master/byte_controller/n209_s6  (
+	.I0(\u_i2c_master/done ),
+	.I1(\u_i2c_master/byte_controller/n209_12 ),
+	.I2(\u_i2c_master/byte_controller/CORE_CMD_0_8 ),
+	.I3(\u_i2c_master/byte_controller/n207_9 ),
+	.F(\u_i2c_master/byte_controller/n209_11 )
+);
+defparam \u_i2c_master/byte_controller/n209_s6 .INIT=16'h4000;
+LUT4 \u_i2c_master/byte_controller/n208_s4  (
+	.I0(\u_i2c_master/byte_controller/c_state [4]),
+	.I1(\u_i2c_master/byte_controller/c_state [2]),
+	.I2(\u_i2c_master/byte_controller/c_state [1]),
+	.I3(\u_i2c_master/byte_controller/c_state [3]),
+	.F(\u_i2c_master/byte_controller/n208_9 )
+);
+defparam \u_i2c_master/byte_controller/n208_s4 .INIT=16'hFEE9;
+LUT4 \u_i2c_master/byte_controller/n207_s5  (
+	.I0(\u_i2c_master/done ),
+	.I1(\u_i2c_master/command_reg [5]),
+	.I2(\u_i2c_master/command_reg [4]),
+	.I3(\u_i2c_master/command_reg [7]),
+	.F(\u_i2c_master/byte_controller/n207_10 )
+);
+defparam \u_i2c_master/byte_controller/n207_s5 .INIT=16'h0001;
+LUT4 \u_i2c_master/byte_controller/n207_s6  (
+	.I0(\u_i2c_master/core_ack ),
+	.I1(\u_i2c_master/command_reg [6]),
+	.I2(\u_i2c_master/byte_controller/c_state [4]),
+	.I3(\u_i2c_master/byte_controller/c_state [3]),
+	.F(\u_i2c_master/byte_controller/n207_11 )
+);
+defparam \u_i2c_master/byte_controller/n207_s6 .INIT=16'hF7AC;
+LUT4 \u_i2c_master/byte_controller/n205_s4  (
+	.I0(\u_i2c_master/byte_controller/c_state [4]),
+	.I1(\u_i2c_master/byte_controller/c_state [2]),
+	.I2(\u_i2c_master/byte_controller/c_state [1]),
+	.I3(\u_i2c_master/byte_controller/c_state [3]),
+	.F(\u_i2c_master/byte_controller/n205_9 )
+);
+defparam \u_i2c_master/byte_controller/n205_s4 .INIT=16'h0001;
+LUT4 \u_i2c_master/byte_controller/n203_s5  (
+	.I0(\u_i2c_master/byte_controller/c_state [4]),
+	.I1(\u_i2c_master/byte_controller/c_state [2]),
+	.I2(\u_i2c_master/core_cmd [0]),
+	.I3(\u_i2c_master/byte_controller/c_state [1]),
+	.F(\u_i2c_master/byte_controller/n203_10 )
+);
+defparam \u_i2c_master/byte_controller/n203_s5 .INIT=16'h0017;
+LUT4 \u_i2c_master/byte_controller/n201_s5  (
+	.I0(\u_i2c_master/command_reg [6]),
+	.I1(\u_i2c_master/byte_controller/c_state [3]),
+	.I2(\u_i2c_master/core_cmd [1]),
+	.I3(\u_i2c_master/core_ack ),
+	.F(\u_i2c_master/byte_controller/n201_10 )
+);
+defparam \u_i2c_master/byte_controller/n201_s5 .INIT=16'h770F;
+LUT3 \u_i2c_master/byte_controller/n200_s5  (
+	.I0(\u_i2c_master/byte_controller/n208_9 ),
+	.I1(\u_i2c_master/core_ack ),
+	.I2(\u_i2c_master/core_cmd [0]),
+	.F(\u_i2c_master/byte_controller/n200_10 )
+);
+defparam \u_i2c_master/byte_controller/n200_s5 .INIT=8'h3E;
+LUT2 \u_i2c_master/byte_controller/n209_s7  (
+	.I0(\u_i2c_master/command_reg [7]),
+	.I1(\u_i2c_master/command_reg [4]),
+	.F(\u_i2c_master/byte_controller/n209_12 )
+);
+defparam \u_i2c_master/byte_controller/n209_s7 .INIT=4'h4;
+LUT4 \u_i2c_master/byte_controller/CORE_CMD_0_s7  (
+	.I0(\u_i2c_master/command_reg [5]),
+	.I1(\u_i2c_master/command_reg [4]),
+	.I2(\u_i2c_master/command_reg [6]),
+	.I3(\u_i2c_master/done ),
+	.F(\u_i2c_master/byte_controller/CORE_CMD_0_10 )
+);
+defparam \u_i2c_master/byte_controller/CORE_CMD_0_s7 .INIT=16'h00FE;
+LUT3 \u_i2c_master/byte_controller/CORE_CMD_0_s8  (
+	.I0(\u_i2c_master/byte_controller/c_state [4]),
+	.I1(\u_i2c_master/byte_controller/c_state [3]),
+	.I2(\u_i2c_master/byte_controller/n207_9 ),
+	.F(\u_i2c_master/byte_controller/CORE_CMD_0_12 )
+);
+defparam \u_i2c_master/byte_controller/CORE_CMD_0_s8 .INIT=8'h10;
+LUT4 \u_i2c_master/byte_controller/n51_s3  (
+	.I0(\u_i2c_master/byte_controller/dcnt [0]),
+	.I1(\u_i2c_master/byte_controller/shift ),
+	.I2(\u_i2c_master/byte_controller/ld ),
+	.I3(\u_i2c_master/byte_controller/dcnt [1]),
+	.F(\u_i2c_master/byte_controller/n51_9 )
+);
+defparam \u_i2c_master/byte_controller/n51_s3 .INIT=16'hFBF4;
+LUT2 \u_i2c_master/byte_controller/sr_6_s4  (
+	.I0(\u_i2c_master/byte_controller/ld ),
+	.I1(\u_i2c_master/byte_controller/shift ),
+	.F(\u_i2c_master/byte_controller/sr_6_9 )
+);
+defparam \u_i2c_master/byte_controller/sr_6_s4 .INIT=4'hE;
+LUT3 \u_i2c_master/byte_controller/n52_s3  (
+	.I0(\u_i2c_master/byte_controller/ld ),
+	.I1(\u_i2c_master/byte_controller/dcnt [0]),
+	.I2(\u_i2c_master/byte_controller/shift ),
+	.F(\u_i2c_master/byte_controller/n52_9 )
+);
+defparam \u_i2c_master/byte_controller/n52_s3 .INIT=8'hBE;
+DFFC \u_i2c_master/byte_controller/CORE_CMD_3_s0  (
+	.D(\u_i2c_master/byte_controller/n199_7 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/core_cmd [3])
+);
+defparam \u_i2c_master/byte_controller/CORE_CMD_3_s0 .INIT=1'b0;
+DFFC \u_i2c_master/byte_controller/CORE_CMD_2_s0  (
+	.D(\u_i2c_master/byte_controller/n200_7 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/core_cmd [2])
+);
+defparam \u_i2c_master/byte_controller/CORE_CMD_2_s0 .INIT=1'b0;
+DFFC \u_i2c_master/byte_controller/CORE_CMD_1_s0  (
+	.D(\u_i2c_master/byte_controller/n201_7 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/core_cmd [1])
+);
+defparam \u_i2c_master/byte_controller/CORE_CMD_1_s0 .INIT=1'b0;
+DFFC \u_i2c_master/byte_controller/CORE_TXD_s0  (
+	.D(\u_i2c_master/byte_controller/n203_7 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/core_txd )
+);
+defparam \u_i2c_master/byte_controller/CORE_TXD_s0 .INIT=1'b0;
+DFFC \u_i2c_master/byte_controller/shift_s0  (
+	.D(\u_i2c_master/byte_controller/n204_7 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/byte_controller/shift )
+);
+defparam \u_i2c_master/byte_controller/shift_s0 .INIT=1'b0;
+DFFC \u_i2c_master/byte_controller/ld_s0  (
+	.D(\u_i2c_master/byte_controller/n205_7 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/byte_controller/ld )
+);
+defparam \u_i2c_master/byte_controller/ld_s0 .INIT=1'b0;
+DFFC \u_i2c_master/byte_controller/CMD_ACK_s0  (
+	.D(\u_i2c_master/byte_controller/n206_7 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/done )
+);
+defparam \u_i2c_master/byte_controller/CMD_ACK_s0 .INIT=1'b0;
+DFFC \u_i2c_master/byte_controller/c_state_4_s0  (
+	.D(\u_i2c_master/byte_controller/n207_7 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/byte_controller/c_state [4])
+);
+defparam \u_i2c_master/byte_controller/c_state_4_s0 .INIT=1'b0;
+DFFC \u_i2c_master/byte_controller/c_state_3_s0  (
+	.D(\u_i2c_master/byte_controller/n208_7 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/byte_controller/c_state [3])
+);
+defparam \u_i2c_master/byte_controller/c_state_3_s0 .INIT=1'b0;
+DFFC \u_i2c_master/byte_controller/c_state_2_s0  (
+	.D(\u_i2c_master/byte_controller/n209_7 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/byte_controller/c_state [2])
+);
+defparam \u_i2c_master/byte_controller/c_state_2_s0 .INIT=1'b0;
+DFFC \u_i2c_master/byte_controller/c_state_1_s0  (
+	.D(\u_i2c_master/byte_controller/n210_7 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/byte_controller/c_state [1])
+);
+defparam \u_i2c_master/byte_controller/c_state_1_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/byte_controller/sr_6_s1  (
+	.D(\u_i2c_master/byte_controller/n20_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/byte_controller/sr_6_9 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/receive_reg [6])
+);
+defparam \u_i2c_master/byte_controller/sr_6_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/byte_controller/sr_5_s1  (
+	.D(\u_i2c_master/byte_controller/n21_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/byte_controller/sr_6_9 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/receive_reg [5])
+);
+defparam \u_i2c_master/byte_controller/sr_5_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/byte_controller/sr_4_s1  (
+	.D(\u_i2c_master/byte_controller/n22_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/byte_controller/sr_6_9 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/receive_reg [4])
+);
+defparam \u_i2c_master/byte_controller/sr_4_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/byte_controller/sr_3_s1  (
+	.D(\u_i2c_master/byte_controller/n23_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/byte_controller/sr_6_9 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/receive_reg [3])
+);
+defparam \u_i2c_master/byte_controller/sr_3_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/byte_controller/sr_2_s1  (
+	.D(\u_i2c_master/byte_controller/n24_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/byte_controller/sr_6_9 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/receive_reg [2])
+);
+defparam \u_i2c_master/byte_controller/sr_2_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/byte_controller/sr_1_s1  (
+	.D(\u_i2c_master/byte_controller/n25_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/byte_controller/sr_6_9 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/receive_reg [1])
+);
+defparam \u_i2c_master/byte_controller/sr_1_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/byte_controller/sr_0_s1  (
+	.D(\u_i2c_master/byte_controller/n26_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/byte_controller/sr_6_9 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/receive_reg [0])
+);
+defparam \u_i2c_master/byte_controller/sr_0_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/byte_controller/dcnt_2_s1  (
+	.D(\u_i2c_master/byte_controller/n50_6 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/byte_controller/sr_6_9 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/byte_controller/dcnt [2])
+);
+defparam \u_i2c_master/byte_controller/dcnt_2_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/byte_controller/CORE_CMD_0_s1  (
+	.D(\u_i2c_master/byte_controller/n104_7 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/byte_controller/CORE_CMD_0_5 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/core_cmd [0])
+);
+defparam \u_i2c_master/byte_controller/CORE_CMD_0_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/byte_controller/ACK_OUT_s1  (
+	.D(\u_i2c_master/byte_controller/n198_7 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/byte_controller/ACK_OUT_5 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/irxack )
+);
+defparam \u_i2c_master/byte_controller/ACK_OUT_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/byte_controller/sr_7_s1  (
+	.D(\u_i2c_master/byte_controller/n19_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/byte_controller/sr_6_9 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/receive_reg [7])
+);
+defparam \u_i2c_master/byte_controller/sr_7_s1 .INIT=1'b0;
+DFFC \u_i2c_master/byte_controller/dcnt_1_s3  (
+	.D(\u_i2c_master/byte_controller/n51_9 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/byte_controller/dcnt [1])
+);
+defparam \u_i2c_master/byte_controller/dcnt_1_s3 .INIT=1'b0;
+DFFC \u_i2c_master/byte_controller/dcnt_0_s3  (
+	.D(\u_i2c_master/byte_controller/n52_9 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/byte_controller/dcnt [0])
+);
+defparam \u_i2c_master/byte_controller/dcnt_0_s3 .INIT=1'b0;
+LUT3 \u_i2c_master/bit_controller/n13_s0  (
+	.I0(\u_i2c_master/bit_controller/n13_4 ),
+	.I1(\u_i2c_master/bit_controller/n13_5 ),
+	.I2(\u_i2c_master/control_reg [7]),
+	.F(\u_i2c_master/bit_controller/n13_3 )
+);
+defparam \u_i2c_master/bit_controller/n13_s0 .INIT=8'h8F;
+LUT4 \u_i2c_master/bit_controller/n31_s0  (
+	.I0(\u_i2c_master/prescale_reg1 [7]),
+	.I1(\u_i2c_master/bit_controller/n31_4 ),
+	.I2(\u_i2c_master/control_reg [7]),
+	.I3(\u_i2c_master/bit_controller/cnt [15]),
+	.F(\u_i2c_master/bit_controller/n31_3 )
+);
+defparam \u_i2c_master/bit_controller/n31_s0 .INIT=16'h3A8A;
+LUT4 \u_i2c_master/bit_controller/n32_s0  (
+	.I0(\u_i2c_master/prescale_reg1 [6]),
+	.I1(\u_i2c_master/bit_controller/n32_4 ),
+	.I2(\u_i2c_master/bit_controller/cnt [14]),
+	.I3(\u_i2c_master/bit_controller/n13_3 ),
+	.F(\u_i2c_master/bit_controller/n32_3 )
+);
+defparam \u_i2c_master/bit_controller/n32_s0 .INIT=16'hAA3C;
+LUT4 \u_i2c_master/bit_controller/n33_s0  (
+	.I0(\u_i2c_master/prescale_reg1 [5]),
+	.I1(\u_i2c_master/bit_controller/cnt [13]),
+	.I2(\u_i2c_master/bit_controller/n13_4 ),
+	.I3(\u_i2c_master/bit_controller/n13_3 ),
+	.F(\u_i2c_master/bit_controller/n33_3 )
+);
+defparam \u_i2c_master/bit_controller/n33_s0 .INIT=16'hAA3C;
+LUT4 \u_i2c_master/bit_controller/n34_s0  (
+	.I0(\u_i2c_master/prescale_reg1 [4]),
+	.I1(\u_i2c_master/bit_controller/n34_4 ),
+	.I2(\u_i2c_master/bit_controller/cnt [12]),
+	.I3(\u_i2c_master/bit_controller/n13_3 ),
+	.F(\u_i2c_master/bit_controller/n34_3 )
+);
+defparam \u_i2c_master/bit_controller/n34_s0 .INIT=16'hAA3C;
+LUT4 \u_i2c_master/bit_controller/n35_s0  (
+	.I0(\u_i2c_master/prescale_reg1 [3]),
+	.I1(\u_i2c_master/bit_controller/n35_4 ),
+	.I2(\u_i2c_master/bit_controller/cnt [11]),
+	.I3(\u_i2c_master/bit_controller/n13_3 ),
+	.F(\u_i2c_master/bit_controller/n35_3 )
+);
+defparam \u_i2c_master/bit_controller/n35_s0 .INIT=16'hAA3C;
+LUT4 \u_i2c_master/bit_controller/n36_s0  (
+	.I0(\u_i2c_master/prescale_reg1 [2]),
+	.I1(\u_i2c_master/bit_controller/n36_6 ),
+	.I2(\u_i2c_master/bit_controller/cnt [10]),
+	.I3(\u_i2c_master/bit_controller/n13_3 ),
+	.F(\u_i2c_master/bit_controller/n36_3 )
+);
+defparam \u_i2c_master/bit_controller/n36_s0 .INIT=16'hAA3C;
+LUT4 \u_i2c_master/bit_controller/n37_s0  (
+	.I0(\u_i2c_master/prescale_reg1 [1]),
+	.I1(\u_i2c_master/bit_controller/cnt [9]),
+	.I2(\u_i2c_master/bit_controller/n37_4 ),
+	.I3(\u_i2c_master/bit_controller/n13_3 ),
+	.F(\u_i2c_master/bit_controller/n37_3 )
+);
+defparam \u_i2c_master/bit_controller/n37_s0 .INIT=16'hAA3C;
+LUT4 \u_i2c_master/bit_controller/n38_s0  (
+	.I0(\u_i2c_master/prescale_reg1 [0]),
+	.I1(\u_i2c_master/bit_controller/n38_4 ),
+	.I2(\u_i2c_master/bit_controller/cnt [8]),
+	.I3(\u_i2c_master/bit_controller/n13_3 ),
+	.F(\u_i2c_master/bit_controller/n38_3 )
+);
+defparam \u_i2c_master/bit_controller/n38_s0 .INIT=16'hAA3C;
+LUT4 \u_i2c_master/bit_controller/n39_s0  (
+	.I0(\u_i2c_master/prescale_reg0 [7]),
+	.I1(\u_i2c_master/bit_controller/cnt [7]),
+	.I2(\u_i2c_master/bit_controller/n39_4 ),
+	.I3(\u_i2c_master/bit_controller/n13_3 ),
+	.F(\u_i2c_master/bit_controller/n39_3 )
+);
+defparam \u_i2c_master/bit_controller/n39_s0 .INIT=16'hAA3C;
+LUT4 \u_i2c_master/bit_controller/n40_s0  (
+	.I0(\u_i2c_master/prescale_reg0 [6]),
+	.I1(\u_i2c_master/bit_controller/n40_4 ),
+	.I2(\u_i2c_master/bit_controller/cnt [6]),
+	.I3(\u_i2c_master/bit_controller/n13_3 ),
+	.F(\u_i2c_master/bit_controller/n40_3 )
+);
+defparam \u_i2c_master/bit_controller/n40_s0 .INIT=16'hAA3C;
+LUT4 \u_i2c_master/bit_controller/n41_s0  (
+	.I0(\u_i2c_master/prescale_reg0 [5]),
+	.I1(\u_i2c_master/bit_controller/n41_4 ),
+	.I2(\u_i2c_master/bit_controller/cnt [5]),
+	.I3(\u_i2c_master/bit_controller/n13_3 ),
+	.F(\u_i2c_master/bit_controller/n41_3 )
+);
+defparam \u_i2c_master/bit_controller/n41_s0 .INIT=16'hAA3C;
+LUT4 \u_i2c_master/bit_controller/n42_s0  (
+	.I0(\u_i2c_master/prescale_reg0 [4]),
+	.I1(\u_i2c_master/bit_controller/cnt [4]),
+	.I2(\u_i2c_master/bit_controller/n42_4 ),
+	.I3(\u_i2c_master/bit_controller/n13_3 ),
+	.F(\u_i2c_master/bit_controller/n42_3 )
+);
+defparam \u_i2c_master/bit_controller/n42_s0 .INIT=16'hAA3C;
+LUT4 \u_i2c_master/bit_controller/n43_s0  (
+	.I0(\u_i2c_master/prescale_reg0 [3]),
+	.I1(\u_i2c_master/bit_controller/n43_4 ),
+	.I2(\u_i2c_master/bit_controller/cnt [3]),
+	.I3(\u_i2c_master/bit_controller/n13_3 ),
+	.F(\u_i2c_master/bit_controller/n43_3 )
+);
+defparam \u_i2c_master/bit_controller/n43_s0 .INIT=16'hAA3C;
+LUT4 \u_i2c_master/bit_controller/n44_s0  (
+	.I0(\u_i2c_master/prescale_reg0 [2]),
+	.I1(\u_i2c_master/bit_controller/n44_4 ),
+	.I2(\u_i2c_master/bit_controller/cnt [2]),
+	.I3(\u_i2c_master/bit_controller/n13_3 ),
+	.F(\u_i2c_master/bit_controller/n44_3 )
+);
+defparam \u_i2c_master/bit_controller/n44_s0 .INIT=16'hAA3C;
+LUT4 \u_i2c_master/bit_controller/n45_s0  (
+	.I0(\u_i2c_master/prescale_reg0 [1]),
+	.I1(\u_i2c_master/bit_controller/cnt [1]),
+	.I2(\u_i2c_master/bit_controller/cnt [0]),
+	.I3(\u_i2c_master/bit_controller/n13_3 ),
+	.F(\u_i2c_master/bit_controller/n45_3 )
+);
+defparam \u_i2c_master/bit_controller/n45_s0 .INIT=16'hAAC3;
+LUT3 \u_i2c_master/bit_controller/n46_s0  (
+	.I0(\u_i2c_master/prescale_reg0 [0]),
+	.I1(\u_i2c_master/bit_controller/cnt [0]),
+	.I2(\u_i2c_master/bit_controller/n13_3 ),
+	.F(\u_i2c_master/bit_controller/n46_3 )
+);
+defparam \u_i2c_master/bit_controller/n46_s0 .INIT=8'hA3;
+LUT3 \u_i2c_master/bit_controller/n93_s0  (
+	.I0(\u_i2c_master/bit_controller/sSDA ),
+	.I1(\u_i2c_master/bit_controller/sSCL ),
+	.I2(\u_i2c_master/bit_controller/dSDA ),
+	.F(\u_i2c_master/bit_controller/n93_3 )
+);
+defparam \u_i2c_master/bit_controller/n93_s0 .INIT=8'h40;
+LUT3 \u_i2c_master/bit_controller/n96_s0  (
+	.I0(\u_i2c_master/bit_controller/dSDA ),
+	.I1(\u_i2c_master/bit_controller/sSDA ),
+	.I2(\u_i2c_master/bit_controller/sSCL ),
+	.F(\u_i2c_master/bit_controller/n96_3 )
+);
+defparam \u_i2c_master/bit_controller/n96_s0 .INIT=8'h40;
+LUT4 \u_i2c_master/bit_controller/n110_s0  (
+	.I0(\u_i2c_master/core_cmd [3]),
+	.I1(\u_i2c_master/core_cmd [2]),
+	.I2(\u_i2c_master/core_cmd [0]),
+	.I3(\u_i2c_master/core_cmd [1]),
+	.F(\u_i2c_master/bit_controller/n110_3 )
+);
+defparam \u_i2c_master/bit_controller/n110_s0 .INIT=16'h0100;
+LUT4 \u_i2c_master/bit_controller/n123_s0  (
+	.I0(\u_i2c_master/bit_controller/sSDA ),
+	.I1(\u_i2c_master/bit_controller/sda_chk ),
+	.I2(sda_padoen_o),
+	.I3(\u_i2c_master/bit_controller/n123_4 ),
+	.F(\u_i2c_master/bit_controller/n123_3 )
+);
+defparam \u_i2c_master/bit_controller/n123_s0 .INIT=16'hFF40;
+LUT2 \u_i2c_master/bit_controller/n129_s0  (
+	.I0(\u_i2c_master/bit_controller/dSCL ),
+	.I1(\u_i2c_master/bit_controller/sSCL ),
+	.F(\u_i2c_master/bit_controller/n129_3 )
+);
+defparam \u_i2c_master/bit_controller/n129_s0 .INIT=4'h4;
+LUT3 \u_i2c_master/bit_controller/cnt_15_s3  (
+	.I0(\u_i2c_master/bit_controller/sSCL ),
+	.I1(\u_i2c_master/bit_controller/n13_3 ),
+	.I2(\u_i2c_master/bit_controller/dscl_oen ),
+	.F(\u_i2c_master/bit_controller/cnt_15_8 )
+);
+defparam \u_i2c_master/bit_controller/cnt_15_s3 .INIT=8'hEF;
+LUT4 \u_i2c_master/bit_controller/n228_s2  (
+	.I0(\u_i2c_master/core_cmd [3]),
+	.I1(\u_i2c_master/core_cmd [2]),
+	.I2(\u_i2c_master/bit_controller/n228_8 ),
+	.I3(\u_i2c_master/bit_controller/n228_9 ),
+	.F(\u_i2c_master/bit_controller/n228_7 )
+);
+defparam \u_i2c_master/bit_controller/n228_s2 .INIT=16'h1000;
+LUT3 \u_i2c_master/bit_controller/n227_s2  (
+	.I0(\u_i2c_master/i2c_al ),
+	.I1(\u_i2c_master/bit_controller/n227_8 ),
+	.I2(\u_i2c_master/bit_controller/n227_9 ),
+	.F(\u_i2c_master/bit_controller/n227_7 )
+);
+defparam \u_i2c_master/bit_controller/n227_s2 .INIT=8'h40;
+LUT3 \u_i2c_master/bit_controller/n225_s2  (
+	.I0(\u_i2c_master/bit_controller/c_state [3]),
+	.I1(\u_i2c_master/bit_controller/c_state [2]),
+	.I2(\u_i2c_master/bit_controller/n225_8 ),
+	.F(\u_i2c_master/bit_controller/n225_7 )
+);
+defparam \u_i2c_master/bit_controller/n225_s2 .INIT=8'h40;
+LUT3 \u_i2c_master/bit_controller/n224_s2  (
+	.I0(\u_i2c_master/bit_controller/c_state [2]),
+	.I1(\u_i2c_master/bit_controller/c_state [3]),
+	.I2(\u_i2c_master/bit_controller/n225_8 ),
+	.F(\u_i2c_master/bit_controller/n224_7 )
+);
+defparam \u_i2c_master/bit_controller/n224_s2 .INIT=8'h40;
+LUT4 \u_i2c_master/bit_controller/n222_s2  (
+	.I0(\u_i2c_master/i2c_al ),
+	.I1(\u_i2c_master/bit_controller/c_state [4]),
+	.I2(\u_i2c_master/bit_controller/n222_8 ),
+	.I3(\u_i2c_master/bit_controller/n222_9 ),
+	.F(\u_i2c_master/bit_controller/n222_7 )
+);
+defparam \u_i2c_master/bit_controller/n222_s2 .INIT=16'h1000;
+LUT4 \u_i2c_master/bit_controller/n221_s2  (
+	.I0(\u_i2c_master/i2c_al ),
+	.I1(\u_i2c_master/bit_controller/c_state [4]),
+	.I2(\u_i2c_master/bit_controller/n221_8 ),
+	.I3(\u_i2c_master/bit_controller/n222_9 ),
+	.F(\u_i2c_master/bit_controller/n221_7 )
+);
+defparam \u_i2c_master/bit_controller/n221_s2 .INIT=16'h1000;
+LUT3 \u_i2c_master/bit_controller/n220_s2  (
+	.I0(\u_i2c_master/i2c_al ),
+	.I1(\u_i2c_master/bit_controller/c_state [6]),
+	.I2(\u_i2c_master/bit_controller/n220_8 ),
+	.F(\u_i2c_master/bit_controller/n220_7 )
+);
+defparam \u_i2c_master/bit_controller/n220_s2 .INIT=8'h10;
+LUT4 \u_i2c_master/bit_controller/n219_s2  (
+	.I0(\u_i2c_master/core_cmd [2]),
+	.I1(\u_i2c_master/core_cmd [3]),
+	.I2(\u_i2c_master/bit_controller/n228_9 ),
+	.I3(\u_i2c_master/bit_controller/n219_8 ),
+	.F(\u_i2c_master/bit_controller/n219_7 )
+);
+defparam \u_i2c_master/bit_controller/n219_s2 .INIT=16'h4000;
+LUT4 \u_i2c_master/bit_controller/n218_s2  (
+	.I0(\u_i2c_master/i2c_al ),
+	.I1(\u_i2c_master/bit_controller/c_state [8]),
+	.I2(\u_i2c_master/bit_controller/n227_8 ),
+	.I3(\u_i2c_master/bit_controller/n218_8 ),
+	.F(\u_i2c_master/bit_controller/n218_7 )
+);
+defparam \u_i2c_master/bit_controller/n218_s2 .INIT=16'h1000;
+LUT3 \u_i2c_master/bit_controller/n217_s2  (
+	.I0(\u_i2c_master/i2c_al ),
+	.I1(\u_i2c_master/bit_controller/n217_8 ),
+	.I2(\u_i2c_master/bit_controller/n217_9 ),
+	.F(\u_i2c_master/bit_controller/n217_7 )
+);
+defparam \u_i2c_master/bit_controller/n217_s2 .INIT=8'h40;
+LUT4 \u_i2c_master/bit_controller/n215_s2  (
+	.I0(\u_i2c_master/core_cmd [3]),
+	.I1(\u_i2c_master/core_cmd [2]),
+	.I2(\u_i2c_master/bit_controller/n228_9 ),
+	.I3(\u_i2c_master/bit_controller/n219_8 ),
+	.F(\u_i2c_master/bit_controller/n215_7 )
+);
+defparam \u_i2c_master/bit_controller/n215_s2 .INIT=16'h4000;
+LUT4 \u_i2c_master/bit_controller/n214_s2  (
+	.I0(\u_i2c_master/i2c_al ),
+	.I1(\u_i2c_master/bit_controller/n214_8 ),
+	.I2(\u_i2c_master/bit_controller/n214_9 ),
+	.I3(\u_i2c_master/bit_controller/c_state [13]),
+	.F(\u_i2c_master/bit_controller/n214_7 )
+);
+defparam \u_i2c_master/bit_controller/n214_s2 .INIT=16'h1000;
+LUT3 \u_i2c_master/bit_controller/n213_s2  (
+	.I0(\u_i2c_master/bit_controller/c_state [15]),
+	.I1(\u_i2c_master/bit_controller/c_state [14]),
+	.I2(\u_i2c_master/bit_controller/n213_8 ),
+	.F(\u_i2c_master/bit_controller/n213_7 )
+);
+defparam \u_i2c_master/bit_controller/n213_s2 .INIT=8'h40;
+LUT3 \u_i2c_master/bit_controller/n212_s2  (
+	.I0(\u_i2c_master/bit_controller/c_state [14]),
+	.I1(\u_i2c_master/bit_controller/c_state [15]),
+	.I2(\u_i2c_master/bit_controller/n213_8 ),
+	.F(\u_i2c_master/bit_controller/n212_7 )
+);
+defparam \u_i2c_master/bit_controller/n212_s2 .INIT=8'h40;
+LUT4 \u_i2c_master/bit_controller/n250_s1  (
+	.I0(\u_i2c_master/bit_controller/n250_7 ),
+	.I1(\u_i2c_master/bit_controller/n250_8 ),
+	.I2(\u_i2c_master/i2c_al ),
+	.I3(\u_i2c_master/bit_controller/clk_en ),
+	.F(\u_i2c_master/bit_controller/n250_6 )
+);
+defparam \u_i2c_master/bit_controller/n250_s1 .INIT=16'h0E00;
+LUT4 \u_i2c_master/bit_controller/n230_s1  (
+	.I0(\u_i2c_master/bit_controller/n230_14 ),
+	.I1(\u_i2c_master/bit_controller/n230_8 ),
+	.I2(\u_i2c_master/bit_controller/n230_9 ),
+	.I3(\u_i2c_master/bit_controller/n230_10 ),
+	.F(\u_i2c_master/bit_controller/n230_6 )
+);
+defparam \u_i2c_master/bit_controller/n230_s1 .INIT=16'hEFFF;
+LUT4 \u_i2c_master/bit_controller/n203_s10  (
+	.I0(\u_i2c_master/bit_controller/n231_8 ),
+	.I1(\u_i2c_master/bit_controller/n220_8 ),
+	.I2(\u_i2c_master/bit_controller/n230_10 ),
+	.I3(\u_i2c_master/bit_controller/n203_20 ),
+	.F(\u_i2c_master/bit_controller/n203_19 )
+);
+defparam \u_i2c_master/bit_controller/n203_s10 .INIT=16'hEFFF;
+LUT4 \u_i2c_master/bit_controller/n13_s1  (
+	.I0(\u_i2c_master/bit_controller/cnt [4]),
+	.I1(\u_i2c_master/bit_controller/n13_6 ),
+	.I2(\u_i2c_master/bit_controller/n13_7 ),
+	.I3(\u_i2c_master/bit_controller/n42_4 ),
+	.F(\u_i2c_master/bit_controller/n13_4 )
+);
+defparam \u_i2c_master/bit_controller/n13_s1 .INIT=16'h4000;
+LUT3 \u_i2c_master/bit_controller/n13_s2  (
+	.I0(\u_i2c_master/bit_controller/cnt [13]),
+	.I1(\u_i2c_master/bit_controller/cnt [14]),
+	.I2(\u_i2c_master/bit_controller/cnt [15]),
+	.F(\u_i2c_master/bit_controller/n13_5 )
+);
+defparam \u_i2c_master/bit_controller/n13_s2 .INIT=8'h01;
+LUT3 \u_i2c_master/bit_controller/n31_s1  (
+	.I0(\u_i2c_master/bit_controller/cnt [13]),
+	.I1(\u_i2c_master/bit_controller/cnt [14]),
+	.I2(\u_i2c_master/bit_controller/n13_4 ),
+	.F(\u_i2c_master/bit_controller/n31_4 )
+);
+defparam \u_i2c_master/bit_controller/n31_s1 .INIT=8'h10;
+LUT2 \u_i2c_master/bit_controller/n32_s1  (
+	.I0(\u_i2c_master/bit_controller/cnt [13]),
+	.I1(\u_i2c_master/bit_controller/n13_4 ),
+	.F(\u_i2c_master/bit_controller/n32_4 )
+);
+defparam \u_i2c_master/bit_controller/n32_s1 .INIT=4'h4;
+LUT4 \u_i2c_master/bit_controller/n34_s1  (
+	.I0(\u_i2c_master/bit_controller/cnt [9]),
+	.I1(\u_i2c_master/bit_controller/cnt [10]),
+	.I2(\u_i2c_master/bit_controller/cnt [11]),
+	.I3(\u_i2c_master/bit_controller/n37_4 ),
+	.F(\u_i2c_master/bit_controller/n34_4 )
+);
+defparam \u_i2c_master/bit_controller/n34_s1 .INIT=16'h0100;
+LUT3 \u_i2c_master/bit_controller/n35_s1  (
+	.I0(\u_i2c_master/bit_controller/cnt [9]),
+	.I1(\u_i2c_master/bit_controller/cnt [10]),
+	.I2(\u_i2c_master/bit_controller/n37_4 ),
+	.F(\u_i2c_master/bit_controller/n35_4 )
+);
+defparam \u_i2c_master/bit_controller/n35_s1 .INIT=8'h10;
+LUT3 \u_i2c_master/bit_controller/n37_s1  (
+	.I0(\u_i2c_master/bit_controller/cnt [4]),
+	.I1(\u_i2c_master/bit_controller/n13_7 ),
+	.I2(\u_i2c_master/bit_controller/n42_4 ),
+	.F(\u_i2c_master/bit_controller/n37_4 )
+);
+defparam \u_i2c_master/bit_controller/n37_s1 .INIT=8'h40;
+LUT2 \u_i2c_master/bit_controller/n38_s1  (
+	.I0(\u_i2c_master/bit_controller/cnt [7]),
+	.I1(\u_i2c_master/bit_controller/n39_4 ),
+	.F(\u_i2c_master/bit_controller/n38_4 )
+);
+defparam \u_i2c_master/bit_controller/n38_s1 .INIT=4'h4;
+LUT4 \u_i2c_master/bit_controller/n39_s1  (
+	.I0(\u_i2c_master/bit_controller/cnt [4]),
+	.I1(\u_i2c_master/bit_controller/cnt [5]),
+	.I2(\u_i2c_master/bit_controller/cnt [6]),
+	.I3(\u_i2c_master/bit_controller/n42_4 ),
+	.F(\u_i2c_master/bit_controller/n39_4 )
+);
+defparam \u_i2c_master/bit_controller/n39_s1 .INIT=16'h0100;
+LUT3 \u_i2c_master/bit_controller/n40_s1  (
+	.I0(\u_i2c_master/bit_controller/cnt [4]),
+	.I1(\u_i2c_master/bit_controller/cnt [5]),
+	.I2(\u_i2c_master/bit_controller/n42_4 ),
+	.F(\u_i2c_master/bit_controller/n40_4 )
+);
+defparam \u_i2c_master/bit_controller/n40_s1 .INIT=8'h10;
+LUT2 \u_i2c_master/bit_controller/n41_s1  (
+	.I0(\u_i2c_master/bit_controller/cnt [4]),
+	.I1(\u_i2c_master/bit_controller/n42_4 ),
+	.F(\u_i2c_master/bit_controller/n41_4 )
+);
+defparam \u_i2c_master/bit_controller/n41_s1 .INIT=4'h4;
+LUT4 \u_i2c_master/bit_controller/n42_s1  (
+	.I0(\u_i2c_master/bit_controller/cnt [0]),
+	.I1(\u_i2c_master/bit_controller/cnt [1]),
+	.I2(\u_i2c_master/bit_controller/cnt [2]),
+	.I3(\u_i2c_master/bit_controller/cnt [3]),
+	.F(\u_i2c_master/bit_controller/n42_4 )
+);
+defparam \u_i2c_master/bit_controller/n42_s1 .INIT=16'h0001;
+LUT3 \u_i2c_master/bit_controller/n43_s1  (
+	.I0(\u_i2c_master/bit_controller/cnt [0]),
+	.I1(\u_i2c_master/bit_controller/cnt [1]),
+	.I2(\u_i2c_master/bit_controller/cnt [2]),
+	.F(\u_i2c_master/bit_controller/n43_4 )
+);
+defparam \u_i2c_master/bit_controller/n43_s1 .INIT=8'h01;
+LUT2 \u_i2c_master/bit_controller/n44_s1  (
+	.I0(\u_i2c_master/bit_controller/cnt [0]),
+	.I1(\u_i2c_master/bit_controller/cnt [1]),
+	.F(\u_i2c_master/bit_controller/n44_4 )
+);
+defparam \u_i2c_master/bit_controller/n44_s1 .INIT=4'h1;
+LUT4 \u_i2c_master/bit_controller/n123_s1  (
+	.I0(\u_i2c_master/bit_controller/n123_5 ),
+	.I1(\u_i2c_master/bit_controller/n214_9 ),
+	.I2(\u_i2c_master/bit_controller/cmd_stop ),
+	.I3(\u_i2c_master/bit_controller/sto_condition ),
+	.F(\u_i2c_master/bit_controller/n123_4 )
+);
+defparam \u_i2c_master/bit_controller/n123_s1 .INIT=16'h0700;
+LUT4 \u_i2c_master/bit_controller/n231_s3  (
+	.I0(\u_i2c_master/bit_controller/c_state [13]),
+	.I1(\u_i2c_master/bit_controller/c_state [16]),
+	.I2(\u_i2c_master/bit_controller/n214_9 ),
+	.I3(\u_i2c_master/bit_controller/n214_8 ),
+	.F(\u_i2c_master/bit_controller/n231_8 )
+);
+defparam \u_i2c_master/bit_controller/n231_s3 .INIT=16'h0010;
+LUT2 \u_i2c_master/bit_controller/n228_s3  (
+	.I0(\u_i2c_master/core_cmd [1]),
+	.I1(\u_i2c_master/core_cmd [0]),
+	.F(\u_i2c_master/bit_controller/n228_8 )
+);
+defparam \u_i2c_master/bit_controller/n228_s3 .INIT=4'h4;
+LUT3 \u_i2c_master/bit_controller/n228_s4  (
+	.I0(\u_i2c_master/i2c_al ),
+	.I1(\u_i2c_master/bit_controller/n214_9 ),
+	.I2(\u_i2c_master/bit_controller/n123_5 ),
+	.F(\u_i2c_master/bit_controller/n228_9 )
+);
+defparam \u_i2c_master/bit_controller/n228_s4 .INIT=8'h40;
+LUT4 \u_i2c_master/bit_controller/n227_s3  (
+	.I0(\u_i2c_master/bit_controller/c_state [10]),
+	.I1(\u_i2c_master/bit_controller/c_state [11]),
+	.I2(\u_i2c_master/bit_controller/c_state [12]),
+	.I3(\u_i2c_master/bit_controller/n123_5 ),
+	.F(\u_i2c_master/bit_controller/n227_8 )
+);
+defparam \u_i2c_master/bit_controller/n227_s3 .INIT=16'h0100;
+LUT4 \u_i2c_master/bit_controller/n227_s4  (
+	.I0(\u_i2c_master/bit_controller/n227_10 ),
+	.I1(\u_i2c_master/bit_controller/c_state [0]),
+	.I2(\u_i2c_master/bit_controller/n227_11 ),
+	.I3(\u_i2c_master/bit_controller/n227_12 ),
+	.F(\u_i2c_master/bit_controller/n227_9 )
+);
+defparam \u_i2c_master/bit_controller/n227_s4 .INIT=16'h8000;
+LUT4 \u_i2c_master/bit_controller/n225_s3  (
+	.I0(\u_i2c_master/i2c_al ),
+	.I1(\u_i2c_master/bit_controller/c_state [4]),
+	.I2(\u_i2c_master/bit_controller/n225_9 ),
+	.I3(\u_i2c_master/bit_controller/n225_10 ),
+	.F(\u_i2c_master/bit_controller/n225_8 )
+);
+defparam \u_i2c_master/bit_controller/n225_s3 .INIT=16'h1000;
+LUT3 \u_i2c_master/bit_controller/n222_s3  (
+	.I0(\u_i2c_master/bit_controller/c_state [6]),
+	.I1(\u_i2c_master/bit_controller/c_state [7]),
+	.I2(\u_i2c_master/bit_controller/c_state [5]),
+	.F(\u_i2c_master/bit_controller/n222_8 )
+);
+defparam \u_i2c_master/bit_controller/n222_s3 .INIT=8'h10;
+LUT4 \u_i2c_master/bit_controller/n222_s4  (
+	.I0(\u_i2c_master/bit_controller/n123_5 ),
+	.I1(\u_i2c_master/bit_controller/n222_10 ),
+	.I2(\u_i2c_master/bit_controller/n222_11 ),
+	.I3(\u_i2c_master/bit_controller/n227_12 ),
+	.F(\u_i2c_master/bit_controller/n222_9 )
+);
+defparam \u_i2c_master/bit_controller/n222_s4 .INIT=16'h8000;
+LUT3 \u_i2c_master/bit_controller/n221_s3  (
+	.I0(\u_i2c_master/bit_controller/c_state [5]),
+	.I1(\u_i2c_master/bit_controller/c_state [7]),
+	.I2(\u_i2c_master/bit_controller/c_state [6]),
+	.F(\u_i2c_master/bit_controller/n221_8 )
+);
+defparam \u_i2c_master/bit_controller/n221_s3 .INIT=8'h10;
+LUT4 \u_i2c_master/bit_controller/n220_s3  (
+	.I0(\u_i2c_master/bit_controller/c_state [6]),
+	.I1(\u_i2c_master/bit_controller/c_state [7]),
+	.I2(\u_i2c_master/bit_controller/n227_11 ),
+	.I3(\u_i2c_master/bit_controller/n222_9 ),
+	.F(\u_i2c_master/bit_controller/n220_8 )
+);
+defparam \u_i2c_master/bit_controller/n220_s3 .INIT=16'h6000;
+LUT2 \u_i2c_master/bit_controller/n219_s3  (
+	.I0(\u_i2c_master/core_cmd [1]),
+	.I1(\u_i2c_master/core_cmd [0]),
+	.F(\u_i2c_master/bit_controller/n219_8 )
+);
+defparam \u_i2c_master/bit_controller/n219_s3 .INIT=4'h1;
+LUT3 \u_i2c_master/bit_controller/n218_s3  (
+	.I0(\u_i2c_master/bit_controller/n218_9 ),
+	.I1(\u_i2c_master/bit_controller/n227_11 ),
+	.I2(\u_i2c_master/bit_controller/n218_10 ),
+	.F(\u_i2c_master/bit_controller/n218_8 )
+);
+defparam \u_i2c_master/bit_controller/n218_s3 .INIT=8'h40;
+LUT3 \u_i2c_master/bit_controller/n217_s3  (
+	.I0(\u_i2c_master/bit_controller/c_state [8]),
+	.I1(\u_i2c_master/bit_controller/c_state [9]),
+	.I2(\u_i2c_master/bit_controller/c_state [10]),
+	.F(\u_i2c_master/bit_controller/n217_8 )
+);
+defparam \u_i2c_master/bit_controller/n217_s3 .INIT=8'h10;
+LUT4 \u_i2c_master/bit_controller/n217_s4  (
+	.I0(\u_i2c_master/bit_controller/n227_11 ),
+	.I1(\u_i2c_master/bit_controller/n218_10 ),
+	.I2(\u_i2c_master/bit_controller/n123_5 ),
+	.I3(\u_i2c_master/bit_controller/n222_10 ),
+	.F(\u_i2c_master/bit_controller/n217_9 )
+);
+defparam \u_i2c_master/bit_controller/n217_s4 .INIT=16'h8000;
+LUT4 \u_i2c_master/bit_controller/n214_s3  (
+	.I0(\u_i2c_master/bit_controller/c_state [13]),
+	.I1(\u_i2c_master/bit_controller/c_state [14]),
+	.I2(\u_i2c_master/bit_controller/c_state [15]),
+	.I3(\u_i2c_master/bit_controller/c_state [16]),
+	.F(\u_i2c_master/bit_controller/n214_8 )
+);
+defparam \u_i2c_master/bit_controller/n214_s3 .INIT=16'hFEE9;
+LUT4 \u_i2c_master/bit_controller/n214_s4  (
+	.I0(\u_i2c_master/bit_controller/n214_10 ),
+	.I1(\u_i2c_master/bit_controller/n227_11 ),
+	.I2(\u_i2c_master/bit_controller/n214_11 ),
+	.I3(\u_i2c_master/bit_controller/n218_10 ),
+	.F(\u_i2c_master/bit_controller/n214_9 )
+);
+defparam \u_i2c_master/bit_controller/n214_s4 .INIT=16'h8000;
+LUT4 \u_i2c_master/bit_controller/n213_s3  (
+	.I0(\u_i2c_master/i2c_al ),
+	.I1(\u_i2c_master/bit_controller/c_state [13]),
+	.I2(\u_i2c_master/bit_controller/c_state [16]),
+	.I3(\u_i2c_master/bit_controller/n214_9 ),
+	.F(\u_i2c_master/bit_controller/n213_8 )
+);
+defparam \u_i2c_master/bit_controller/n213_s3 .INIT=16'h0100;
+LUT4 \u_i2c_master/bit_controller/n250_s2  (
+	.I0(\u_i2c_master/bit_controller/n250_9 ),
+	.I1(\u_i2c_master/bit_controller/n227_11 ),
+	.I2(\u_i2c_master/bit_controller/n214_11 ),
+	.I3(\u_i2c_master/bit_controller/n218_10 ),
+	.F(\u_i2c_master/bit_controller/n250_7 )
+);
+defparam \u_i2c_master/bit_controller/n250_s2 .INIT=16'h4000;
+LUT4 \u_i2c_master/bit_controller/n250_s3  (
+	.I0(\u_i2c_master/bit_controller/c_state [5]),
+	.I1(\u_i2c_master/bit_controller/c_state [8]),
+	.I2(\u_i2c_master/bit_controller/n250_10 ),
+	.I3(\u_i2c_master/bit_controller/n227_8 ),
+	.F(\u_i2c_master/bit_controller/n250_8 )
+);
+defparam \u_i2c_master/bit_controller/n250_s3 .INIT=16'h1000;
+LUT4 \u_i2c_master/bit_controller/n230_s3  (
+	.I0(\u_i2c_master/bit_controller/c_state [10]),
+	.I1(\u_i2c_master/bit_controller/c_state [11]),
+	.I2(\u_i2c_master/bit_controller/n123_5 ),
+	.I3(\u_i2c_master/bit_controller/n218_8 ),
+	.F(\u_i2c_master/bit_controller/n230_8 )
+);
+defparam \u_i2c_master/bit_controller/n230_s3 .INIT=16'h1000;
+LUT4 \u_i2c_master/bit_controller/n230_s4  (
+	.I0(\u_i2c_master/bit_controller/n227_9 ),
+	.I1(\u_i2c_master/bit_controller/n227_8 ),
+	.I2(\u_i2c_master/bit_controller/n230_12 ),
+	.I3(\u_i2c_master/bit_controller/n214_9 ),
+	.F(\u_i2c_master/bit_controller/n230_9 )
+);
+defparam \u_i2c_master/bit_controller/n230_s4 .INIT=16'h7077;
+LUT3 \u_i2c_master/bit_controller/n230_s5  (
+	.I0(\u_i2c_master/bit_controller/n217_9 ),
+	.I1(\u_i2c_master/bit_controller/n217_8 ),
+	.I2(\u_i2c_master/i2c_al ),
+	.F(\u_i2c_master/bit_controller/n230_10 )
+);
+defparam \u_i2c_master/bit_controller/n230_s5 .INIT=8'h07;
+LUT4 \u_i2c_master/bit_controller/n203_s11  (
+	.I0(\u_i2c_master/bit_controller/n226_9 ),
+	.I1(\u_i2c_master/bit_controller/n230_11 ),
+	.I2(\u_i2c_master/bit_controller/n203_21 ),
+	.I3(\u_i2c_master/bit_controller/n225_10 ),
+	.F(\u_i2c_master/bit_controller/n203_20 )
+);
+defparam \u_i2c_master/bit_controller/n203_s11 .INIT=16'h0DDD;
+LUT4 \u_i2c_master/bit_controller/n13_s3  (
+	.I0(\u_i2c_master/bit_controller/cnt [9]),
+	.I1(\u_i2c_master/bit_controller/cnt [10]),
+	.I2(\u_i2c_master/bit_controller/cnt [11]),
+	.I3(\u_i2c_master/bit_controller/cnt [12]),
+	.F(\u_i2c_master/bit_controller/n13_6 )
+);
+defparam \u_i2c_master/bit_controller/n13_s3 .INIT=16'h0001;
+LUT4 \u_i2c_master/bit_controller/n13_s4  (
+	.I0(\u_i2c_master/bit_controller/cnt [5]),
+	.I1(\u_i2c_master/bit_controller/cnt [6]),
+	.I2(\u_i2c_master/bit_controller/cnt [7]),
+	.I3(\u_i2c_master/bit_controller/cnt [8]),
+	.F(\u_i2c_master/bit_controller/n13_7 )
+);
+defparam \u_i2c_master/bit_controller/n13_s4 .INIT=16'h0001;
+LUT4 \u_i2c_master/bit_controller/n123_s2  (
+	.I0(\u_i2c_master/bit_controller/c_state [13]),
+	.I1(\u_i2c_master/bit_controller/c_state [14]),
+	.I2(\u_i2c_master/bit_controller/c_state [15]),
+	.I3(\u_i2c_master/bit_controller/c_state [16]),
+	.F(\u_i2c_master/bit_controller/n123_5 )
+);
+defparam \u_i2c_master/bit_controller/n123_s2 .INIT=16'h0001;
+LUT3 \u_i2c_master/bit_controller/n227_s5  (
+	.I0(\u_i2c_master/bit_controller/c_state [1]),
+	.I1(\u_i2c_master/bit_controller/c_state [6]),
+	.I2(\u_i2c_master/bit_controller/c_state [7]),
+	.F(\u_i2c_master/bit_controller/n227_10 )
+);
+defparam \u_i2c_master/bit_controller/n227_s5 .INIT=8'h01;
+LUT4 \u_i2c_master/bit_controller/n227_s6  (
+	.I0(\u_i2c_master/bit_controller/c_state [2]),
+	.I1(\u_i2c_master/bit_controller/c_state [3]),
+	.I2(\u_i2c_master/bit_controller/c_state [4]),
+	.I3(\u_i2c_master/bit_controller/c_state [5]),
+	.F(\u_i2c_master/bit_controller/n227_11 )
+);
+defparam \u_i2c_master/bit_controller/n227_s6 .INIT=16'h0001;
+LUT3 \u_i2c_master/bit_controller/n227_s7  (
+	.I0(\u_i2c_master/bit_controller/c_state [8]),
+	.I1(\u_i2c_master/bit_controller/c_state [9]),
+	.I2(\u_i2c_master/bit_controller/c_state [10]),
+	.F(\u_i2c_master/bit_controller/n227_12 )
+);
+defparam \u_i2c_master/bit_controller/n227_s7 .INIT=8'h01;
+LUT4 \u_i2c_master/bit_controller/n226_s4  (
+	.I0(\u_i2c_master/bit_controller/n226_10 ),
+	.I1(\u_i2c_master/bit_controller/n227_11 ),
+	.I2(\u_i2c_master/bit_controller/n123_5 ),
+	.I3(\u_i2c_master/bit_controller/n227_12 ),
+	.F(\u_i2c_master/bit_controller/n226_9 )
+);
+defparam \u_i2c_master/bit_controller/n226_s4 .INIT=16'h8000;
+LUT3 \u_i2c_master/bit_controller/n225_s4  (
+	.I0(\u_i2c_master/bit_controller/c_state [5]),
+	.I1(\u_i2c_master/bit_controller/c_state [8]),
+	.I2(\u_i2c_master/bit_controller/n218_10 ),
+	.F(\u_i2c_master/bit_controller/n225_9 )
+);
+defparam \u_i2c_master/bit_controller/n225_s4 .INIT=8'h10;
+LUT4 \u_i2c_master/bit_controller/n225_s5  (
+	.I0(\u_i2c_master/bit_controller/c_state [9]),
+	.I1(\u_i2c_master/bit_controller/c_state [10]),
+	.I2(\u_i2c_master/bit_controller/n123_5 ),
+	.I3(\u_i2c_master/bit_controller/n222_10 ),
+	.F(\u_i2c_master/bit_controller/n225_10 )
+);
+defparam \u_i2c_master/bit_controller/n225_s5 .INIT=16'h1000;
+LUT2 \u_i2c_master/bit_controller/n222_s5  (
+	.I0(\u_i2c_master/bit_controller/c_state [11]),
+	.I1(\u_i2c_master/bit_controller/c_state [12]),
+	.F(\u_i2c_master/bit_controller/n222_10 )
+);
+defparam \u_i2c_master/bit_controller/n222_s5 .INIT=4'h1;
+LUT4 \u_i2c_master/bit_controller/n222_s6  (
+	.I0(\u_i2c_master/bit_controller/c_state [0]),
+	.I1(\u_i2c_master/bit_controller/c_state [1]),
+	.I2(\u_i2c_master/bit_controller/c_state [2]),
+	.I3(\u_i2c_master/bit_controller/c_state [3]),
+	.F(\u_i2c_master/bit_controller/n222_11 )
+);
+defparam \u_i2c_master/bit_controller/n222_s6 .INIT=16'h0001;
+LUT3 \u_i2c_master/bit_controller/n218_s4  (
+	.I0(\u_i2c_master/bit_controller/c_state [8]),
+	.I1(\u_i2c_master/bit_controller/c_state [9]),
+	.I2(\u_i2c_master/bit_controller/c_state [12]),
+	.F(\u_i2c_master/bit_controller/n218_9 )
+);
+defparam \u_i2c_master/bit_controller/n218_s4 .INIT=8'hE9;
+LUT4 \u_i2c_master/bit_controller/n218_s5  (
+	.I0(\u_i2c_master/bit_controller/c_state [0]),
+	.I1(\u_i2c_master/bit_controller/c_state [1]),
+	.I2(\u_i2c_master/bit_controller/c_state [6]),
+	.I3(\u_i2c_master/bit_controller/c_state [7]),
+	.F(\u_i2c_master/bit_controller/n218_10 )
+);
+defparam \u_i2c_master/bit_controller/n218_s5 .INIT=16'h0001;
+LUT2 \u_i2c_master/bit_controller/n214_s5  (
+	.I0(\u_i2c_master/bit_controller/c_state [8]),
+	.I1(\u_i2c_master/bit_controller/c_state [12]),
+	.F(\u_i2c_master/bit_controller/n214_10 )
+);
+defparam \u_i2c_master/bit_controller/n214_s5 .INIT=4'h1;
+LUT3 \u_i2c_master/bit_controller/n214_s6  (
+	.I0(\u_i2c_master/bit_controller/c_state [9]),
+	.I1(\u_i2c_master/bit_controller/c_state [10]),
+	.I2(\u_i2c_master/bit_controller/c_state [11]),
+	.F(\u_i2c_master/bit_controller/n214_11 )
+);
+defparam \u_i2c_master/bit_controller/n214_s6 .INIT=8'h01;
+LUT4 \u_i2c_master/bit_controller/n250_s4  (
+	.I0(\u_i2c_master/bit_controller/n250_11 ),
+	.I1(\u_i2c_master/bit_controller/n123_5 ),
+	.I2(\u_i2c_master/bit_controller/c_state [8]),
+	.I3(\u_i2c_master/bit_controller/c_state [12]),
+	.F(\u_i2c_master/bit_controller/n250_9 )
+);
+defparam \u_i2c_master/bit_controller/n250_s4 .INIT=16'hF335;
+LUT2 \u_i2c_master/bit_controller/n250_s5  (
+	.I0(\u_i2c_master/bit_controller/n218_10 ),
+	.I1(\u_i2c_master/bit_controller/n250_12 ),
+	.F(\u_i2c_master/bit_controller/n250_10 )
+);
+defparam \u_i2c_master/bit_controller/n250_s5 .INIT=4'h8;
+LUT2 \u_i2c_master/bit_controller/n230_s6  (
+	.I0(\u_i2c_master/bit_controller/c_state [1]),
+	.I1(\u_i2c_master/bit_controller/c_state [11]),
+	.F(\u_i2c_master/bit_controller/n230_11 )
+);
+defparam \u_i2c_master/bit_controller/n230_s6 .INIT=4'h9;
+LUT4 \u_i2c_master/bit_controller/n230_s7  (
+	.I0(\u_i2c_master/bit_controller/n214_8 ),
+	.I1(\u_i2c_master/core_txd ),
+	.I2(sda_padoen_o),
+	.I3(\u_i2c_master/bit_controller/n123_5 ),
+	.F(\u_i2c_master/bit_controller/n230_12 )
+);
+defparam \u_i2c_master/bit_controller/n230_s7 .INIT=16'h0BBB;
+LUT4 \u_i2c_master/bit_controller/n203_s12  (
+	.I0(\u_i2c_master/bit_controller/c_state [4]),
+	.I1(\u_i2c_master/bit_controller/c_state [5]),
+	.I2(\u_i2c_master/bit_controller/n203_22 ),
+	.I3(\u_i2c_master/bit_controller/n218_10 ),
+	.F(\u_i2c_master/bit_controller/n203_21 )
+);
+defparam \u_i2c_master/bit_controller/n203_s12 .INIT=16'h0100;
+LUT4 \u_i2c_master/bit_controller/n226_s5  (
+	.I0(\u_i2c_master/bit_controller/c_state [0]),
+	.I1(\u_i2c_master/bit_controller/c_state [6]),
+	.I2(\u_i2c_master/bit_controller/c_state [7]),
+	.I3(\u_i2c_master/bit_controller/c_state [12]),
+	.F(\u_i2c_master/bit_controller/n226_10 )
+);
+defparam \u_i2c_master/bit_controller/n226_s5 .INIT=16'h0001;
+LUT4 \u_i2c_master/bit_controller/n250_s6  (
+	.I0(\u_i2c_master/bit_controller/c_state [13]),
+	.I1(\u_i2c_master/bit_controller/c_state [14]),
+	.I2(\u_i2c_master/bit_controller/c_state [15]),
+	.I3(\u_i2c_master/bit_controller/c_state [16]),
+	.F(\u_i2c_master/bit_controller/n250_11 )
+);
+defparam \u_i2c_master/bit_controller/n250_s6 .INIT=16'h0100;
+LUT4 \u_i2c_master/bit_controller/n250_s7  (
+	.I0(\u_i2c_master/bit_controller/c_state [2]),
+	.I1(\u_i2c_master/bit_controller/c_state [3]),
+	.I2(\u_i2c_master/bit_controller/c_state [9]),
+	.I3(\u_i2c_master/bit_controller/c_state [4]),
+	.F(\u_i2c_master/bit_controller/n250_12 )
+);
+defparam \u_i2c_master/bit_controller/n250_s7 .INIT=16'h0100;
+LUT3 \u_i2c_master/bit_controller/n203_s13  (
+	.I0(\u_i2c_master/bit_controller/c_state [2]),
+	.I1(\u_i2c_master/bit_controller/c_state [3]),
+	.I2(\u_i2c_master/bit_controller/c_state [8]),
+	.F(\u_i2c_master/bit_controller/n203_22 )
+);
+defparam \u_i2c_master/bit_controller/n203_s13 .INIT=8'hE9;
+LUT4 \u_i2c_master/bit_controller/n216_s3  (
+	.I0(\u_i2c_master/bit_controller/c_state [1]),
+	.I1(\u_i2c_master/bit_controller/c_state [11]),
+	.I2(\u_i2c_master/i2c_al ),
+	.I3(\u_i2c_master/bit_controller/n226_9 ),
+	.F(\u_i2c_master/bit_controller/n216_9 )
+);
+defparam \u_i2c_master/bit_controller/n216_s3 .INIT=16'h0400;
+LUT4 \u_i2c_master/bit_controller/n226_s6  (
+	.I0(\u_i2c_master/bit_controller/c_state [11]),
+	.I1(\u_i2c_master/bit_controller/c_state [1]),
+	.I2(\u_i2c_master/i2c_al ),
+	.I3(\u_i2c_master/bit_controller/n226_9 ),
+	.F(\u_i2c_master/bit_controller/n226_12 )
+);
+defparam \u_i2c_master/bit_controller/n226_s6 .INIT=16'h0400;
+LUT3 \u_i2c_master/bit_controller/n230_s8  (
+	.I0(\u_i2c_master/bit_controller/n226_9 ),
+	.I1(\u_i2c_master/bit_controller/c_state [1]),
+	.I2(\u_i2c_master/bit_controller/c_state [11]),
+	.F(\u_i2c_master/bit_controller/n230_14 )
+);
+defparam \u_i2c_master/bit_controller/n230_s8 .INIT=8'h28;
+LUT4 \u_i2c_master/bit_controller/n36_s2  (
+	.I0(\u_i2c_master/bit_controller/cnt [9]),
+	.I1(\u_i2c_master/bit_controller/cnt [4]),
+	.I2(\u_i2c_master/bit_controller/n13_7 ),
+	.I3(\u_i2c_master/bit_controller/n42_4 ),
+	.F(\u_i2c_master/bit_controller/n36_6 )
+);
+defparam \u_i2c_master/bit_controller/n36_s2 .INIT=16'h1000;
+LUT4 \u_i2c_master/bit_controller/n223_s3  (
+	.I0(\u_i2c_master/bit_controller/n110_3 ),
+	.I1(\u_i2c_master/i2c_al ),
+	.I2(\u_i2c_master/bit_controller/n214_9 ),
+	.I3(\u_i2c_master/bit_controller/n123_5 ),
+	.F(\u_i2c_master/bit_controller/n223_9 )
+);
+defparam \u_i2c_master/bit_controller/n223_s3 .INIT=16'h2000;
+LUT4 \u_i2c_master/bit_controller/SCL_OEN_s5  (
+	.I0(\u_i2c_master/bit_controller/n228_9 ),
+	.I1(\u_i2c_master/bit_controller/n227_7 ),
+	.I2(\u_i2c_master/i2c_al ),
+	.I3(\u_i2c_master/bit_controller/clk_en ),
+	.F(\u_i2c_master/bit_controller/SCL_OEN_8 )
+);
+defparam \u_i2c_master/bit_controller/SCL_OEN_s5 .INIT=16'h1110;
+LUT3 \u_i2c_master/bit_controller/n102_s5  (
+	.I0(\u_i2c_master/bit_controller/sta_condition ),
+	.I1(\u_i2c_master/i2c_busy ),
+	.I2(\u_i2c_master/bit_controller/sto_condition ),
+	.F(\u_i2c_master/bit_controller/n102_11 )
+);
+defparam \u_i2c_master/bit_controller/n102_s5 .INIT=8'h0E;
+LUT4 \u_i2c_master/bit_controller/n231_s5  (
+	.I0(\u_i2c_master/bit_controller/n231_8 ),
+	.I1(\u_i2c_master/bit_controller/sda_chk ),
+	.I2(\u_i2c_master/i2c_al ),
+	.I3(\u_i2c_master/bit_controller/clk_en ),
+	.F(\u_i2c_master/bit_controller/n231_11 )
+);
+defparam \u_i2c_master/bit_controller/n231_s5 .INIT=16'h0A0C;
+LUT2 \u_i2c_master/bit_controller/c_state_16_s4  (
+	.I0(\u_i2c_master/i2c_al ),
+	.I1(\u_i2c_master/bit_controller/clk_en ),
+	.F(\u_i2c_master/bit_controller/c_state_16_10 )
+);
+defparam \u_i2c_master/bit_controller/c_state_16_s4 .INIT=4'hE;
+DFFP \u_i2c_master/bit_controller/sSCL_s0  (
+	.D(SCL_in),
+	.CLK(I_CLK),
+	.PRESET(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/sSCL )
+);
+defparam \u_i2c_master/bit_controller/sSCL_s0 .INIT=1'b1;
+DFFP \u_i2c_master/bit_controller/sSDA_s0  (
+	.D(SDA_in),
+	.CLK(I_CLK),
+	.PRESET(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/sSDA )
+);
+defparam \u_i2c_master/bit_controller/sSDA_s0 .INIT=1'b1;
+DFFP \u_i2c_master/bit_controller/dSCL_s0  (
+	.D(\u_i2c_master/bit_controller/sSCL ),
+	.CLK(I_CLK),
+	.PRESET(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/dSCL )
+);
+defparam \u_i2c_master/bit_controller/dSCL_s0 .INIT=1'b1;
+DFFP \u_i2c_master/bit_controller/dSDA_s0  (
+	.D(\u_i2c_master/bit_controller/sSDA ),
+	.CLK(I_CLK),
+	.PRESET(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/dSDA )
+);
+defparam \u_i2c_master/bit_controller/dSDA_s0 .INIT=1'b1;
+DFFC \u_i2c_master/bit_controller/sta_condition_s0  (
+	.D(\u_i2c_master/bit_controller/n93_3 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/sta_condition )
+);
+defparam \u_i2c_master/bit_controller/sta_condition_s0 .INIT=1'b0;
+DFFC \u_i2c_master/bit_controller/sto_condition_s0  (
+	.D(\u_i2c_master/bit_controller/n96_3 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/sto_condition )
+);
+defparam \u_i2c_master/bit_controller/sto_condition_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/cmd_stop_s0  (
+	.D(\u_i2c_master/bit_controller/n110_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/clk_en ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/cmd_stop )
+);
+defparam \u_i2c_master/bit_controller/cmd_stop_s0 .INIT=1'b0;
+DFFC \u_i2c_master/bit_controller/AL_s0  (
+	.D(\u_i2c_master/bit_controller/n123_3 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/i2c_al )
+);
+defparam \u_i2c_master/bit_controller/AL_s0 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/DOUT_s0  (
+	.D(\u_i2c_master/bit_controller/sSDA ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/n129_3 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/core_rxd )
+);
+defparam \u_i2c_master/bit_controller/DOUT_s0 .INIT=1'b0;
+DFFC \u_i2c_master/bit_controller/CMD_ACK_s0  (
+	.D(\u_i2c_master/bit_controller/n250_6 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/core_ack )
+);
+defparam \u_i2c_master/bit_controller/CMD_ACK_s0 .INIT=1'b0;
+DFF \u_i2c_master/bit_controller/dscl_oen_s0  (
+	.D(scl_padoen_o),
+	.CLK(I_CLK),
+	.Q(\u_i2c_master/bit_controller/dscl_oen )
+);
+defparam \u_i2c_master/bit_controller/dscl_oen_s0 .INIT=1'b0;
+DFFP \u_i2c_master/bit_controller/clk_en_s0  (
+	.D(\u_i2c_master/bit_controller/n13_3 ),
+	.CLK(I_CLK),
+	.PRESET(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/clk_en )
+);
+defparam \u_i2c_master/bit_controller/clk_en_s0 .INIT=1'b1;
+DFFCE \u_i2c_master/bit_controller/cnt_15_s1  (
+	.D(\u_i2c_master/bit_controller/n31_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/cnt_15_8 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/cnt [15])
+);
+defparam \u_i2c_master/bit_controller/cnt_15_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/cnt_14_s1  (
+	.D(\u_i2c_master/bit_controller/n32_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/cnt_15_8 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/cnt [14])
+);
+defparam \u_i2c_master/bit_controller/cnt_14_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/cnt_13_s1  (
+	.D(\u_i2c_master/bit_controller/n33_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/cnt_15_8 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/cnt [13])
+);
+defparam \u_i2c_master/bit_controller/cnt_13_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/cnt_12_s1  (
+	.D(\u_i2c_master/bit_controller/n34_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/cnt_15_8 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/cnt [12])
+);
+defparam \u_i2c_master/bit_controller/cnt_12_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/cnt_11_s1  (
+	.D(\u_i2c_master/bit_controller/n35_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/cnt_15_8 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/cnt [11])
+);
+defparam \u_i2c_master/bit_controller/cnt_11_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/cnt_10_s1  (
+	.D(\u_i2c_master/bit_controller/n36_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/cnt_15_8 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/cnt [10])
+);
+defparam \u_i2c_master/bit_controller/cnt_10_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/cnt_9_s1  (
+	.D(\u_i2c_master/bit_controller/n37_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/cnt_15_8 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/cnt [9])
+);
+defparam \u_i2c_master/bit_controller/cnt_9_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/cnt_8_s1  (
+	.D(\u_i2c_master/bit_controller/n38_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/cnt_15_8 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/cnt [8])
+);
+defparam \u_i2c_master/bit_controller/cnt_8_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/cnt_7_s1  (
+	.D(\u_i2c_master/bit_controller/n39_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/cnt_15_8 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/cnt [7])
+);
+defparam \u_i2c_master/bit_controller/cnt_7_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/cnt_6_s1  (
+	.D(\u_i2c_master/bit_controller/n40_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/cnt_15_8 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/cnt [6])
+);
+defparam \u_i2c_master/bit_controller/cnt_6_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/cnt_5_s1  (
+	.D(\u_i2c_master/bit_controller/n41_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/cnt_15_8 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/cnt [5])
+);
+defparam \u_i2c_master/bit_controller/cnt_5_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/cnt_4_s1  (
+	.D(\u_i2c_master/bit_controller/n42_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/cnt_15_8 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/cnt [4])
+);
+defparam \u_i2c_master/bit_controller/cnt_4_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/cnt_3_s1  (
+	.D(\u_i2c_master/bit_controller/n43_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/cnt_15_8 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/cnt [3])
+);
+defparam \u_i2c_master/bit_controller/cnt_3_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/cnt_2_s1  (
+	.D(\u_i2c_master/bit_controller/n44_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/cnt_15_8 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/cnt [2])
+);
+defparam \u_i2c_master/bit_controller/cnt_2_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/cnt_1_s1  (
+	.D(\u_i2c_master/bit_controller/n45_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/cnt_15_8 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/cnt [1])
+);
+defparam \u_i2c_master/bit_controller/cnt_1_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/cnt_0_s1  (
+	.D(\u_i2c_master/bit_controller/n46_3 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/cnt_15_8 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/cnt [0])
+);
+defparam \u_i2c_master/bit_controller/cnt_0_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/c_state_16_s1  (
+	.D(\u_i2c_master/bit_controller/n212_7 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/c_state [16])
+);
+defparam \u_i2c_master/bit_controller/c_state_16_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/c_state_15_s1  (
+	.D(\u_i2c_master/bit_controller/n213_7 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/c_state [15])
+);
+defparam \u_i2c_master/bit_controller/c_state_15_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/c_state_14_s1  (
+	.D(\u_i2c_master/bit_controller/n214_7 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/c_state [14])
+);
+defparam \u_i2c_master/bit_controller/c_state_14_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/c_state_13_s1  (
+	.D(\u_i2c_master/bit_controller/n215_7 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/c_state [13])
+);
+defparam \u_i2c_master/bit_controller/c_state_13_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/c_state_12_s1  (
+	.D(\u_i2c_master/bit_controller/n216_9 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/c_state [12])
+);
+defparam \u_i2c_master/bit_controller/c_state_12_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/c_state_11_s1  (
+	.D(\u_i2c_master/bit_controller/n217_7 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/c_state [11])
+);
+defparam \u_i2c_master/bit_controller/c_state_11_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/c_state_10_s1  (
+	.D(\u_i2c_master/bit_controller/n218_7 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/c_state [10])
+);
+defparam \u_i2c_master/bit_controller/c_state_10_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/c_state_9_s1  (
+	.D(\u_i2c_master/bit_controller/n219_7 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/c_state [9])
+);
+defparam \u_i2c_master/bit_controller/c_state_9_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/c_state_8_s1  (
+	.D(\u_i2c_master/bit_controller/n220_7 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/c_state [8])
+);
+defparam \u_i2c_master/bit_controller/c_state_8_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/c_state_7_s1  (
+	.D(\u_i2c_master/bit_controller/n221_7 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/c_state [7])
+);
+defparam \u_i2c_master/bit_controller/c_state_7_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/c_state_6_s1  (
+	.D(\u_i2c_master/bit_controller/n222_7 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/c_state [6])
+);
+defparam \u_i2c_master/bit_controller/c_state_6_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/c_state_5_s1  (
+	.D(\u_i2c_master/bit_controller/n223_9 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/c_state [5])
+);
+defparam \u_i2c_master/bit_controller/c_state_5_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/c_state_4_s1  (
+	.D(\u_i2c_master/bit_controller/n224_7 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/c_state [4])
+);
+defparam \u_i2c_master/bit_controller/c_state_4_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/c_state_3_s1  (
+	.D(\u_i2c_master/bit_controller/n225_7 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/c_state [3])
+);
+defparam \u_i2c_master/bit_controller/c_state_3_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/c_state_2_s1  (
+	.D(\u_i2c_master/bit_controller/n226_12 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/c_state [2])
+);
+defparam \u_i2c_master/bit_controller/c_state_2_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/c_state_1_s1  (
+	.D(\u_i2c_master/bit_controller/n227_7 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/c_state [1])
+);
+defparam \u_i2c_master/bit_controller/c_state_1_s1 .INIT=1'b0;
+DFFCE \u_i2c_master/bit_controller/c_state_0_s1  (
+	.D(\u_i2c_master/bit_controller/n228_7 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/c_state [0])
+);
+defparam \u_i2c_master/bit_controller/c_state_0_s1 .INIT=1'b0;
+DFFPE \u_i2c_master/bit_controller/SCL_OEN_s1  (
+	.D(\u_i2c_master/bit_controller/n203_19 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/SCL_OEN_8 ),
+	.PRESET(\u_i2c_master/n16_6 ),
+	.Q(scl_padoen_o)
+);
+defparam \u_i2c_master/bit_controller/SCL_OEN_s1 .INIT=1'b1;
+DFFPE \u_i2c_master/bit_controller/SDA_OEN_s1  (
+	.D(\u_i2c_master/bit_controller/n230_6 ),
+	.CLK(I_CLK),
+	.CE(\u_i2c_master/bit_controller/c_state_16_10 ),
+	.PRESET(\u_i2c_master/n16_6 ),
+	.Q(sda_padoen_o)
+);
+defparam \u_i2c_master/bit_controller/SDA_OEN_s1 .INIT=1'b1;
+DFFC \u_i2c_master/bit_controller/BUSY_s4  (
+	.D(\u_i2c_master/bit_controller/n102_11 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/i2c_busy )
+);
+defparam \u_i2c_master/bit_controller/BUSY_s4 .INIT=1'b0;
+DFFC \u_i2c_master/bit_controller/sda_chk_s3  (
+	.D(\u_i2c_master/bit_controller/n231_11 ),
+	.CLK(I_CLK),
+	.CLEAR(\u_i2c_master/n16_6 ),
+	.Q(\u_i2c_master/bit_controller/sda_chk )
+);
+defparam \u_i2c_master/bit_controller/sda_chk_s3 .INIT=1'b0;
+endmodule

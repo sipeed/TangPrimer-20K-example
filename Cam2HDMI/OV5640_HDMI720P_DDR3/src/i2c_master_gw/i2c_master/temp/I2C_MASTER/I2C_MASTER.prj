@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW2A-18C" package="PBGA256" speed="8" partNumber="GW2A-LV18PG256C8/I7"/>
+    <FileList>
+        <File path="E:/Design_Tools/FPGA/Gowin/Gowin_V1.9.12.02_SP1_x64/IDE/ipcore/I2CMASTER/data/I2C_MASTER_TOP.v" type="verilog"/>
+        <File path="E:/Design_Tools/FPGA/Gowin/Gowin_V1.9.12.02_SP1_x64/IDE/ipcore/I2CMASTER/data/I2C_MASTER.vp" type="verilog"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="1"/>
+        <Option type="include_path" value="E:/Design_Tools/FPGA/Gowin/Gowin_V1.9.12.02_SP1_x64/IDE/ipcore/I2CMASTER/data"/>
+        <Option type="include_path" value="F:/Project/TangPrimer-20K-example/Cam2HDMI/OV5640_HDMI720P_DDR3/src/i2c_master_gw/i2c_master/temp/I2C_MASTER"/>
+        <Option type="ip_version" value="1.0"/>
+        <Option type="output_file" value="i2c_master_gw.vg"/>
+        <Option type="output_template" value="i2c_master_gw_tmp.v"/>
+        <Option type="ram_balance" value="1"/>
+        <Option type="ram_rw_check" value="1"/>
+        <Option type="vcc" value="1.0"/>
+        <Option type="vccx" value="3.3"/>
+        <Option type="verilog_language" value="sysv-2017"/>
+    </OptionList>
+</Project>

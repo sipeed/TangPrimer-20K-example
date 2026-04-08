@@ -1,31 +1,34 @@
-//Copyright (C)2014-2022 Gowin Semiconductor Corporation.
+//Copyright (C)2014-2026 Gowin Semiconductor Corporation.
 //All rights reserved.
 //File Title: IP file
-//GOWIN Version: V1.9.8.07 Education
+//Tool Version: V1.9.12.02_SP1 (64-bit)
+//IP Version: 1.0
 //Part Number: GW2A-LV18PG256C8/I7
-//Device: GW2A-18C
-//Created Time: Thu Sep 01 15:07:02 2022
+//Device: GW2A-18
+//Device Version: C
+//Created Time: Wed Apr  8 15:06:29 2026
 
-module cmos_pll (clkout, clkin);
+module cmos_pll (clkout, lock, clkoutd, clkoutd3, reset, clkin);
 
 output clkout;
+output lock;
+output clkoutd;
+output clkoutd3;
+input reset;
 input clkin;
 
-wire lock_o;
 wire clkoutp_o;
-wire clkoutd_o;
-wire clkoutd3_o;
 wire gw_gnd;
 
 assign gw_gnd = 1'b0;
 
 rPLL rpll_inst (
     .CLKOUT(clkout),
-    .LOCK(lock_o),
+    .LOCK(lock),
     .CLKOUTP(clkoutp_o),
-    .CLKOUTD(clkoutd_o),
-    .CLKOUTD3(clkoutd3_o),
-    .RESET(gw_gnd),
+    .CLKOUTD(clkoutd),
+    .CLKOUTD3(clkoutd3),
+    .RESET(reset),
     .RESET_P(gw_gnd),
     .CLKIN(clkin),
     .CLKFB(gw_gnd),
@@ -39,11 +42,11 @@ rPLL rpll_inst (
 
 defparam rpll_inst.FCLKIN = "27";
 defparam rpll_inst.DYN_IDIV_SEL = "false";
-defparam rpll_inst.IDIV_SEL = 8;
+defparam rpll_inst.IDIV_SEL = 4;
 defparam rpll_inst.DYN_FBDIV_SEL = "false";
-defparam rpll_inst.FBDIV_SEL = 7;
+defparam rpll_inst.FBDIV_SEL = 12;
 defparam rpll_inst.DYN_ODIV_SEL = "false";
-defparam rpll_inst.ODIV_SEL = 32;
+defparam rpll_inst.ODIV_SEL = 8;
 defparam rpll_inst.PSDA_SEL = "0000";
 defparam rpll_inst.DYN_DA_EN = "true";
 defparam rpll_inst.DUTYDA_SEL = "1000";

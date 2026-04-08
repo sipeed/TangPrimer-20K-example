@@ -1,18 +1,22 @@
-//Copyright (C)2014-2022 Gowin Semiconductor Corporation.
+//Copyright (C)2014-2026 Gowin Semiconductor Corporation.
 //All rights reserved.
 //File Title: Template file for instantiation
-//GOWIN Version: V1.9.8.07 Education
+//Tool Version: V1.9.12.02_SP1 (64-bit)
+//IP Version: 1.0
 //Part Number: GW2A-LV18PG256C8/I7
-//Device: GW2A-18C
-//Created Time: Sat Sep 24 16:50:04 2022
+//Device: GW2A-18
+//Device Version: C
+//Created Time: Wed Apr  8 20:06:39 2026
 
 //Change the instance name and port connections to the signal names
 //--------Copy here to design--------
 
     mem_pll your_instance_name(
-        .clkout(clkout_o), //output clkout
-        .lock(lock_o), //output lock
-        .clkin(clkin_i) //input clkin
+        .clkout(clkout), //output clkout
+        .lock(lock), //output lock
+        .clkoutd3(clkoutd3), //output clkoutd3
+        .reset(reset), //input reset
+        .clkin(clkin) //input clkin
     );
 
 //--------Copy end-------------------

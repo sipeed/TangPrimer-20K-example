@@ -1,24 +1,26 @@
 -series GW2A
--device GW2A-18C
+-device GW2A-18
+-device_version C
 -package PBGA256
 -part_number GW2A-LV18PG256C8/I7
 
 
 -mod_name mem_pll
 -file_name mem_pll
--path D:/Users/HUIP/Desktop/OV5640_HDMI800_DDR3/src/gowin_rpll/
+-path F:/Project/TangPrimer-20K-example/Cam2HDMI/OV5640_HDMI720P_DDR3/src/gowin_rpll/
 -type PLL
 -rPll true
 -file_type vlg
+-ip_version 1.0
 -dev_type GW2A-18C
 -dyn_idiv_sel false
--idiv_sel 4
+-idiv_sel 5
 -dyn_fbdiv_sel false
--fbdiv_sel 59
+-fbdiv_sel 56
 -dyn_odiv_sel false
 -odiv_sel 2
 -dyn_da_en true
--rst_sig false
+-rst_sig true
 -rst_sig_p false
 -fclkin 27
 -clkfb_sel 0
@@ -29,4 +31,5 @@
 -clkoutp_bypass false
 -en_clkoutd false
 -clkoutd_bypass false
--en_clkoutd3 false
+-en_clkoutd3 true
+-clkoutd3_src CLKOUT

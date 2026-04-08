@@ -10,7 +10,5 @@ version=1.0
 DISABLE_IO_INSERTION=true
 ELVDS=false
 LANG=0
-RX_CLOCK_IN_FREQUENCY=40
 Synthesis_tool=GowinSynthesis
 TLVDS=true
-USING_EXTERNAL_CLOCK=true

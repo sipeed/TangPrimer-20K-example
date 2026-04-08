@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW2A-18C" package="PBGA256" speed="8" partNumber="GW2A-LV18PG256C8/I7"/>
+    <FileList>
+        <File path="E:/Design_Tools/FPGA/Gowin/Gowin_V1.9.12.02_SP1_x64/IDE/ipcore/VFB/data/vfb_top.v" type="verilog"/>
+        <File path="E:/Design_Tools/FPGA/Gowin/Gowin_V1.9.12.02_SP1_x64/IDE/ipcore/VFB/data/vfb_wrapper.v" type="verilog"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="1"/>
+        <Option type="include_path" value="E:/Design_Tools/FPGA/Gowin/Gowin_V1.9.12.02_SP1_x64/IDE/ipcore/VFB/data"/>
+        <Option type="include_path" value="F:/Project/TangPrimer-20K-example/Cam2HDMI/OV5640_HDMI720P_DDR3/src/video_frame_buffer/temp/VFB"/>
+        <Option type="ip_version" value="2.4"/>
+        <Option type="output_file" value="Video_Frame_Buffer_Top.vg"/>
+        <Option type="output_template" value="Video_Frame_Buffer_Top_tmp.v"/>
+        <Option type="ram_balance" value="1"/>
+        <Option type="ram_rw_check" value="1"/>
+        <Option type="top_module" value="Video_Frame_Buffer_Top"/>
+        <Option type="vcc" value="1.0"/>
+        <Option type="vccx" value="3.3"/>
+        <Option type="verilog_language" value="sysv-2017"/>
+    </OptionList>
+</Project>

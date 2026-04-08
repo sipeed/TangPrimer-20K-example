@@ -1,0 +1,47 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v'
+Analyzing included file 'fifo_define.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Back to file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Analyzing included file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\static_macro_define.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Back to file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Analyzing included file 'fifo_parameter.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Back to file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Analyzing included file 'fifo_define.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Back to file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Analyzing included file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\static_macro_define.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Back to file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Undeclared symbol 'Reset', assumed default net type 'wire'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Undeclared symbol 'RPReset', assumed default net type 'wire'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Analyzing Verilog file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v'
+Analyzing included file 'fifo_define.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v":1)
+Back to file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v":1)
+Analyzing included file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\static_macro_define.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v":2)
+Back to file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v":2)
+Analyzing included file 'fifo_parameter.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v":57)
+Back to file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v":57)
+Compiling module 'video_fifo'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs_top.v":4)
+Compiling module '**'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+Extracting RAM for identifier '**'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+NOTE  (EX0101) : Current top module is "video_fifo"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+WARN  (DI0004) : Register "wfull_val1" has both asynchronous set and reset. Your design may not work on the board. GoWin recommends you change your RTL. This warning is only issued once, although it may apply to other registers as well("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\FIFO_HS\data\fifo_hs.v":15293)
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "F:\Project\TangPrimer-20K-example\Cam2HDMI\OV5640_HDMI720P_DDR3\src\fifo_hs\temp\FIFOHS\video_fifo.vg" completed
+Generate template file "F:\Project\TangPrimer-20K-example\Cam2HDMI\OV5640_HDMI720P_DDR3\src\fifo_hs\temp\FIFOHS\video_fifo_tmp.v" completed
+[100%] Generate report file "F:\Project\TangPrimer-20K-example\Cam2HDMI\OV5640_HDMI720P_DDR3\src\fifo_hs\temp\FIFOHS\video_fifo_syn.rpt.html" completed
+GowinSynthesis finish

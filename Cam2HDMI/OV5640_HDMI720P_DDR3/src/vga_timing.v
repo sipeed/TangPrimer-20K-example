@@ -1,17 +1,35 @@
-module vga_timing(
+module vga_timing#(
+	parameter H_ACTIVE = 16'd1280,  	//horizontal active time (pixels)
+	parameter H_FP 	   = 16'd110,		//horizontal front porch (pixels)
+	parameter H_SYNC   = 16'd40,   		//horizontal sync time(pixels)
+	parameter H_BP	   = 16'd220,  		//horizontal back porch (pixels)
+	parameter V_ACTIVE = 16'd720,		//vertical active Time (lines)
+	parameter V_FP     = 16'd5,  		//vertical front porch (lines)
+	parameter V_SYNC   = 16'd5,  		//vertical sync time (lines)
+	parameter V_BP     = 16'd20, 		//vertical back porch (lines)
+	parameter HS_POL   = 1'b1,   		//horizontal sync polarity, 1 : POSITIVE,0 : NEGATIVE;
+	parameter VS_POL   = 1'b1    		//vertical sync polarity, 1 : POSITIVE,0 : NEGATIVE;
+)(
 	input                 clk,           //pixel clock
 	input                 rst,           //reset signal high active
 	output                hs,            //horizontal synchronization
 	output                vs,            //vertical synchronization
 	output                de,            //video valid
 
-	output reg [9:0] active_x,              //video x position 
-	output reg [9:0] active_y             //video y position 
+	output reg [11:0] active_x,           //video x position 
+	output reg [11:0] active_y            //video y position 
 	
 	);
 
+	localparam H_TOTAL  = H_ACTIVE + H_FP + H_SYNC + H_BP;//horizontal total time (pixels)
+	localparam V_TOTAL  = V_ACTIVE + V_FP + V_SYNC + V_BP;//vertical total time (lines)
+
+
+/***** FOR REFERENCE *******/
 
 //VIDEO_1280_720
+///-----------------------------------------------------------------------
+/*
 parameter H_ACTIVE = 16'd1280;           //horizontal active time (pixels)
 parameter H_FP = 16'd110;                //horizontal front porch (pixels)
 parameter H_SYNC = 16'd40;               //horizontal sync time(pixels)
@@ -22,11 +40,43 @@ parameter V_SYNC  = 16'd5;               //vertical sync time (lines)
 parameter V_BP  = 16'd20;                //vertical back porch (lines)
 parameter HS_POL = 1'b1;                 //horizontal sync polarity, 1 : POSITIVE,0 : NEGATIVE;
 parameter VS_POL = 1'b1;                 //vertical sync polarity, 1 : POSITIVE,0 : NEGATIVE;
+parameter H_TOTAL = H_ACTIVE + H_FP + H_SYNC + H_BP;//horizontal total time (pixels)
+parameter V_TOTAL = V_ACTIVE + V_FP + V_SYNC + V_BP;//vertical total time (lines)
+*/
 
+//VIDEO_1280_720_30_DMT
+/*//-----------------------------------------------------------------------
+parameter H_ACTIVE = 16'd1280;           //horizontal active time (pixels)
+parameter H_FP = 16'd1760;                //horizontal front porch (pixels)
+parameter H_SYNC = 16'd40;               //horizontal sync time(pixels)
+parameter H_BP = 16'd220;                //horizontal back porch (pixels)
+parameter V_ACTIVE = 16'd720;            //vertical active Time (lines)
+parameter V_FP  = 16'd5;                 //vertical front porch (lines)
+parameter V_SYNC  = 16'd5;               //vertical sync time (lines)
+parameter V_BP  = 16'd20;                //vertical back porch (lines)
+parameter HS_POL = 1'b1;                 //horizontal sync polarity, 1 : POSITIVE,0 : NEGATIVE;
+parameter VS_POL = 1'b1;                 //vertical sync polarity, 1 : POSITIVE,0 : NEGATIVE;
 
 parameter H_TOTAL = H_ACTIVE + H_FP + H_SYNC + H_BP;//horizontal total time (pixels)
 parameter V_TOTAL = V_ACTIVE + V_FP + V_SYNC + V_BP;//vertical total time (lines)
+*/
 
+/*
+//VIDEO_800x600
+///-----------------------------------------------------------------------
+parameter H_ACTIVE = 16'd800;           //horizontal active time (pixels)
+parameter H_FP = 16'd40;                //horizontal front porch (pixels)
+parameter H_SYNC = 16'd128;               //horizontal sync time(pixels)
+parameter H_BP = 16'd88;                //horizontal back porch (pixels)
+parameter V_ACTIVE = 16'd600;            //vertical active Time (lines)
+parameter V_FP  = 16'd1;                 //vertical front porch (lines)
+parameter V_SYNC  = 16'd4;               //vertical sync time (lines)
+parameter V_BP  = 16'd23;                //vertical back porch (lines)
+parameter HS_POL = 1'b1;                 //horizontal sync polarity, 1 : POSITIVE,0 : NEGATIVE;
+parameter VS_POL = 1'b1;                 //vertical sync polarity, 1 : POSITIVE,0 : NEGATIVE;
+parameter H_TOTAL = H_ACTIVE + H_FP + H_SYNC + H_BP;//horizontal total time (pixels)
+parameter V_TOTAL = V_ACTIVE + V_FP + V_SYNC + V_BP;//vertical total time (lines)
+*/
 
 reg hs_reg;                      //horizontal sync register
 reg vs_reg;                      //vertical sync register
@@ -40,7 +90,7 @@ assign vs = vs_reg;
 assign de = h_active & v_active;
 
 
-//列计数
+//column count
 always@(posedge clk or posedge rst)
 begin
 	if(rst == 1'b1)
@@ -50,7 +100,7 @@ begin
 	else
 		h_cnt <= h_cnt + 12'd1;
 end
-//显示计数
+//pixel count
 always@(posedge clk)
 begin
 	if(h_cnt >= H_FP + H_SYNC + H_BP)//horizontal video active
@@ -65,7 +115,7 @@ begin
 	else
 		active_y <= active_y;
 end
-//行计数
+//row count
 always@(posedge clk or posedge rst)
 begin
 	if(rst == 1'b1)
@@ -78,7 +128,7 @@ begin
 	else
 		v_cnt <= v_cnt;
 end
-//HS生成
+//HS GEN
 always@(posedge clk or posedge rst)
 begin
 	if(rst == 1'b1)
@@ -90,7 +140,7 @@ begin
 	else
 		hs_reg <= hs_reg;
 end
-//列有效
+//Col. valid
 always@(posedge clk or posedge rst)
 begin
 	if(rst == 1'b1)
@@ -102,7 +152,7 @@ begin
 	else
 		h_active <= h_active;
 end
-//VS生成
+//VS GEN
 always@(posedge clk or posedge rst)
 begin
 	if(rst == 1'b1)
@@ -114,7 +164,7 @@ begin
 	else
 		vs_reg <= vs_reg;
 end
-//行有效
+//Row valid 
 always@(posedge clk or posedge rst)
 begin
 	if(rst == 1'b1)

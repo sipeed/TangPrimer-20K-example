@@ -1,0 +1,12 @@
+[General]
+file=i2c_master_gw
+ipc_version=4
+module=I2C_MASTER_GW_Top
+target_device=gw2a18c-011
+type=i2c_master
+version=1.0
+
+[Config]
+DISABLE_IO_INSERTION=true
+LANG=0
+Synthesis_tool=GowinSynthesis

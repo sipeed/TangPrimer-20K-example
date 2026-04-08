@@ -1,0 +1,43 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_top.v'
+Analyzing included file 'top_define.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_top.v":30)
+Back to file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_top.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_top.v":30)
+Analyzing included file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\static_macro_define.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_top.v":31)
+Back to file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_top.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_top.v":31)
+Analyzing included file 'vfb_defines.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_top.v":32)
+Back to file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_top.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_top.v":32)
+Analyzing Verilog file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_wrapper.v'
+Analyzing included file 'top_define.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_wrapper.v":8475)
+Back to file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_wrapper.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_wrapper.v":8475)
+Analyzing included file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\static_macro_define.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_wrapper.v":8475)
+Back to file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_wrapper.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_wrapper.v":8475)
+Analyzing included file 'vfb_defines.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_wrapper.v":8475)
+Back to file 'E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_wrapper.v'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_wrapper.v":8475)
+Compiling module 'Video_Frame_Buffer_Top'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_top.v":34)
+Compiling module '**'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_wrapper.v":8475)
+Extracting RAM for identifier '**'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_wrapper.v":8475)
+WARN  (EX3791) : Expression size ** truncated to fit in target size **("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_wrapper.v":8475)
+WARN  (EX3670) : Actual bit length ** differs from formal bit length *** for port '**'("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_wrapper.v":8475)
+NOTE  (EX0101) : Current top module is "Video_Frame_Buffer_Top"
+[5%] Running netlist conversion ...
+WARN  (CV0016) : Input I_rd_data_end is unused("E:\Design_Tools\FPGA\Gowin\Gowin_V1.9.12.02_SP1_x64\IDE\ipcore\VFB\data\vfb_top.v":78)
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "F:\Project\TangPrimer-20K-example\Cam2HDMI\OV5640_HDMI720P_DDR3\src\video_frame_buffer\temp\VFB\Video_Frame_Buffer_Top.vg" completed
+Generate template file "F:\Project\TangPrimer-20K-example\Cam2HDMI\OV5640_HDMI720P_DDR3\src\video_frame_buffer\temp\VFB\Video_Frame_Buffer_Top_tmp.v" completed
+[100%] Generate report file "F:\Project\TangPrimer-20K-example\Cam2HDMI\OV5640_HDMI720P_DDR3\src\video_frame_buffer\temp\VFB\Video_Frame_Buffer_Top_syn.rpt.html" completed
+GowinSynthesis finish
