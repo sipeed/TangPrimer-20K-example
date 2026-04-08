@@ -155,7 +155,7 @@ module top #(
     wire pll_stop;
     clk_init u_clk_init(
     	.clkin                      (clk                ),
-        .rst_n                      (rstni & hdmi_hpd   ),
+        .rst_n                      (rstni              ),
     	.clk_37M                    (clk_37M 	        ),
     	.clk_50M                    (clk_50M 	        ),
         .cmos_clk                   (cmos_clk 	        ),
@@ -173,7 +173,7 @@ module top #(
     assign cmos_xclk = cmos_clk;
     assign cmos_pwdn = 1'b0;
     //assign cmos_rst_n = 1'b1;
-    assign cmos_rst_n = cmos_resetn ^ ddr_rst;
+    assign cmos_rst_n = cmos_resetn;
     //assign cmos_rst_n = rst_n;
     assign write_data = cmos_16bit_data;
     //assign write_data = {cmos_16bit_data[4:0],cmos_16bit_data[10:5],cmos_16bit_data[15:11]};
@@ -184,7 +184,7 @@ module top #(
         .CNT_WIDTH                  (22                   )
     ) cmos_reset_gen_m0(
         .clk                        (sccb_clk             ),
-        .rst_n                      (rstni & cmos_pll_lock),
+        .rst_n                      (rstni && hdmi_hpd    ),
         .cmos_resetn                (cmos_resetn          ),
         .cmos_start_config          (cmos_start_cfg       )
     );
@@ -470,7 +470,7 @@ module top #(
     end
     endgenerate
     
-    wire vfb_rstn = init_calib_complete & hdmi_hpd;
+    wire vfb_rstn = init_calib_complete && hdmi_hpd;
     Video_Frame_Buffer_Top Video_Frame_Buffer_Top_inst
     ( 
         .I_rst_n              (vfb_rstn         ),
@@ -641,7 +641,7 @@ module top #(
     end
     endgenerate
 
-    wire hdmi4_rst_n = rstni & TMDS_pll_lock & hdmi_hpd;
+    wire hdmi4_rst_n = rstni && TMDS_pll_lock && hdmi_hpd;
 
     DVI_TX_Top DVI_TX_Top_inst0
     (
