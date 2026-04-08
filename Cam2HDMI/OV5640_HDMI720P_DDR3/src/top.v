@@ -1,6 +1,7 @@
 module top #(
     parameter         USE_TPG     = "false",
     parameter         USE_1280    = "true",
+    parameter         USE_1024    = "false",
     parameter integer I2C_MODE    = 3,
     parameter integer USE_DSP_CNT = 0,
     parameter integer SCCB_LOGIC_CLK = 37_000_000
@@ -201,6 +202,20 @@ module top #(
                 .LUT_AW(LUT_ADDR_WIDTH),
                 .USE_colour_bar(CMOS_COLOR_BAR),
                 .USE_4vs3_frame(1'b0)
+            )lut_ov5640_rgb565_m0(
+            	.lut_index(lut_index),
+            	.lut_data(lut_data)
+            );
+        end
+        else if(USE_1024 == "true" && USE_1280 == "false") begin
+            lut_ov5640_rgb565 #(
+            	.HActive(12'd1024),
+            	.VActive(12'd768),
+            	.HTotal(13'd1892),
+            	.VTotal(13'd740),
+                .LUT_AW(LUT_ADDR_WIDTH),
+                .USE_colour_bar(CMOS_COLOR_BAR),
+                .USE_4vs3_frame(1'b1)
             )lut_ov5640_rgb565_m0(
             	.lut_index(lut_index),
             	.lut_data(lut_data)
