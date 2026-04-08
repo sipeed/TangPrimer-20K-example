@@ -1,1 +1,1 @@
-TBD
+S0 is the reset_n button.
