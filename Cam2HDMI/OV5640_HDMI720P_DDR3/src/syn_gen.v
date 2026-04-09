@@ -24,8 +24,8 @@ module syn_gen
     input      [15:0]  I_v_res     ,//ver resolution 
     input      [15:0]  I_rd_hres   ,
     input      [15:0]  I_rd_vres   ,
-    input              I_hs_pol    ,//HS polarity , 0:负极性，1：正极性
-    input              I_vs_pol    ,//VS polarity , 0:负极性，1：正极性
+    input              I_hs_pol    ,//HS polarity , 0,negative;1,positive
+    input              I_vs_pol    ,//VS polarity , 0,negative;1,positive
     output reg         O_rden      ,
     output reg         O_de        ,   
     output reg         O_hs        ,
