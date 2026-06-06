@@ -257,11 +257,13 @@ begin
 	    10'd248: lut_data <= {8'h78 , 24'h382402}; // DVP CLK divider 
 	    10'd249: lut_data <= {8'h78 , 24'h5001a3}; // SDE on, scale on, UV average off, color matrix on, AWB on
 	    10'd250: lut_data <= {8'h78 , 24'h350300}; // AEC/AGC on 
-	    10'd251: lut_data <= {8'h78 , 24'h301602}; //Strobe output enable
-	    10'd252: lut_data <= {8'h78 , 24'h3b070a}; //FREX strobe mode1		 
-	    10'd253: lut_data <= {8'h78 , 24'h3b0083}; //STROBE CTRL: strobe request ON, Strobe mode: LED3 
-	    10'd254: lut_data <= {8'h78 , 24'h3b0000}; //STROBE CTRL: strobe request OFF 
-		10'd255: lut_data <= {8'hff , 24'hffffff};
+	    10'd251: lut_data <= {8'h78 , 24'h301600}; //Flash disable
+	    10'd252: lut_data <= {8'h78 , 24'h301c00}; //Flash disable
+	    10'd253: lut_data <= {8'h78 , 24'h301900}; //Flash disable
+	    10'd254: lut_data <= {8'h78 , 24'h303108}; //Bypass regulator
+	    // DRIVE_CAPABILITY (0x302c): 0x02=1x, 0x42=2x, 0x82=3x, 0xC2=4x.
+	    // Warning: raising drive above 0x02 can cause severe sensor heating on this module.
+		10'd255: lut_data <= {8'h78 , 24'h302c02}; //Confirmed default: output drive 1x
 		default:lut_data <= {8'h00,16'h0000,8'h00};
 	endcase
 end

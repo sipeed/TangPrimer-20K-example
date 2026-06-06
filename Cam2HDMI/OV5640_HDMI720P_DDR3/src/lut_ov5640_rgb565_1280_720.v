@@ -297,7 +297,9 @@ generate
 		    10'd244: lut_data <= {8'h78 , 24'h301c_00};
 			10'd245: lut_data <= {8'h78 , 24'h3019_00}; //Flash Disabled
 			10'd246: lut_data <= {8'h78 , 24'h3031_08}; //Bypass regulator
-	        10'd247: lut_data <= {8'h78 , 24'h302c_C2}; //output drive 4x
+	        // DRIVE_CAPABILITY (0x302c): 0x02=1x, 0x42=2x, 0x82=3x, 0xC2=4x.
+	        // Warning: raising drive above 0x02 can cause severe sensor heating on this module.
+	        10'd247: lut_data <= {8'h78 , 24'h302c_02}; //Confirmed default: output drive 1x
 			10'd248: lut_data <= {8'hff , 24'hffff_ff};
 			default: lut_data <= {8'h00 , 24'h0000_00};
 		endcase
